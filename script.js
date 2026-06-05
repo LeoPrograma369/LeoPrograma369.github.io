@@ -1,0 +1,234 @@
+// ===================== MENÚ HAMBURGUESA =====================
+
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+    });
+}
+
+// Cerrar menú al hacer clic en un enlace
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.style.display = 'none';
+    });
+});
+
+// ===================== SCROLL SUAVE =====================
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// ===================== NAVBAR EFECTOS AL SCROLL =====================
+
+const navbar = document.querySelector('.navbar');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.1)';
+    } else {
+        navbar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+    }
+});
+
+// ===================== FORMULARIO DE CONTACTO =====================
+
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Obtener valores del formulario
+        const nombre = document.querySelector('.contact-form input[placeholder="Tu Nombre"]').value;
+        const email = document.querySelector('.contact-form input[placeholder="Tu Email"]').value;
+        const asunto = document.querySelector('.contact-form input[placeholder="Asunto"]').value;
+        const mensaje = document.querySelector('.contact-form textarea').value;
+
+        // Validar campos
+        if (!nombre || !email || !mensaje) {
+            alert('Por favor, completa todos los campos requeridos.');
+            return;
+        }
+
+        // Validar email
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            alert('Por favor, ingresa un email válido.');
+            return;
+        }
+
+        // Crear enlace mailto
+        const mailtoLink = `mailto:leo@example.com?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(`Nombre: ${nombre}\nEmail: ${email}\n\nMensaje:\n${mensaje}`)}`;
+
+        // Abrir cliente de email
+        window.location.href = mailtoLink;
+
+        // Mostrar mensaje de confirmación
+        alert('¡Gracias por tu mensaje! Pronto me pondré en contacto contigo.');
+
+        // Limpiar formulario
+        contactForm.reset();
+    });
+}
+
+// ===================== ANIMACIÓN DE OBSERVADOR (OBSERVER API) =====================
+
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+// Observar tarjetas de servicios y proyectos
+document.querySelectorAll('.service-card, .project-card, .stat-card').forEach(card => {
+    card.style.opacity = '0';
+    observer.observe(card);
+});
+
+// ===================== ANIMACIÓN FADE IN UP =====================
+
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+`;
+document.head.appendChild(style);
+
+// ===================== FUNCIONALIDAD DE MODO OSCURO (Opcional) =====================
+
+const toggleDarkMode = () => {
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+};
+
+// Cargar preferencia de tema almacenada
+if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark-mode');
+}
+
+// ===================== EFECTO DE TIPEO EN EL HERO =====================
+
+const typeEffect = (element, text, speed = 100) => {
+    let index = 0;
+    element.textContent = '';
+
+    const type = () => {
+        if (index < text.length) {
+            element.textContent += text.charAt(index);
+            index++;
+            setTimeout(type, speed);
+        }
+    };
+
+    type();
+};
+
+// Aplicar efecto de tipeo si existe
+const heroTitle = document.querySelector('.hero-content h2');
+if (heroTitle) {
+    const originalText = heroTitle.textContent;
+    // Descomentar la siguiente línea para activar el efecto de tipeo
+    // typeEffect(heroTitle, originalText, 50);
+}
+
+// ===================== CONTADOR DE ESTADÍSTICAS (ANIMADO) =====================
+
+const animateCounter = (element, target, duration = 2000) => {
+    let current = 0;
+    const increment = target / (duration / 16);
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            element.textContent = target + (element.textContent.includes('+') ? '+' : element.textContent.includes('%') ? '%' : '');
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(current) + (element.textContent.includes('+') ? '+' : element.textContent.includes('%') ? '%' : '');
+        }
+    }, 16);
+};
+
+// Iniciar animación de contadores cuando son visibles
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.dataset.animated) {
+            const h3 = entry.target.querySelector('h3');
+            if (h3) {
+                const text = h3.textContent;
+                const number = parseInt(text);
+                if (!isNaN(number)) {
+                    animateCounter(h3, number);
+                    entry.target.dataset.animated = 'true';
+                }
+            }
+            statsObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.stat-card').forEach(card => {
+    statsObserver.observe(card);
+});
+
+// ===================== VALIDACIÓN DE EMAIL EN TIEMPO REAL =====================
+
+const emailInput = document.querySelector('.contact-form input[placeholder="Tu Email"]');
+if (emailInput) {
+    emailInput.addEventListener('blur', () => {
+        const email = emailInput.value;
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (email && !emailPattern.test(email)) {
+            emailInput.style.borderColor = '#ef4444';
+            emailInput.style.boxShadow = '0 0 0 3px rgba(239, 68, 68, 0.1)';
+        } else {
+            emailInput.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+            emailInput.style.boxShadow = 'none';
+        }
+    });
+}
+
+// ===================== SMOOTH SCROLL HEADER =====================
+
+const updateHeaderOnScroll = () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 100) {
+        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+    } else {
+        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+    }
+};
+
+window.addEventListener('scroll', updateHeaderOnScroll);
+
+// ===================== CONSOLE MESSAGE =====================
+
+console.log('%c🚀 ¡Bienvenido a mi sitio!', 'font-size: 20px; color: #6366f1; font-weight: bold;');
+console.log('%cSi buscas un desarrollador, ¡aquí estoy!', 'font-size: 14px; color: #ec4899;');
+console.log('%cContacto: leo@example.com', 'font-size: 12px; color: #64748b;');
