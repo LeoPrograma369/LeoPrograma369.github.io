@@ -1,65 +1,91 @@
+/**
+ * Plataforma Front-End de Automatización - LeoPrograma369
+ * Controlador Centralizado y Optimizado para SEO Técnico
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ===================== 1. DETECTOR DE APERTURA MULTI-URL =====================
+    // ==========================================================================
+    // 1. MANEJADOR MULTI-URL (APERTURA EN SEGUNDO PLANO ASÍNCRONA)
+    // ==========================================================================
     const btnMultiGoogle = document.getElementById('btn-multi-google');
 
     if (btnMultiGoogle) {
-        btnMultiGoogle.addEventListener('click', (e) => {
-            e.preventDefault();
+        btnMultiGoogle.addEventListener('click', (event) => {
+            // Evita comportamientos colaterales del botón en formularios o enlaces
+            event.preventDefault();
 
+            // Conjunto estructurado de URLs para el despliegue del ecosistema
             const ecosistemaUrls = [
-                "https://www.google.com",
-                "https://trends.google.com",
-                "https://analytics.google.com"
+                'https://www.google.com',
+                'https://trends.google.com',
+                'https://analytics.google.com'
             ];
 
-            // Dispara las ventanas de manera simultánea en hilos independientes
+            // Ejecución nativa iterativa para evitar bloqueos del navegador
             ecosistemaUrls.forEach(url => {
                 window.open(url, '_blank');
             });
         });
     }
 
-    // ===================== 2. CONTROL PERSISTENTE DE INTERRUPTOR DE TEMA =====================
+    // ==========================================================================
+    // 2. SISTEMA PERSISTENTE DE CAMBIO DE MODO (LIGHT / DARK CYBER)
+    // ==========================================================================
     const themeToggleBtn = document.getElementById('theme-toggle');
     const bodyElement = document.body;
 
-    // Carga inicial basada en las preferencias previas del desarrollador
-    if (localStorage.getItem('theme') === 'dark') {
-        bodyElement.classList.add('dark-mode');
+    // Verificar si existe una preferencia almacenada previamente en el cliente
+    const temaGuardado = localStorage.getItem('modo-color');
+
+    // Inicializar el estado de la interfaz
+    if (temaGuardado === 'light') {
+        bodyElement.classList.remove('dark-mode');
+        bodyElement.classList.add('light-mode');
     } else {
-        // Opcional: Podés iniciar por defecto en modo oscuro para lucir la UI de la captura
-        bodyElement.classList.add('dark-mode'); 
+        // Por defecto forzamos el modo oscuro premium configurado
+        bodyElement.classList.add('dark-mode');
+        bodyElement.classList.remove('light-mode');
     }
 
     if (themeToggleBtn) {
         themeToggleBtn.addEventListener('click', () => {
-            bodyElement.classList.toggle('dark-mode');
-            
+            // Alternancia dinámica de selectores CSS nativos
             if (bodyElement.classList.contains('dark-mode')) {
-                localStorage.setItem('theme', 'dark');
+                bodyElement.classList.remove('dark-mode');
+                bodyElement.classList.add('light-mode');
+                localStorage.setItem('modo-color', 'light');
             } else {
-                localStorage.setItem('theme', 'light');
+                bodyElement.classList.remove('light-mode');
+                bodyElement.classList.add('dark-mode');
+                localStorage.setItem('modo-color', 'dark');
             }
         });
     }
 
-    // ===================== 3. OBSERVADOR DE ELEMENTOS (FADE IN UP) =====================
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -40px 0px'
+    // ==========================================================================
+    // 3. INTERSECTION OBSERVER OPTIMIZADO (Rendimiento Core Web Vitals)
+    // ==========================================================================
+    const observerConfig = {
+        root: null,         // Contexto relativo al viewport del dispositivo
+        threshold: 0.12,    // Se dispara cuando el 12% del elemento es visible
+        rootMargin: '0px 0px -20px 0px'
     };
 
-    const entranceObserver = new IntersectionObserver((entries) => {
+    const scriptObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
+            // Si el elemento entra en la zona visible agregamos la clase animada
             if (entry.isIntersecting) {
-                entry.target.style.animation = 'fadeInUp 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) forwards';
-                entranceObserver.unobserve(entry.target);
+                entry.target.classList.add('visible');
+                // Dejamos de observar para liberar memoria en el cliente
+                observer.unobserve(entry.target);
             }
         });
-    }, observerOptions);
+    }, observerConfig);
 
-    document.querySelectorAll('.project-card').forEach(card => {
-        entranceObserver.observe(card);
+    // Adjuntar observador a todas las tarjetas registradas con la clase de proyecto
+    const tarjetasCargadas = document.querySelectorAll('.project-card');
+    tarjetasCargadas.forEach(tarjeta => {
+        scriptObserver.observe(tarjeta);
     });
 });
