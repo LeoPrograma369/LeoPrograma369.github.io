@@ -1,124 +1,67 @@
-/**
- * Lógica de Negocio de Interfaz de Portafolio Avanzada
- * Desarrollado nativamente en Vanilla JavaScript (ES6+)
- */
+// --- CONTROL DE MODO OSCURO / CLARO[cite: 1, 2] ---
+const themeToggleBtn = document.getElementById('theme-toggle');
+const themeText = document.getElementById('theme-text');
+const bodyElement = document.body;
 
-document.addEventListener('DOMContentLoaded', () => {
-
-    // ==========================================================================
-    // 1. GESTIÓN Y PERSISTENCIA DE MODO CLARO / OSCURO (LocalStorage)
-    // ==========================================================================
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    const bodyElement = document.body;
-
-    // Verificar si existe una selección previa en el almacenamiento del cliente
-    const temaGuardado = localStorage.getItem('hub-theme');
-
-    if (temaGuardado === 'light') {
-        bodyElement.classList.remove('dark-mode');
-        bodyElement.classList.add('light-mode');
+const updateToggleUI = () => {
+    if (bodyElement.classList.contains('dark-mode')) {
+        themeText.textContent = "Modo Oscuro";
     } else {
-        // Por defecto, inicializar siempre en dark-mode según especificación
-        bodyElement.classList.add('dark-mode');
-        bodyElement.classList.remove('light-mode');
+        themeText.textContent = "Modo Claro";
     }
+};
 
-    // Intercambio reactivo de clases al ejecutar click
-    if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', () => {
-            if (bodyElement.classList.contains('dark-mode')) {
-                bodyElement.classList.replace('dark-mode', 'light-mode');
-                localStorage.setItem('hub-theme', 'light');
-            } else {
-                bodyElement.classList.replace('light-mode', 'dark-mode');
-                localStorage.setItem('hub-theme', 'dark');
-            }
-        });
-    }
+// Comprobación de estado guardado en local[cite: 1, 2]
+if (localStorage.getItem('theme') === 'dark') {
+    bodyElement.classList.add('dark-mode');
+    updateToggleUI();
+}
 
-    // ==========================================================================
-    // 2. SISTEMA DE ECOSISTEMAS MULTI-LINK (Estructuras de 7 URLs Limpias)
-    // ==========================================================================
-    const baseEcosistemas = {
-        'google': [
-            'https://www.google.com',
-            'https://trends.google.com',
-            'https://analytics.google.com',
-            'https://search.google.com/search-console',
-            'https://ads.google.com?subid=xs-ip-gemini-adlc',
-            'https://tagmanager.google.com',
-            'https://www.youtube.com'
-        ],
-        'gamer-rentable': [
-            'https://gamerrentable.blogspot.com',
-            'https://www.blogger.com',
-            'https://adsense.google.com',
-            'https://www.coingecko.com',
-            'https://www.amazon.afiliados.com',
-            'https://news.google.com',
-            'https://www.pinterest.com'
-        ],
-        'devops': [
-            'https://github.com',
-            'https://github.com/features/actions',
-            'https://portal.azure.com',
-            'https://aws.amazon.com',
-            'https://hub.docker.com',
-            'https://kubernetes.io',
-            'https://vercel.com'
-        ]
-    };
-
-    // Delegación de eventos optimizada para controlar los clics en los botones de las tarjetas
-    const contenedorTarjetas = document.querySelector('.contenedor-grid-tarjetas');
-    
-    if (contenedorTarjetas) {
-        contenedorTarjetas.addEventListener('click', (e) => {
-            // Verificar si el elemento clickeado es el botón premium violeta
-            if (e.target.classList.contains('btn-ecosistema')) {
-                const tarjetaPadre = e.target.closest('.tarjeta-proyecto');
-                
-                if (tarjetaPadre) {
-                    const identificadorPlataforma = tarjetaPadre.getAttribute('data-plataforma');
-                    const urlsDestino = baseEcosistemas[identificadorPlataforma];
-                    
-                    if (urlsDestino && Array.isArray(urlsDestino)) {
-                        // Apertura iterativa limpia de los 7 enlaces en segundo plano
-                        urlsDestino.forEach(url => {
-                            window.open(url, '_blank');
-                        });
-                    }
-                }
-            }
-        });
-    }
-
-    // ==========================================================================
-    // 3. ANIMACIONES DE INTERFAZ (Intersection Observer API)
-    // ==========================================================================
-    const opcionesConfig = {
-        root: null, // Hace referencia al viewport del navegador
-        threshold: 0.1, // Se activa cuando el 10% de la tarjeta es visible
-        rootMargin: '0px 0px -40px 0px'
-    };
-
-    const callbackAnimacion = (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Inyección de clase utilitaria CSS para gatillar la transición fluidamente
-                entry.target.classList.add('visible');
-                // Dejar de observar para optimizar ciclos de procesamiento de la CPU
-                observer.unobserve(entry.target);
-            }
-        });
-    };
-
-    const observadorNativo = new IntersectionObserver(callbackAnimacion, opcionesConfig);
-
-    // Seleccionar y asignar el observador a todas las tarjetas de la grilla
-    const tarjetasAAnimar = document.querySelectorAll('.tarjeta-proyecto');
-    tarjetasAAnimar.forEach(tarjeta => {
-        observadorNativo.observe(tarjeta);
-    });
-
+themeToggleBtn.addEventListener('click', () => {
+    bodyElement.classList.toggle('dark-mode');
+    const isDark = bodyElement.classList.contains('dark-mode');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    updateToggleUI();
 });
+
+// --- MENÚ HAMBURGUESA RESPONSIVE[cite: 2] ---
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+}
+
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+    });
+});
+
+// --- EFECTOS VISUALES AL SCROLL (NAVBAR BLUR)[cite: 2] ---
+const navbar = document.querySelector('.navbar');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.08)';
+    } else {
+        navbar.style.boxShadow = 'var(--shadow)';
+    }
+});
+
+// --- MANEJO LOGIC FORM CON MAILTO[cite: 2] ---
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const nombre = contactForm.querySelector('input[placeholder="Tu Nombre"]').value;
+        const email = document.getElementById('contact-email').value;
+        const mensaje = contactForm.querySelector('textarea').value;
+
+        const mailtoLink = `mailto:leo@example.com?subject=Propuesta%20Laboral%20Portafolio&body=Nombre:%20${encodeURIComponent(nombre)}%0AEmail:%20${encodeURIComponent(email)}%0AMensaje:%20${encodeURIComponent(mensaje)}`;
+        window.location.href = mailtoLink;
+        alert('¡Gracias por tu interés! Se abrirá tu cliente de correo para enviar la propuesta.');
+        contactForm.reset();
+    });
+}
