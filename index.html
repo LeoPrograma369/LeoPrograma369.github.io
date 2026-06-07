@@ -3,65 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LeoPrograma369 | Portafolio Retro Anime</title>
+    <title>LeoPrograma369 | Portafolio Profesional Full Stack</title>
+    <!-- Preconexiones para optimizar la carga de fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Iconos oficiales de FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Enlace a tu archivo de estilos separado -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="vhs-overlay"></div>
-
+    <!-- Barra de Navegación Dinámica -->
     <nav class="navbar">
         <div class="container nav-container">
             <div class="logo">
                 <h1>LeoPrograma<span>369</span></h1>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+                <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
             </ul>
-            <button id="theme-toggle" class="theme-btn">🌓</button>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-btn" aria-label="Cambiar modo de color">🌓</button>
+                <div class="hamburger" id="hamburger" aria-label="Abrir menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
 
     <main class="container">
+        
+        <!-- Sección Hero con Caja de Código Dinámica -->
         <section id="inicio" class="hero">
             <div class="hero-content">
+                <div class="status-badge">
+                    <span class="status-dot"></span> Disponible para nuevos proyectos
+                </div>
                 <h2>Desarrollo Soluciones Digitales Robustas con <span>Código Limpio</span></h2>
-                <p>Hola, soy Leandro Samperez. Un desarrollador Full Stack versátil preparado para integrarse a equipos multidisciplinarios de alto rendimiento.</p>
+                <p>Hola, soy Leandro Samperez. Un desarrollador Full Stack versátil preparado para integrarse a equipos multidisciplinarios de alto rendimiento y escala técnica.</p>
                 <div class="hero-buttons">
-                    <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
+                    <a href="#proyectos" class="btn btn-primary">Ver Proyectos <i class="fas fa-arrow-right"></i></a>
                     <a href="#contacto" class="btn btn-secondary">Contratarme</a>
                 </div>
             </div>
+            
             <div class="hero-image">
                 <div class="code-box">
                     <div class="code-header">
                         <span class="dot red"></span>
                         <span class="dot yellow"></span>
                         <span class="dot green"></span>
+                        <span class="code-title">developer.js</span>
                     </div>
-                    <pre><code>const dev = {
-  name: 'Leandro Samperez',
-  role: 'Full Stack Developer',
-  status: 'Ready to Work'
+                    <pre><code><span class="keyword">const</span> dev = {
+  name: <span class="string">'Leandro Samperez'</span>,
+  role: <span class="string">'Full Stack Developer'</span>,
+  skills: [<span class="string">'Node.js'</span>, <span class="string">'React'</span>, <span class="string">'SQL'</span>],
+  status: <span class="string">'Ready to Work'</span>
 };</code></pre>
                 </div>
             </div>
         </section>
 
+        <!-- Sección Habilidades con Grid Avanzado -->
         <section id="habilidades" class="habilidades">
-            <h2 class="section-title">Stack Tecnológico & <span>Plataformas</span></h2>
+            <div class="section-header">
+                <h2 class="section-title">Stack Tecnológico & <span>Plataformas</span></h2>
+                <p class="section-subtitle">Herramientas y tecnologías utilizadas para construir arquitecturas eficientes.</p>
+            </div>
+            
             <div class="habilidades-grid">
+                <!-- Tarjeta Frontend -->
                 <div class="categoria-habilidad">
-                    <h3>Frontend</h3>
+                    <div class="categoria-header">
+                        <i class="fas fa-code icon-blue"></i>
+                        <h3>Frontend Architecture</h3>
+                    </div>
                     <div class="nivel-habilidad">
                         <h4>Avanzado</h4>
                         <div class="badges">
@@ -79,102 +105,160 @@
                     </div>
                 </div>
 
+                <!-- Tarjeta Backend -->
                 <div class="categoria-habilidad">
-                    <h3>Backend</h3>
+                    <div class="categoria-header">
+                        <i class="fas fa-server icon-purple"></i>
+                        <h3>Backend & Databases</h3>
+                    </div>
                     <div class="nivel-habilidad">
                         <h4>Avanzado</h4>
                         <div class="badges">
                             <span class="badge-tech">Node.js</span>
                             <span class="badge-tech">Express.js</span>
                             <span class="badge-tech">MySQL</span>
+                            <span class="badge-tech">REST APIs</span>
                         </div>
                     </div>
                 </div>
 
+                <!-- Tarjeta DevOps -->
                 <div class="categoria-habilidad">
-                    <h3>DevOps & Cloud</h3>
+                    <div class="categoria-header">
+                        <i class="fas fa-cloud icon-red"></i>
+                        <h3>DevOps & Cloud</h3>
+                    </div>
                     <div class="nivel-habilidad">
                         <h4>Avanzado</h4>
                         <div class="badges">
                             <span class="badge-tech">Git / GitHub</span>
                             <span class="badge-tech">GitHub Pages</span>
+                            <span class="badge-tech">CI/CD Basics</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Sección Proyectos con la Modificación de Enlaces Múltiples -->
         <section id="proyectos" class="proyectos">
-            <h2 class="section-title">Soluciones de <span>Alto Impacto</span></h2>
+            <div class="section-header">
+                <h2 class="section-title">Soluciones de <span>Alto Impacto</span></h2>
+                <p class="section-subtitle">Explora mis últimos desarrollos, integraciones y plataformas optimizadas.</p>
+            </div>
+            
             <div class="proyectos-grid">
                 
-                <div class="tarjeta-proyecto" style="display: flex; flex-direction: column; justify-content: space-between;">
-                    <div>
-                        <h3 style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                            Google 
-                            <span class="badge-tech" style="background: #2563eb; color: white; border: none; font-size: 0.75rem; padding: 4px 10px;">
+                <!-- TARJETA MODIFICADA DE GOOGLE CON H3 AJUSTADO Y BOTÓN DINÁMICO -->
+                <div class="tarjeta-proyecto google-card">
+                    <div class="proyecto-contenido">
+                        <div class="proyecto-header">
+                            <h3>Google</h3>
+                            <span class="badge-tech status-badge-tech blue-tech">
                                 <i class="fab fa-google"></i> Oficial
                             </span>
-                        </h3>
-                        <p>Acceso directo a herramientas de búsqueda, analítica avanzada y optimización SEO global.</p>
-                        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 15px;">
+                        </div>
+                        <p class="proyecto-descripcion">Acceso directo integrado a herramientas de búsqueda global, analítica de datos avanzada y optimización SEO estructurada.</p>
+                        <div class="proyecto-badges">
                             <span class="badge-tech">Buscador</span>
                             <span class="badge-tech">Herramientas</span>
+                            <span class="badge-tech">API Integration</span>
                         </div>
                     </div>
-                    <a href="#" id="btn-multi-google" class="btn btn-primary" style="text-align: center; text-decoration: none; display: block; width: 100%;">
-                        Abrir Ecosistema <i class="fas fa-external-link-alt" style="margin-left: 5px; font-size: 0.85rem;"></i>
+                    <a href="#" id="btn-multi-google" class="btn btn-primary btn-project-action">
+                        Abrir Ecosistema <i class="fas fa-external-link-alt"></i>
                     </a>
                 </div>
 
+                <!-- Tarjeta Gamer Rentable -->
                 <div class="tarjeta-proyecto">
-                    <h3>Gamer Rentable</h3>
-                    <p>Optimización y monetización avanzada de plataformas de entretenimiento masivo.</p>
-                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                        <span class="badge-tech">Blogger XML</span>
-                        <span class="badge-tech">CSS3 Advanced</span>
+                    <div class="proyecto-contenido">
+                        <div class="proyecto-header">
+                            <h3>Gamer Rentable</h3>
+                            <span class="badge-tech status-badge-tech purple-tech">Optimizado</span>
+                        </div>
+                        <p class="proyecto-descripcion">Diseño, optimización y monetización avanzada aplicados a plataformas de entretenimiento y gaming masivo.</p>
+                        <div class="proyecto-badges">
+                            <span class="badge-tech">Blogger XML</span>
+                            <span class="badge-tech">CSS3 Advanced</span>
+                        </div>
                     </div>
+                    <a href="#" class="btn btn-secondary btn-project-action">Ver Detalles</a>
                 </div>
 
+                <!-- Tarjeta Sistemas de Automatización -->
                 <div class="tarjeta-proyecto">
-                    <h3>Sistemas de Automatización</h3>
-                    <p>Integración de scripts automatizados para el control y mejora de arquitecturas de software cliente-servidor.</p>
-                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                        <span class="badge-tech">DevOps</span>
-                        <span class="badge-tech">Git</span>
+                    <div class="proyecto-contenido">
+                        <div class="proyecto-header">
+                            <h3>Sistemas de Automatización</h3>
+                            <span class="badge-tech status-badge-tech red-tech">Infraestructura</span>
+                        </div>
+                        <p class="proyecto-descripcion">Integración de scripts automatizados y pipelines para el control, despliegue y mejora de arquitecturas cliente-servidor.</p>
+                        <div class="proyecto-badges">
+                            <span class="badge-tech">DevOps</span>
+                            <span class="badge-tech">Git Automation</span>
+                        </div>
                     </div>
+                    <a href="#" class="btn btn-secondary btn-project-action">Ver Arquitectura</a>
                 </div>
 
             </div>
         </section>
 
+        <!-- Sección Contacto con Formulario y Validación Avanzada -->
         <section id="contacto" class="contacto">
-            <h2 class="section-title">Iniciemos un <span>Proyecto</span></h2>
             <div class="contacto-container">
                 <div class="contacto-info">
-                    <h3>¿Listo para escalar tus operaciones técnicas?</h3>
-                    <p>Escríbeme y evaluemos cómo puedo potenciar tus metas comerciales.</p>
+                    <h2 class="section-title" style="text-align: left;">Iniciemos un <span>Proyecto</span></h2>
+                    <p>¿Listo para escalar tus operaciones técnicas o necesitas un desarrollador Full Stack preparado para resolver problemas complejos? Escríbeme.</p>
+                    <div class="contacto-directo">
+                        <div class="contacto-item">
+                            <i class="fas fa-envelope icon-blue"></i>
+                            <span>leandro.samperez@example.com</span>
+                        </div>
+                        <div class="contacto-item">
+                            <i class="fas fa-location-dot icon-purple"></i>
+                            <span>Buenos Aires, Argentina</span>
+                        </div>
+                    </div>
                 </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" placeholder="Tu Nombre" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Tu Email" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Detalles del Proyecto" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Enviar Propuesta</button>
-                </form>
+                
+                <div class="contacto-card">
+                    <form class="contact-form" id="contact-form" novalidate>
+                        <div class="form-group">
+                            <label for="form-name">Nombre Completo</label>
+                            <input type="text" id="form-name" placeholder="Tu Nombre" required>
+                            <span class="error-message" id="name-error">El nombre es requerido.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-email">Correo Electrónico</label>
+                            <input type="email" id="form-email" placeholder="tu@email.com" required>
+                            <span class="error-message" id="email-error">Por favor introduce un correo válido.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-message">Detalles del Proyecto</label>
+                            <textarea id="form-message" placeholder="¿Cómo puedo ayudarte?" rows="4" required></textarea>
+                            <span class="error-message" id="message-error">El mensaje no puede estar vacío.</span>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Propuesta <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
             </div>
         </section>
+
     </main>
 
     <footer class="footer">
-        <p>&copy; 2026 LeoPrograma369. Creado con pasión por el código limpio.</p>
+        <div class="container footer-content">
+            <p>&copy; 2026 LeoPrograma369. Diseñado con Código Limpio y Alta Eficiencia.</p>
+            <div class="footer-socials">
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
     </footer>
 
+    <!-- Vinculación de tu script.js dinámico -->
     <script src="script.js"></script>
 </body>
 </html>
