@@ -3,135 +3,327 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio de Ecosistemas | Soluciones Web Avanzadas</title>
-    <meta name="description" content="Portafolio ultra-profesional optimizado con sistemas multi-link integrados, arquitectura semántica pura y control de interfaz interactiva.">
-    
-    <!-- Precarga de estilos esenciales para evitar saltos visuales -->
-    <link rel="stylesheet" href="styles.css">
+    <title>LeoPrograma369 | Portafolio Retro Anime</title>
+    <style>
+        /* ==========================================================================
+           VARIABLES DE COLORES (Paleta Estilo Retro 90s Anime / Lo-Fi)
+           ========================================================================== */
+        :root {
+            /* Modo Claro (Pastel Lo-Fi) */
+            --bg-principal: #faf6f0;       /* Crema pastel suave estilo vhs vintage */
+            --bg-tarjeta: #ffffff;         /* Blanco puro para contraste de bloques */
+            --texto-primario: #3a2d42;     /* Violeta oscuro/grisáceo muy saturado */
+            --texto-secundario: #6b5b7b;   /* Lavanda desaturado intermedio */
+            --color-acento: #ffb7b2;       /* Rosa pastel nostálgico */
+            --color-borde: #e8dfd8;        /* Borde sutil apagado */
+            --vhs-overlay: rgba(255, 183, 178, 0.05);
+            --shadow: 0 4px 10px rgba(107, 91, 123, 0.08);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .dark-mode {
+            /* Modo Oscuro (Cyber Neon / Midnight Anime) */
+            --bg-principal: #1a1625;       /* Espacio profundo violeta oscuro */
+            --bg-tarjeta: #241e33;         /* Bloques violeta intermedio */
+            --texto-primario: #f3e9fa;     /* Blanco con tinte lavanda */
+            --texto-secundario: #bdaec6;   /* Lavanda claro desaturado */
+            --color-acento: #ff9aa2;       /* Rosa pastel encendido */
+            --color-borde: #3a324d;        /* Borde oscuro contrastante */
+            --vhs-overlay: rgba(255, 154, 162, 0.03);
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ==========================================================================
+           ESTILOS GENERALES Y RESETEO
+           ========================================================================== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-principal);
+            color: var(--texto-primario);
+            line-height: 1.6;
+            transition: var(--transition);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Efecto sutil grano de cinta VHS retro */
+        body::before {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 99999;
+            opacity: 0.12;
+            pointer-events: none;
+            background-size: 100% 3px, 6px 100%;
+        }
+
+        /* ==========================================================================
+           BARRA DE NAVEGACIÓN Y BOTÓN MODO CLARO/OSCURO
+           ========================================================================== */
+        header {
+            background-color: var(--bg-tarjeta);
+            border-bottom: 3px solid var(--color-acento);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--texto-primario);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+        
+        .logo span {
+            color: var(--color-acento);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--texto-secundario);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--color-acento);
+        }
+
+        /* Interruptor de modo Claro / Oscuro */
+        .theme-toggle-btn {
+            background: none;
+            border: 2px solid var(--color-borde);
+            padding: 8px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            transition: var(--transition);
+            outline: none;
+        }
+
+        .theme-toggle-btn:hover {
+            border-color: var(--color-acento);
+            transform: scale(1.05);
+        }
+
+        .theme-toggle-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--texto-primario);
+            transition: var(--transition);
+        }
+
+        /* Ocultar iconos de manera dinámica */
+        .dark-mode-icon { display: block; }
+        .light-mode-icon { display: none; }
+
+        .dark-mode .dark-mode-icon { display: none; }
+        .dark-mode .light-mode-icon { display: block; }
+        .dark-mode .theme-toggle-btn svg { fill: var(--color-acento); }
+
+        /* ==========================================================================
+           CONTENIDO PRINCIPAL (HERO Y SECCIONES)
+           ========================================================================== */
+        main {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .hero-section {
+            background-color: var(--bg-tarjeta);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            border-left: 6px solid var(--color-acento);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .hero-section h1 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: var(--texto-primario);
+        }
+
+        .hero-section p {
+            color: var(--texto-secundario);
+            font-size: 1.1rem;
+            max-width: 800px;
+        }
+
+        .grid-proyectos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .tarjeta-proyecto {
+            background-color: var(--bg-tarjeta);
+            border: 1px solid var(--color-borde);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .tarjeta-proyecto:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-acento);
+        }
+
+        .tarjeta-proyecto h3 {
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+            color: var(--texto-primario);
+        }
+
+        .tarjeta-proyecto p {
+            color: var(--texto-secundario);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .badge-tech {
+            display: inline-block;
+            background-color: var(--bg-principal);
+            color: var(--texto-secundario);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border: 1px solid var(--color-borde);
+        }
+
+        /* ==========================================================================
+           PIE DE PÁGINA
+           ========================================================================== */
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+            color: var(--texto-secundario);
+            border-top: 1px solid var(--color-borde);
+            font-size: 0.9rem;
+        }
+
+        /* Responsividad básica */
+        @media (max-width: 600px) {
+            header { padding: 15px 20px; }
+            nav { gap: 15px; }
+            .hero-section { padding: 25px; }
+            .hero-section h1 { font-size: 1.7rem; }
+        }
+    </style>
 </head>
-<body class="dark-mode">
+<body>
 
-    <!-- ENCABEZADO GLOBAL -->
-    <header class="sitio-header">
-        <div class="header-container">
-            <!-- Área de Marca -->
-            <div class="logo-area">
-                <a href="#" class="logo-enlace">Ecosistema<span class="logo-accent">Hub</span></a>
-            </div>
-
-            <!-- ENLACES PRINCIPALES: Geométricamente centrados horizontalmente -->
-            <nav class="navegacion-principal" aria-label="Menú principal">
-                <ul class="menu-enlaces-centrados">
-                    <li><a href="#ecosistemas" class="enlace-nav activo">Ecosistemas</a></li>
-                    <li><a href="#contacto" class="enlace-nav">Contacto</a></li>
-                </ul>
-            </nav>
-
-            <!-- SWITCH INTERACTIVO DE MODO CLARO/OSCURO -->
-            <div class="control-interfaz">
-                <button id="theme-toggle" class="switch-tema" aria-label="Alternar modo de color" title="Alternar Modo Claro/Oscuro">
-                    <!-- Icono Luna (Modo Oscuro) -->
-                    <svg class="icono-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-                    <!-- Icono Sol (Modo Claro) -->
-                    <svg class="icono-sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.22" x2="5.64" y2="17.86"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                </button>
-            </div>
-        </div>
+    <header>
+        <a href="#" class="logo">LeoPrograma<span>369</span></a>
+        <nav>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#sobre-mi">Sobre Mí</a>
+            
+            <button class="theme-toggle-btn" id="theme-toggle" aria-label="Cambiar modo de color">
+                <svg class="dark-mode-icon" viewBox="0 0 24 24">
+                    <path d="M12.3 22h-.1c-5.5 0-10-4.5-10-10 0-4.8 3.5-8.9 8.2-9.8.5-.1 1 .2 1.2.7.2.5 0 1.1-.4 1.4-2.8 2.2-4.2 5.8-3.6 9.4.6 3.5 3.4 6.3 6.9 6.9 3.6.6 7.2-.8 9.4-3.6.3-.4.9-.5 1.4-.4.5.2.8.7.7 1.2-.9 4.7-5 8.2-9.8 8.2z"/>
+                </svg>
+                <svg class="light-mode-icon" viewBox="0 0 24 24">
+                    <path d="M12 4c.6 0 1-.4 1-1V2c0-.6-.4-1-1-1s-1 .4-1 1v1c0 .6.4 1 1 1zm0 16c-.6 0-1 .4-1 1v1c0 .6.4 1 1 1s1-.4 1-1v-1c0-.6-.4-1-1-1zm8-9h1c.6 0 1-.4 1-1s-.4-1-1-1h-1c-.6 0-1 .4-1 1s.4 1 1 1zM3 12h1c.6 0 1-.4 1-1s-.4-1-1-1H3c-.6 0-1 .4-1 1s.4 1 1 1zm14.1-5.7c.4.4 1 .4 1.4 0l.7-.7c.4-.4.4-1 0-1.4s-1-.4-1.4 0l-.7.7c-.4.4-.4 1 0 1.4zm-11.5 11.5c.4.4 1 .4 1.4 0l.7-.7c.4-.4.4-1 0-1.4s-1-.4-1.4 0l-.7.7c-.4.4-.4 1 0 1.4zM18.2 17.5c-.4-.4-1-.4-1.4 0l-.7.7c-.4.4-.4 1 0 1.4.4.4 1 .4 1.4 0l.7-.7c.4-.4.4-1 0-1.4zM6.1 5.6c-.4-.4-1-.4-1.4 0l-.7.7c-.4.4-.4 1 0 1.4.4.4 1 .4 1.4 0l.7-.7c.4-.4.4-1 0-1.4zM12 6c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z"/>
+                </svg>
+            </button>
+        </nav>
     </header>
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <main id="contenido-principal">
-        
-        <!-- SECCIÓN DE ECOSISTEMAS MULTI-LINK -->
-        <section class="seccion-portafolio" id="ecosistemas" aria-labelledby="titulo-seccion">
-            <h1 id="titulo-seccion" class="titulo-seccion-centrado">Ecosistemas de Trabajo</h1>
-            
-            <div class="contenedor-grid-tarjetas">
+    <main>
+        <section class="hero-section" id="sobre-mi">
+            <h1>Hola, soy Leandro Samperez</h1>
+            <p>Programador Full Stack enfocado en el desarrollo web moderno, optimización de flujos con Git/GitHub y diseño de experiencias digitales con vibras retro únicas.</p>
+        </section>
 
-                <!-- TARJETA 1: GOOGLE -->
-                <article class="tarjeta-proyecto" data-plataforma="google">
-                    <div class="tarjeta-encabezado">
-                        <h2 class="tarjeta-titulo-texto">Google</h2>
-                        <span class="badge-status badge-azul" role="status">G Oficial</span>
-                    </div>
-                    
-                    <p class="tarjeta-descripcion">
-                        Acceso centralizado a herramientas analíticas avanzadas, control de posicionamiento web global, SEO técnico y optimización de flujos comerciales.
-                    </p>
-                    
-                    <div class="tarjeta-tags">
-                        <span class="tag-ovalado">Analítica</span>
-                        <span class="tag-ovalado">SEO</span>
-                        <span class="tag-ovalado">Buscador</span>
-                    </div>
-                    
-                    <div class="contenedor-boton-centrado">
-                        <button class="btn-violeta-premium btn-ecosistema">
-                            Desplegar Ecosistema
-                        </button>
-                    </div>
-                </article>
+        <section id="proyectos">
+            <h2 style="margin-bottom: 20px;">Proyectos Destacados</h2>
+            <div class="grid-proyectos">
+                
+                <div class="tarjeta-proyecto">
+                    <h3>Gamer Rentable</h3>
+                    <p>Espacio especializado en optimización, monetización y personalización de plataformas de entretenimiento.</p>
+                    <span class="badge-tech">Blogger XML</span>
+                    <span class="badge-tech">CSS3</span>
+                </div>
 
-                <!-- TARJETA 2: BLOGGER / GAMER RENTABLE -->
-                <article class="tarjeta-proyecto" data-plataforma="gamer-rentable">
-                    <div class="tarjeta-encabezado">
-                        <h2 class="tarjeta-titulo-texto">Gamer Rentable</h2>
-                        <span class="badge-status badge-rojo" role="status">XML Custom</span>
-                    </div>
-                    
-                    <p class="tarjeta-descripcion">
-                        Plataforma optimizada de nicho. Estructura modular diseñada para la monetización de contenido, gestión de microtareas e integraciones e-commerce eficientes.
-                    </p>
-                    
-                    <div class="tarjeta-tags">
-                        <span class="tag-ovalado">Blogger</span>
-                        <span class="tag-ovalado">CSS3</span>
-                        <span class="tag-ovalado">Monetización</span>
-                    </div>
-                    
-                    <div class="contenedor-boton-centrado">
-                        <button class="btn-violeta-premium btn-ecosistema">
-                            Desplegar Ecosistema
-                        </button>
-                    </div>
-                </article>
+                <div class="tarjeta-proyecto">
+                    <h3>Despliegue GitHub Pages</h3>
+                    <p>Infraestructura optimizada y limpia para el alojamiento de aplicaciones web estáticas con alta velocidad de respuesta.</p>
+                    <span class="badge-tech">HTML5 Semántico</span>
+                    <span class="badge-tech">JavaScript</span>
+                </div>
 
-                <!-- TARJETA 3: SISTEMAS DEVOPS -->
-                <article class="tarjeta-proyecto" data-plataforma="devops">
-                    <div class="tarjeta-encabezado">
-                        <h2 class="tarjeta-titulo-texto">Sistemas DevOps</h2>
-                        <span class="badge-status badge-azul" role="status">CI / CD</span>
-                    </div>
-                    
-                    <p class="tarjeta-descripcion">
-                        Automatización completa de despliegues web estáticos y dinámicos, flujos lógicos de integración continua y control exhaustivo de código fuente.
-                    </p>
-                    
-                    <div class="tarjeta-tags">
-                        <span class="tag-ovalado">GitHub Actions</span>
-                        <span class="tag-ovalado">Git</span>
-                        <span class="tag-ovalado">Pipelines</span>
-                    </div>
-                    
-                    <div class="contenedor-boton-centrado">
-                        <button class="btn-violeta-premium btn-ecosistema">
-                            Desplegar Ecosistema
-                        </button>
-                    </div>
-                </article>
+                <div class="tarjeta-proyecto">
+                    <h3>Sistemas de Automatización</h3>
+                    <p>Integración de scripts automatizados para el control y mejora de arquitecturas de software cliente-servidor.</p>
+                    <span class="badge-tech">DevOps</span>
+                    <span class="badge-tech">Git</span>
+                </div>
 
             </div>
         </section>
     </main>
 
-    <!-- PIE DE PÁGINA -->
-    <footer class="sitio-pie" id="contacto">
-        <div class="footer-container">
-            <p>&copy; 2026 EcosistemaHub. Construido bajo estrictos estándares semánticos de rendimiento web.</p>
-        </div>
+    <footer>
+        <p>&copy; 2026 LeoPrograma369. Creado con pasión por el código limpio.</p>
     </footer>
 
-    <!-- Carga diferida de scripts lógicos -->
-    <script src="script.js"></script>
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const bodyElement = document.body;
+
+        // Comprobar si el usuario ya tenía una preferencia guardada anteriormente
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme === 'dark') {
+            bodyElement.classList.add('dark-mode');
+        }
+
+        // Evento de escucha para detectar el clic en el botón
+        themeToggleBtn.addEventListener('click', () => {
+            // Alternar la clase del modo oscuro en el body
+            bodyElement.classList.toggle('dark-mode');
+            
+            // Determinar qué modo está activo para guardarlo en el almacenamiento local
+            let theme = 'light';
+            if (bodyElement.classList.contains('dark-mode')) {
+                theme = 'dark';
+            }
+            localStorage.setItem('theme', theme);
+        });
+    </script>
 </body>
 </html>
