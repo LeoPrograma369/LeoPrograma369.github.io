@@ -5,12 +5,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LeoPrograma369 | Portafolio Profesional</title>
     
+    <!-- Iconos FontAwesome para los logos y badges -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <link rel="stylesheet" href="style.css">
+    <!-- TODO TU DISEÑO CSS RECUPERADO Y CORREGIDO AQUÍ -->
+    <style>
+        :root {
+            --bg-principal: #f8fafc;       
+            --bg-tarjeta: #ffffff;         
+            --bg-nav: rgba(248, 250, 252, 0.95);
+            --texto-primario: #111111;    
+            --texto-secundario: #475569;   
+            --color-borde: #cbd5e1;        
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            
+            --color-blue: #2563eb;       
+            --color-purple: #8b5cf6;     
+            --color-red: #ef4444;        
+            --transition: all 0.3s ease;
+        }
+
+        .dark-mode {
+            --bg-principal: #0a0f1d;       
+            --bg-tarjeta: #131b2e;         
+            --bg-nav: rgba(10, 15, 29, 0.95);
+            --texto-primario: #f3f4f6;    
+            --texto-secundario: #9ca3af;   
+            --color-borde: #1e293b;        
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-principal); color: var(--texto-primario); font-family: sans-serif; transition: var(--transition); padding-top: 80px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        section { padding: 60px 0; }
+        .section-title { text-align: center; margin-bottom: 40px; font-size: 2rem; }
+
+        /* Navbar Fixed */
+        .navbar { background-color: var(--bg-nav); position: fixed; top: 0; width: 100%; z-index: 1000; border-bottom: 1px solid var(--color-borde); padding: 15px 0; transition: var(--transition); }
+        .navbar .container { display: flex; justify-content: space-between; align-items: center; }
+        .nav-controls { display: flex; align-items: center; gap: 20px; }
+        .nav-menu { display: flex; list-style: none; gap: 20px; }
+        .nav-menu a { color: var(--texto-secundario); text-decoration: none; font-weight: 600; transition: var(--transition); }
+        .nav-menu a:hover { color: var(--color-blue); }
+        .brand-accent { color: var(--color-red); }
+
+        /* Interruptor de Modo */
+        .theme-toggle-container { display: flex; align-items: center; gap: 8px; background: rgba(0,0,0,0.05); padding: 4px 10px; border-radius: 20px; }
+        .dark-mode .theme-toggle-container { background: rgba(255,255,255,0.1); }
+        .theme-label { font-size: 0.8rem; font-weight: bold; }
+        .theme-toggle-btn { background: var(--bg-tarjeta); border: 1px solid var(--color-borde); border-radius: 50%; cursor: pointer; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; }
+        .theme-toggle-btn svg { width: 16px; height: 16px; fill: var(--texto-primario); }
+        
+        .dark-mode-icon { display: block; } .light-mode-icon { display: none; }
+        .dark-mode .dark-mode-icon { display: none; } .dark-mode .light-mode-icon { display: block; }
+
+        /* Estructura de Rejillas (Grids) */
+        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center; }
+        .skills-grid, .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+
+        /* Tarjetas de Contenido */
+        .skills-category, .project-card { background-color: var(--bg-tarjeta); border: 1px solid var(--color-borde); padding: 25px; border-radius: 12px; box-shadow: var(--shadow); transition: var(--transition); }
+        .project-card h3 { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; font-size: 1.4rem; }
+        .project-card p { color: var(--texto-secundario); font-size: 0.95rem; line-height: 1.5; margin-bottom: 15px; }
+        
+        .level-group { margin-top: 15px; }
+        .level-label { font-size: 0.75rem; font-weight: bold; color: var(--color-red); text-transform: uppercase; }
+        .badges-container, .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+
+        /* Estilos de los Badges */
+        .badge { padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; display: inline-flex; align-items: center; gap: 5px; text-transform: none; }
+        .b-blue { background-color: #e0f2fe; color: #0369a1; }
+        .b-purple { background-color: #f3e8ff; color: #6b21a8; }
+        .b-red { background-color: #fee2e2; color: #b91c1c; }
+        
+        .dark-mode .b-blue { background-color: rgba(37, 99, 235, 0.2); color: #38bdf8; }
+        .dark-mode .b-purple { background-color: rgba(139, 92, 246, 0.2); color: #c084fc; }
+        .dark-mode .b-red { background-color: rgba(239, 68, 68, 0.2); color: #f87171; }
+
+        /* Botones */
+        .btn { padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 8px; transition: var(--transition); justify-content: center; }
+        .btn-blue { background: var(--color-blue); color: white; }
+        .btn-blue:hover { opacity: 0.9; }
+        .btn-purple { background: var(--color-purple); color: white; }
+        .btn-red { border: 2px solid var(--color-red); color: var(--color-red); }
+
+        /* Ventana de Código Simulada */
+        .code-window { background: #0f172a; color: #38bdf8; padding: 20px; border-radius: 8px; font-family: monospace; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3); }
+        .code-header { display: flex; gap: 6px; margin-bottom: 12px; }
+        .code-dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+
+        /* Formulario de Contacto */
+        .contact-form { display: flex; flex-direction: column; gap: 15px; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid var(--color-borde); border-radius: 6px; background: var(--bg-tarjeta); color: var(--texto-primario); transition: var(--transition); }
+        .footer { text-align: center; padding: 30px; margin-top: 40px; border-top: 1px solid var(--color-borde); color: var(--texto-secundario); }
+
+        /* Hamburguesa para diseño móvil */
+        .hamburger { display: none; flex-direction: column; gap: 4px; cursor: pointer; }
+        .hamburger span { width: 20px; height: 2px; background: var(--texto-primario); }
+
+        @media (max-width: 768px) {
+            .hero-grid, .contact-grid { grid-template-columns: 1fr; }
+            .hamburger { display: flex; }
+            .nav-menu { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--bg-tarjeta); padding: 20px; flex-direction: column; border-bottom: 1px solid var(--color-borde); gap: 15px; }
+            .nav-menu.active { display: flex; }
+        }
+    </style>
 </head>
 <body>
 
+    <!-- MENÚ DE NAVEGACIÓN -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
@@ -42,6 +146,7 @@
     </nav>
 
     <main class="container">
+        <!-- SECCIÓN HERO -->
         <section id="inicio" class="hero">
             <div class="hero-grid">
                 <div class="hero-content">
@@ -70,6 +175,7 @@
             </div>
         </section>
 
+        <!-- SECCIÓN HABILIDADES -->
         <section id="habilidades">
             <h2 class="section-title">Stack Tecnológico & <span>Plataformas</span></h2>
             <div class="skills-grid">
@@ -119,65 +225,122 @@
             </div>
         </section>
 
+        <!-- SECCIÓN PROYECTOS -->
         <section id="proyectos">
             <h2 class="section-title">Soluciones de <span>Alto Impacto</span></h2>
             <div class="projects-grid">
                 
-                <div class="project-card">
-                    <h3>Google <span class="badge b-blue"><i class="fab fa-google"></i> Oficial</span></h3>
-                    <p>Acceso directo a herramientas de búsqueda, analítica avanzada y optimización SEO global.</p>
-                    <div class="project-tags">
-                        <span class="badge b-purple">Buscador</span>
-                        <span class="badge b-red">Herramientas</span>
+                <!-- 1. TU NUEVA TARJETA DE GOOGLE CON LOGO EN BADGE -->
+                <div class="project-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3>Google <span class="badge b-blue"><i class="fab fa-google"></i> Oficial</span></h3>
+                        <p>Acceso directo a herramientas de búsqueda, analítica avanzada y optimización SEO global.</p>
+                        <div class="project-tags">
+                            <span class="badge b-purple">Buscador</span>
+                            <span class="badge b-red">Herramientas</span>
+                        </div>
                     </div>
-                    <a href="#" id="btn-multi-google" class="btn btn-blue" style="margin-top: 15px; width: 100%; justify-content: center;">
+                    <!-- 2. BOTÓN DE REDIRECCIÓN MÚLTIPLE CON HREF='#' -->
+                    <a href="#" id="btn-multi-google" class="btn btn-blue" style="margin-top: 15px; width: 100%;">
                         Abrir Ecosistema <i class="fas fa-external-link-alt"></i>
                     </a>
                 </div>
 
-                <div class="project-card">
-                    <h3>Gamer Rentable</h3>
-                    <p>Optimización y monetización avanzada de plataformas de entretenimiento masivo.</p>
-                    <div class="project-tags">
-                        <span class="badge b-blue">Blogger XML</span>
-                        <span class="badge b-purple">CSS3 Advanced</span>
+                <div class="project-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3>Gamer Rentable</h3>
+                        <p>Optimización y monetización avanzada de plataformas de entretenimiento masivo.</p>
+                        <div class="project-tags">
+                            <span class="badge b-blue">Blogger XML</span>
+                            <span class="badge b-purple">CSS3 Advanced</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <h3>Sistemas de Automatización</h3>
-                    <p>Integración de scripts automatizados para el control y mejora de arquitecturas de software.</p>
-                    <div class="project-tags">
-                        <span class="badge b-purple">DevOps</span>
-                        <span class="badge b-red">Git</span>
+                <div class="project-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3>Sistemas de Automatización</h3>
+                        <p>Integración de scripts automatizados para el control y mejora de arquitecturas de software.</p>
+                        <div class="project-tags">
+                            <span class="badge b-purple">DevOps</span>
+                            <span class="badge b-red">Git</span>
+                        </div>
                     </div>
                 </div>
 
             </div>
         </section>
 
+        <!-- SECCIÓN CONTACTO -->
         <section id="contacto">
             <h2 class="section-title">Iniciemos un <span>Proyecto</span></h2>
             <div class="contact-grid">
                 <div>
                     <h3>¿Listo para escalar tus operaciones técnicas?</h3>
-                    <p style="color: var(--texto-secundario); margin-bottom: 25px;">Escríbeme y evaluemos cómo puedo potenciar tus metas.</p>
+                    <p style="color: var(--texto-secundario); margin-bottom: 25px;">Escríbeme y evaluemos cómo puedo potenciar tus metas comerciales.</p>
                     <p><i class="fas fa-envelope" style="color: var(--color-blue); margin-right: 8px;"></i> leo@example.com</p>
                 </div>
                 <form class="contact-form">
                     <div class="form-group"><input type="text" placeholder="Tu Nombre" required></div>
                     <div class="form-group"><input type="email" id="contact-email" placeholder="Tu Email" required></div>
                     <div class="form-group"><textarea placeholder="Detalles del Proyecto" rows="4" required></textarea></div>
-                    <button type="submit" class="btn btn-purple" style="border: none; width: 100%; justify-content: center; cursor: pointer;">Enviar Propuesta</button>
+                    <button type="submit" class="btn btn-purple" style="border: none; width: 100%; cursor: pointer;">Enviar Propuesta</button>
                 </form>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <p>&copy; 2026 LeoPrograma369. Creado con pasión por el código limpio.</p>
+        <p>&copy; 2026 LeoPrograma369. Diseñado con código limpio y estructurado.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- TODO TU JAVASCRIPT SEGURO E INTEGRADO AQUÍ -->
+    <script>
+        // Intercambiador de Modo Oscuro / Claro
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeText = document.getElementById('theme-text');
+        const bodyElement = document.body;
+
+        const updateToggleUI = () => {
+            themeText.textContent = bodyElement.classList.contains('dark-mode') ? "Modo Oscuro" : "Modo Claro";
+        };
+
+        if (localStorage.getItem('theme') === 'dark') {
+            bodyElement.classList.add('dark-mode');
+            updateToggleUI();
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            bodyElement.classList.toggle('dark-mode');
+            localStorage.setItem('theme', bodyElement.classList.contains('dark-mode') ? 'dark' : 'light');
+            updateToggleUI();
+        });
+
+        // Menú responsive móvil
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        if (hamburger) {
+            hamburger.addEventListener('click', () => navMenu.classList.toggle('active'));
+        }
+
+        // CONTROLADOR DE LA REDIRECCIÓN MÚLTIPLE DE GOOGLE
+        const btnGoogle = document.getElementById('btn-multi-google');
+        if (btnGoogle) {
+            btnGoogle.addEventListener('click', (e) => {
+                e.preventDefault(); // Evita que la página salte al inicio por usar '#'
+                
+                // Las URLs que se abrirán simultáneamente en pestañas nuevas
+                const urlsGoogle = [
+                    "https://www.google.com",
+                    "https://trends.google.com",
+                    "https://analytics.google.com"
+                ];
+
+                urlsGoogle.forEach(url => {
+                    window.open(url, '_blank');
+                });
+            });
+        }
+    </script>
 </body>
 </html>
