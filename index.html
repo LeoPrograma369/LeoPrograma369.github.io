@@ -3,17 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LeoPrograma369 | Desarrollador Full Stack</title>
-    <meta name="description" content="Portafolio profesional de LeoPrograma369, Desarrollador Full Stack.">
     
+    <!-- ====== ESTRATEGIA SEO Y METADATOS PARA BUSCAR TRABAJO ====== -->
+    <title>LeoPrograma369 | Desarrollador Full Stack - Portafolio Profesional</title>
+    <meta name="description" content="Portafolio profesional de LeoPrograma369, Desarrollador Full Stack especializado en soluciones web de alto rendimiento, React, Node.js, y automatización DevOps. Disponible para contratación.">
+    <meta name="keywords" content="Desarrollador Full Stack, Programador Web, React, Node.js, TypeScript, Portafolio IT, Contratar Programador, Git, DevOps, JavaScript">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://leoprograma369.github.io/">
+    
+    <!-- Open Graph (Para optimizar cómo se comparte en LinkedIn / Twitter) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="LeoPrograma369 | Desarrollador Full Stack - Soluciones Web">
+    <meta property="og:description" content="Explora mis proyectos web, stack tecnológico avanzado y soluciones a medida listas para integrarse en entornos corporativos.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1618477388954-7852f32655ec?q=80&w=600">
+
     <!-- Iconos FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- VINCULACIÓN EN SINGULAR (Corregido) -->
+    <!-- Vinculación del archivo CSS externo -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- NAVEGACIÓN -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
@@ -27,11 +39,12 @@
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
                 
+                <!-- CONTROLADOR VISIBLE CLARO / OSCURO -->
                 <div class="theme-toggle-container">
                     <span class="theme-label" id="theme-text">Modo Claro</span>
                     <button class="theme-toggle-btn" id="theme-toggle" aria-label="Cambiar modo de color">
                         <svg class="dark-mode-icon" viewBox="0 0 24 24"><path d="M12.3 22h-.1c-5.5 0-10-4.5-10-10 0-4.8 3.5-8.9 8.2-9.8.5-.1 1 .2 1.2.7.2.5 0 1.1-.4 1.4-2.8 2.2-4.2 5.8-3.6 9.4.6 3.5 3.4 6.3 6.9 6.9 3.6.6 7.2-.8 9.4-3.6.3-.4.9-.5 1.4-.4.5.2.8.7.7 1.2-.9 4.7-5 8.2-9.8 8.2z"/></svg>
-                        <svg class="light-mode-icon" viewBox="0 0 24 24"><path d="M12 4c.6 0 1-.4 1-1V2c0-.6-.4-1-1-1s-1 .4-1 1v1c0 .6.4 1 1 1zm0 16c-.6 0-1 .4-1 1v1c0 .6.4 1 1 1s1-.4 1-1v-1c0-.6-.4-1-1-1zm8-9h1c.6 0 1-.4 1-1s-.4-1-1-1h-1c-.6 0-1 .4-1 1s.4 1 1 1zM3 12h1c.6 0 1-.4 1-1s-.4-1-1-1H3c-.6 0-1 .4-1 1s.4 1 1 1zm14.1-5.7c.4.4 1 .4 1.4 0l.7-.7c.4-.4.4-1 0-1.4s-1-.4-1.4 0l-.7.7c-.4.4-.4 1 0 1.4zm-11.5 11.5c.4.4 1 .4 1.4 0l.7-.7c.4-.4.4-1 0-1.4s-1-.4-1.4 0l-.7.7c-.4.4-.4 1 0 1.4zM18.2 17.5c-.4-.4-1-.4-1.4 0l-.7.7c-.4.4-.4 1 0 1.4.4.4 1 .4 1.4 0l.7-.7c.4-.4.4-1 0-1.4zM6.1 5.6c-.4-.4-1-.4-1.4 0l-.7.7c-.4.4-.4 1 0 1.4.4.4 1 .4 1.4 0l.7-.7c.4-.4.4-1 0-1.4zM12 6c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z"/></svg>
+                        <svg class="light-mode-icon" viewBox="0 0 24 24"><path d="M12 4c.6 0 1-.4 1-1V2c0-.6-.4-1-1-1s-1 .4-1 1v1c0 .6.4 1 1 4zm0 16c-.6 0-1 .4-1 1v1c0 .6.4 1 1 1s1-.4 1-1v-1c0-.6-.4-1-1-1zm8-9h1c.6 0 1-.4 1-1s-.4-1-1-1h-1c-.6 0-1 .4-1 1s.4 1 1 1zM3 12h1c.6 0 1-.4 1-1s-.4-1-1-1H3c-.6 0-1 .4-1 1s.4 1 1 1zm14.1-5.7c.4.4 1 .4 1.4 0l.7-.7c.4-.4.4-1 0-1.4s-1-.4-1.4 0l-.7.7c-.4.4-.4 1 0 1.4zm-11.5 11.5c.4.4 1 .4 1.4 0l.7-.7c.4-.4.4-1 0-1.4s-1-.4-1.4 0l-.7.7c-.4.4-.4 1 0 1.4zM18.2 17.5c-.4-.4-1-.4-1.4 0l-.7.7c-.4.4-.4 1 0 1.4.4.4 1 .4 1.4 0l.7-.7c.4-.4.4-1 0-1.4zM6.1 5.6c-.4-.4-1-.4-1.4 0l-.7.7c-.4.4-.4 1 0 1.4.4.4 1 .4 1.4 0l.7-.7c.4-.4.4-1 0-1.4zM12 6c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z"/></svg>
                     </button>
                 </div>
 
@@ -45,15 +58,16 @@
     </nav>
 
     <main class="container">
+        <!-- HERO SECTION -->
         <section id="inicio" class="hero">
             <div class="hero-grid">
                 <div class="hero-content">
                     <h2>Desarrollo Soluciones Digitales Robustas con <span>Código Limpio</span></h2>
-                    <p>Hola, soy Leandro Samperez. Un desarrollador Full Stack versátil preparado para integrarse a equipos multidisciplinarios de alto rendimiento.</p>
+                    <p>Hola, soy Leandro Samperez. Un desarrollador Full Stack versátil preparado para integrarse a equipos multidisciplinarios de alto rendimiento y aportar valor inmediato a entornos de producción corporativa.</p>
                     <div class="hero-buttons">
                         <a href="#proyectos" class="btn btn-blue">Ver Proyectos <i class="fas fa-arrow-right"></i></a>
                         <a href="#contacto" class="btn btn-purple">Contratarme</a>
-                        <a href="#habilidades" class="btn btn-red">Ver Stack</a>
+                        <a href="#habilidades" class="btn btn-red">Echar un ojo al Stack</a>
                     </div>
                 </div>
                 <div class="hero-background">
@@ -66,16 +80,20 @@
                         <pre><code>const dev = {
   name: 'Leandro Samperez',
   role: 'Full Stack Developer',
-  status: 'Ready to Work'
+  status: 'Ready to Work',
+  vision: 'Clean architecture & speed'
 };</code></pre>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- SECCIÓN HABILIDADES -->
         <section id="habilidades">
             <h2 class="section-title">Stack Tecnológico & <span>Plataformas</span></h2>
             <div class="skills-grid">
+                
+                <!-- Frontend -->
                 <div class="skills-category">
                     <h3 class="category-title"><i class="fas fa-laptop-code"></i> Frontend</h3>
                     <div class="level-group">
@@ -91,12 +109,21 @@
                         <div class="badges-container">
                             <span class="badge b-blue">TypeScript</span>
                             <span class="badge b-blue">Vue.js</span>
+                            <span class="badge b-blue">Tailwind CSS</span>
+                        </div>
+                    </div>
+                    <div class="level-group">
+                        <span class="level-label">Principiante</span>
+                        <div class="badges-container">
+                            <span class="badge b-blue">Angular</span>
+                            <span class="badge b-blue">Next.js</span>
                         </div>
                     </div>
                 </div>
 
+                <!-- Backend & DB -->
                 <div class="skills-category">
-                    <h3 class="category-title"><i class="fas fa-server"></i> Backend</h3>
+                    <h3 class="category-title"><i class="fas fa-server"></i> Backend & DB</h3>
                     <div class="level-group">
                         <span class="level-label">Avanzado</span>
                         <div class="badges-container">
@@ -105,10 +132,26 @@
                             <span class="badge b-purple">MySQL</span>
                         </div>
                     </div>
+                    <div class="level-group">
+                        <span class="level-label">Intermedio</span>
+                        <div class="badges-container">
+                            <span class="badge b-purple">PostgreSQL</span>
+                            <span class="badge b-purple">MongoDB</span>
+                            <span class="badge b-purple">REST APIs</span>
+                        </div>
+                    </div>
+                    <div class="level-group">
+                        <span class="level-label">Principiante</span>
+                        <div class="badges-container">
+                            <span class="badge b-purple">Python / Django</span>
+                            <span class="badge b-purple">GraphQL</span>
+                        </div>
+                    </div>
                 </div>
 
+                <!-- DevOps & Cloud Platforms -->
                 <div class="skills-category">
-                    <h3 class="category-title"><i class="fas fa-cloud"></i> DevOps</h3>
+                    <h3 class="category-title"><i class="fas fa-cloud"></i> DevOps & Infraestructura</h3>
                     <div class="level-group">
                         <span class="level-label">Avanzado</span>
                         <div class="badges-container">
@@ -116,16 +159,33 @@
                             <span class="badge b-red">GitHub Pages</span>
                         </div>
                     </div>
+                    <div class="level-group">
+                        <span class="level-label">Intermedio</span>
+                        <div class="badges-container">
+                            <span class="badge b-red">Docker</span>
+                            <span class="badge b-red">Vercel / Netlify</span>
+                            <span class="badge b-red">Linux CLI</span>
+                        </div>
+                    </div>
+                    <div class="level-group">
+                        <span class="level-label">Principiante</span>
+                        <div class="badges-container">
+                            <span class="badge b-red">AWS S3/EC2</span>
+                            <span class="badge b-red">CI/CD Pipelines</span>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </section>
 
+        <!-- PROYECTOS DESTACADOS -->
         <section id="proyectos">
             <h2 class="section-title">Soluciones de <span>Alto Impacto</span></h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <h3>Gamer Rentable</h3>
-                    <p>Optimización y monetización avanzada de plataformas de entretenimiento masivo.</p>
+                    <p>Optimización y monetización avanzada de plataformas de entretenimiento masivo estructurado bajo arquitecturas semánticas limpias.</p>
                     <div class="project-tags">
                         <span class="badge b-blue">Blogger XML</span>
                         <span class="badge b-purple">CSS3 Advanced</span>
@@ -133,7 +193,7 @@
                 </div>
                 <div class="project-card">
                     <h3>Despliegue GitHub Pages Automatizado</h3>
-                    <p>Entorno estático altamente escalable bajo auditorías de Lighthouse al 100%.</p>
+                    <p>Entorno estático altamente escalable bajo auditorías de Lighthouse al 100% en rendimiento y adaptabilidad de UI.</p>
                     <div class="project-tags">
                         <span class="badge b-blue">JS Vanilla</span>
                         <span class="badge b-red">Git CI</span>
@@ -142,29 +202,33 @@
             </div>
         </section>
 
+        <!-- CONTACTO -->
         <section id="contacto">
             <h2 class="section-title">Iniciemos un <span>Proyecto</span></h2>
             <div class="contact-grid">
                 <div>
-                    <h3>¿Listo para escalar tus operaciones técnicas?</h3>
-                    <p style="color: var(--texto-secundario); margin-bottom: 25px;">Escríbeme y evaluemos cómo puedo potenciar tus metas comerciales.</p>
-                    <p><i class="fas fa-envelope" style="color: var(--color-blue); margin-right: 8px;"></i> leo@example.com</p>
+                    <h3 style="margin-bottom: 15px;">¿Listo para escalar tus operaciones técnicas?</h3>
+                    <p style="color: var(--texto-secundario); margin-bottom: 25px;">Busco integrarme a posiciones como Desarrollador Full Stack Jr/Mid. Escríbeme y evaluemos cómo puedo potenciar tus metas comerciales e industriales.</p>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <p><i class="fas fa-envelope" style="color: var(--color-blue); margin-right: 8px;"></i> leo@example.com</p>
+                        <p><i class="fas fa-map-marker-alt" style="color: var(--color-red); margin-right: 8px;"></i> Buenos Aires, Argentina</p>
+                    </div>
                 </div>
                 <form class="contact-form">
                     <div class="form-group"><input type="text" placeholder="Tu Nombre" required></div>
-                    <div class="form-group"><input type="email" id="contact-email" placeholder="Tu Email" required></div>
-                    <div class="form-group"><textarea placeholder="Detalles del Proyecto" rows="4" required></textarea></div>
-                    <button type="submit" class="btn btn-purple" style="border: none; width: 100%; justify-content: center; cursor: pointer;">Enviar Propuesta</button>
+                    <div class="form-group"><input type="email" id="contact-email" placeholder="Tu Email de Contacto" required></div>
+                    <div class="form-group"><textarea placeholder="Detalles de la Vacante o Proyecto" rows="4" required></textarea></div>
+                    <button type="submit" class="btn btn-purple" style="border: none; cursor: pointer;">Enviar Propuesta</button>
                 </form>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <p>&copy; 2026 LeoPrograma369.</p>
+        <p>&copy; 2026 LeoPrograma369. Construido para máxima velocidad de respuesta e indexación SEO.</p>
     </footer>
 
-    <!-- SCRIPT CORREGIDO -->
+    <!-- Vinculación del archivo JavaScript externo -->
     <script src="script.js"></script>
 </body>
 </html>
