@@ -1,27 +1,37 @@
 /* ==========================================================================
-   1. VARIABLES DE DISEÑO (Cambia colores globalmente desde aquí)
+   1. CONFIGURACIÓN DE COLORES Y VARIABLES GLOBALES[cite: 3]
    ========================================================================== */
 :root {
-    /* Fondos Base (Azul noche profundo) */
-    --bg-dark: #0a0f1d;
-    --bg-card: #131b2e;
-    --bg-nav: rgba(10, 15, 29, 0.9);
+    /* MODO CLARO: Letras Negras, Fondos Claros y Confortables[cite: 1] */
+    --bg-principal: #f8fafc;       
+    --bg-tarjeta: #ffffff;         
+    --bg-nav: rgba(248, 250, 252, 0.95);
+    --texto-primario: #111111;    /* Exigencia: Letras Negras claras */
+    --texto-secundario: #475569;   
+    --color-borde: #cbd5e1;        
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
     
-    /* Colores del Tema */
-    --color-blue: #2563eb;       /* Azul Eléctrico */
-    --color-purple: #8b5cf6;     /* Violeta Neón */
-    --color-red: #ef4444;        /* Rojo Carmesí */
+    /* Colores Base para Botones y Acentos (Azul, Rojo, Violeta)[cite: 3] */
+    --color-blue: #2563eb;       
+    --color-purple: #8b5cf6;     
+    --color-red: #ef4444;        
     
-    /* Textos */
-    --text-main: #f3f4f6;
-    --text-muted: #9ca3af;
-    
-    /* Gradiente Identitario de LeoPrograma369 */
-    --gradient-brand: linear-gradient(135deg, var(--color-blue), var(--color-purple), var(--color-red));
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark-mode {
+    /* MODO OSCURO: Altamente Tecnológico e Inmersivo[cite: 1, 3] */
+    --bg-principal: #0a0f1d;       
+    --bg-tarjeta: #131b2e;         
+    --bg-nav: rgba(10, 15, 29, 0.95);
+    --texto-primario: #f3f4f6;    
+    --texto-secundario: #9ca3af;   
+    --color-borde: #1e293b;        
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
 }
 
 /* ==========================================================================
-   2. ESTILOS GENERALES Y RESET
+   2. ESTILOS GENERALES Y RESETEO[cite: 3]
    ========================================================================== */
 * {
     margin: 0;
@@ -34,44 +44,50 @@ html {
 }
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-main);
-    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-principal);
+    color: var(--texto-primario);
+    font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
     line-height: 1.6;
+    transition: var(--transition);
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
 }
 
 section {
-    padding: 80px 0;
+    padding: 100px 0 60px 0;
 }
 
 .section-title {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 50px;
-    background: var(--gradient-brand);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.section-title span {
+    background: linear-gradient(135deg, var(--color-blue), var(--color-purple));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    position: relative;
 }
 
 /* ==========================================================================
-   3. NAVEGACIÓN
+   3. NAVEGACIÓN (NAVBAR CON CONTROLES VISIBLES)[cite: 1, 3]
    ========================================================================== */
 .navbar {
     background-color: var(--bg-nav);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    border-bottom: 1px solid rgba(139, 92, 246, 0.1);
-    padding: 15px 0;
+    border-bottom: 1px solid var(--color-borde);
+    padding: 18px 0;
+    transition: var(--transition);
 }
 
 .navbar .container {
@@ -81,397 +97,380 @@ section {
 }
 
 .nav-brand h1 {
-    font-size: 1.5rem;
-    color: var(--text-main);
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--texto-primario);
 }
 
 .brand-accent {
     color: var(--color-red);
 }
 
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 25px;
+    gap: 24px;
 }
 
 .nav-menu a {
-    color: var(--text-muted);
+    color: var(--texto-secundario);
     text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: var(--transition);
 }
 
 .nav-menu a:hover {
-    color: var(--color-purple);
-}
-
-/* ==========================================================================
-   4. HERO SECTION
-   ========================================================================== */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 100px;
-    background: radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.15), transparent 40%),
-                radial-gradient(circle at 20% 80%, rgba(239, 64, 64, 0.1), transparent 40%);
-}
-
-.hero-content {
-    flex: 1;
-    max-width: 600px;
-}
-
-.hero-content h2 {
-    font-size: 3rem;
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-
-.hero-content p {
-    color: var(--text-muted);
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-}
-
-/* Botones con la combinación de colores */
-.btn {
-    display: inline-block;
-    padding: 12px 28px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: transform 0.3s, box-shadow 0.3s;
-    margin-right: 15px;
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, var(--color-blue), var(--color-purple));
-    color: white;
-}
-
-.btn-secondary {
-    background: transparent;
-    color: var(--text-main);
-    border: 2px solid var(--color-red);
-}
-
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-}
-
-/* Ventana de Código decorativa */
-.hero-background {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.code-window {
-    background-color: var(--bg-card);
-    border: 1px solid rgba(139, 92, 246, 0.2);
-    border-radius: 12px;
-    width: 100%;
-    max-width: 450px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-}
-
-.code-header {
-    background-color: #0d1424;
-    padding: 10px 15px;
-    color: var(--color-purple);
-    font-family: monospace;
-    font-size: 0.85rem;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-
-.code-window pre {
-    padding: 20px;
-    color: #34d399; /* Código verde */
-    font-family: 'Courier New', Courier, monospace;
-}
-
-/* ==========================================================================
-   5. SOBRE MÍ & STATS
-   ========================================================================== */
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
-
-.about-text h3 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
     color: var(--color-blue);
 }
 
-.about-text p {
-    color: var(--text-muted);
-    margin-bottom: 15px;
+/* Interruptor de Tema Visible y Estilizado[cite: 1] */
+.theme-toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(139, 92, 246, 0.1);
+    padding: 6px 14px;
+    border-radius: 30px;
+    border: 1px solid rgba(139, 92, 246, 0.2);
 }
 
-.skills h4 {
-    margin: 20px 0 10px 0;
+.theme-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--texto-primario);
 }
 
-.skills ul {
-    list-style: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+.theme-toggle-btn {
+    background: var(--bg-tarjeta);
+    border: 2px solid var(--color-borde);
+    padding: 6px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    transition: var(--transition);
 }
 
-.skills li i {
-    color: var(--color-red);
-    margin-right: 8px;
-}
-
-/* Tarjetas de estadísticas */
-.about-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.stat-card {
-    background-color: var(--bg-card);
-    border: 1px solid rgba(255,255,255,0.05);
-    padding: 30px;
-    border-radius: 12px;
-    text-align: center;
-    transition: border-color 0.3s;
-}
-
-.stat-card:hover {
+.theme-toggle-btn:hover {
     border-color: var(--color-purple);
+    transform: scale(1.1);
 }
 
-.stat-card h3 {
-    font-size: 2.5rem;
-    background: linear-gradient(135deg, var(--color-blue), var(--color-red));
+.theme-toggle-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--texto-primario);
+}
+
+.dark-mode-icon { display: block; }
+.light-mode-icon { display: none; }
+
+.dark-mode .dark-mode-icon { display: none; }
+.dark-mode .light-mode-icon { display: block; }
+
+/* Hamburguesa para móviles[cite: 1] */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--texto-primario);
+    border-radius: 3px;
+    transition: var(--transition);
+}
+
+/* ==========================================================================
+   4. HERO SECTION (DISEÑO ORIENTADO A LA CONTRATACIÓN)[cite: 1, 3]
+   ========================================================================== */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding-top: 120px;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.hero-content h2 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+}
+
+.hero-content h2 span {
+    background: linear-gradient(135deg, var(--color-blue), var(--color-purple), var(--color-red));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
+.hero-content p {
+    color: var(--texto-secundario);
+    font-size: 1.25rem;
+    margin-bottom: 35px;
+    max-width: 650px;
+}
+
+/* BOTONES EXCLUSIVOS: AZUL, ROJO Y VIOLETA[cite: 1, 3] */
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 32px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    transition: var(--transition);
+}
+
+.btn-blue {
+    background-color: var(--color-blue);
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+}
+
+.btn-blue:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+}
+
+.btn-purple {
+    background-color: var(--color-purple);
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(139, 92, 246, 0.4);
+}
+
+.btn-purple:hover {
+    background-color: #7c3aed;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6);
+}
+
+.btn-red {
+    background-color: transparent;
+    color: var(--color-red) !important;
+    border: 2px solid var(--color-red);
+}
+
+.btn-red:hover {
+    background-color: var(--color-red);
+    color: #ffffff !important;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+}
+
+/* Contenedor Interactivo de Consola de Código[cite: 3] */
+.code-window {
+    background-color: #0f172a;
+    border: 1px solid var(--color-borde);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.code-header {
+    background-color: #1e293b;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.code-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.code-window pre {
+    padding: 24px;
+    color: #38bdf8;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    overflow-x: auto;
+}
+
 /* ==========================================================================
-   6. SECCIÓN DE HABILIDADES Y BADGES (Optimizado para escalabilidad)
+   5. SECCIÓN HABILIDADES (ORDENADO POR PLATAFORMAS Y NIVELES)[cite: 1, 3]
    ========================================================================== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 24px;
+}
+
 .skills-category {
-    background-color: var(--bg-card);
-    border: 1px solid rgba(255, 255, 255, 0.03);
+    background-color: var(--bg-tarjeta);
+    border: 1px solid var(--color-borde);
     border-radius: 16px;
-    padding: 25px;
-    margin-bottom: 30px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.skills-category:hover {
+    border-color: var(--color-purple);
+    transform: translateY(-2px);
 }
 
 .category-title {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    font-weight: 700;
     margin-bottom: 20px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
-/* Iconos de categorías en color Violeta */
 .category-title i {
-    color: var(--color-purple);
+    color: var(--color-blue);
 }
 
-/* Contenedor flexible de Badges */
+.level-group {
+    margin-bottom: 20px;
+}
+
+.level-group:last-child {
+    margin-bottom: 0;
+}
+
+.level-label {
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-red);
+    margin-bottom: 8px;
+    display: block;
+}
+
 .badges-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;      /* Espacio perfecto y ordenado entre badges */
+    gap: 10px;
 }
 
-/* --- CLASE MAESTRA PARA TODOS LOS BADGES --- */
-[class^="badge-"], .badge {
+/* CLASE MAESTRA DE BADGES CON SELECTORES INTELIGENTES[cite: 3] */
+.badge {
     display: inline-block;
-    padding: 8px 16px;
-    border-radius: 30px;
+    padding: 6px 14px;
+    border-radius: 8px;
     font-size: 0.85rem;
     font-weight: 600;
-    letter-spacing: 0.5px;
-    background-color: rgba(255, 255, 255, 0.05); /* Fondo base gris translúcido */
-    color: var(--text-main);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-    cursor: default;
+    background-color: rgba(15, 23, 42, 0.04);
+    color: var(--texto-primario);
+    border: 1px solid var(--color-borde);
+    transition: var(--transition);
 }
 
-/* Efecto hover interactivo global para los badges */
-[class^="badge-"]:hover, .badge:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+.dark-mode .badge {
+    background-color: rgba(255,255,255,0.03);
 }
 
-/* --- SELECTORES INTELIGENTES POR COLOR ---
-   Automatizan la asignación de colores sin tener que escribir CSS para cada skill nueva */
-
-/* Categoría AZUL: Para Frontend y Tecnologías del lado del cliente */
-.badge-html, .badge-css, .badge-js, .badge-ts, .badge-react, .badge-vue, 
-.badge-angular, .badge-bootstrap, .badge-tailwind, .badge-responsive, .b-blue {
-    background-color: rgba(37, 99, 235, 0.12);
-    color: #60a5fa;
-    border-color: rgba(37, 99, 235, 0.3);
-}
-.badge-html:hover, .badge-css:hover, .badge-js:hover, .badge-ts:hover, .badge-react:hover, 
-.badge-vue:hover, .badge-angular:hover, .badge-bootstrap:hover, .badge-tailwind:hover, .badge-responsive:hover, .b-blue:hover {
-    border-color: var(--color-blue);
-    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+.badge:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
 }
 
-/* Categoría VIOLETA: Para Bases de Datos, DevOps y Herramientas */
-.badge-git, .badge-github, .badge-gitlab, .badge-docker, .badge-kubernetes, 
-.badge-jenkins, .badge-aws, .badge-gcp, .badge-linux, .badge-nginx,
-.badge-mysql, .badge-postgresql, .badge-mongodb, .badge-firebase, .badge-redis, 
-.badge-elasticsearch, .badge-sql, .badge-nosql, .b-purple {
-    background-color: rgba(139, 92, 246, 0.12);
-    color: #c084fc;
-    border-color: rgba(139, 92, 246, 0.3);
+/* Clasificación por Automatización de Colores Sutiles[cite: 3] */
+.b-blue {
+    background-color: rgba(37, 99, 235, 0.08) !important;
+    color: #2563eb !important;
+    border-color: rgba(37, 99, 235, 0.3) !important;
 }
-.badge-git:hover, .badge-github:hover, .badge-gitlab:hover, .badge-docker:hover, .badge-kubernetes:hover, 
-.badge-jenkins:hover, .badge-aws:hover, .badge-gcp:hover, .badge-linux:hover, .badge-nginx:hover,
-.badge-mysql:hover, .badge-postgresql:hover, .badge-mongodb:hover, .badge-firebase:hover, .badge-redis:hover, 
-.badge-elasticsearch:hover, .badge-sql:hover, .badge-nosql:hover, .b-purple:hover {
-    border-color: var(--color-purple);
-    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+.b-purple {
+    background-color: rgba(139, 92, 246, 0.08) !important;
+    color: #8b5cf6 !important;
+    border-color: rgba(139, 92, 246, 0.3) !important;
 }
-
-/* Categoría ROJA: Para Backend, Mobile y Soft Skills */
-.badge-nodejs, .badge-express, .badge-python, .badge-django, .badge-php, .badge-java, 
-.badge-dotnet, .badge-rest, .badge-graphql, .badge-microservices,
-.badge-react-native, .badge-flutter, .badge-swift, .badge-kotlin, .badge-ionic, .badge-android, .badge-ios,
-.badge-soft, .b-red {
-    background-color: rgba(239, 68, 68, 0.12);
-    color: #f87171;
-    border-color: rgba(239, 68, 68, 0.3);
-}
-.badge-nodejs:hover, .badge-express:hover, .badge-python:hover, .badge-django:hover, .badge-php:hover, .badge-java:hover, 
-.badge-dotnet:hover, .badge-rest:hover, .badge-graphql:hover, .badge-microservices:hover,
-.badge-react-native:hover, .badge-flutter:hover, .badge-swift:hover, .badge-kotlin:hover, .badge-ionic:hover, .badge-android:hover, .badge-ios:hover,
-.badge-soft:hover, .b-red:hover {
-    border-color: var(--color-red);
-    box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
+.b-red {
+    background-color: rgba(239, 68, 68, 0.08) !important;
+    color: #ef4444 !important;
+    border-color: rgba(239, 68, 68, 0.3) !important;
 }
 
 /* ==========================================================================
-   7. SERVICIOS Y PROYECTOS
+   6. PROYECTOS DESTACADOS[cite: 1, 3]
    ========================================================================== */
-.services-grid, .projects-grid {
+.projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
 }
 
-.service-card, .project-card {
-    background-color: var(--bg-card);
-    border: 1px solid rgba(255,255,255,0.02);
+.project-card {
+    background-color: var(--bg-tarjeta);
+    border: 1px solid var(--color-borde);
+    border-radius: 16px;
     padding: 30px;
-    border-radius: 12px;
-    transition: transform 0.3s;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
 }
 
-.service-card:hover, .project-card:hover {
+.project-card:hover {
     transform: translateY(-5px);
+    border-color: var(--color-blue);
 }
 
-.service-icon {
-    font-size: 2.5rem;
-    color: var(--color-blue);
-    margin-bottom: 15px;
+.project-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
 }
 
-/* Estilos de Proyectos */
-.project-image {
-    font-size: 3rem;
-    color: var(--color-purple);
-    text-align: center;
-    background: #0d1424;
-    padding: 40px;
-    border-radius: 8px;
-    margin-bottom: 15px;
+.project-card p {
+    color: var(--texto-secundario);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
 }
 
 .project-tags {
     display: flex;
     gap: 8px;
-    margin: 15px 0;
     flex-wrap: wrap;
-}
-
-.tag {
-    background: rgba(255,255,255,0.05);
-    padding: 4px 10px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    color: var(--text-muted);
-}
-
-.btn-small {
-    color: var(--color-red);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-/* ==========================================================================
-   8. CONTACTO & FORMULARIO
-   ========================================================================== */
-.contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-}
-
-.contact-details {
-    margin: 30px 0;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
     margin-bottom: 20px;
 }
 
-.contact-item i {
-    font-size: 1.5rem;
-    color: var(--color-blue);
+/* ==========================================================================
+   7. FORMULARIO Y CONTACTO[cite: 3]
+   ========================================================================== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
 }
 
-.contact-item a {
-    color: var(--text-main);
-    text-decoration: none;
-}
-
-.social-links {
-    display: flex;
-    gap: 15px;
-}
-
-.social-icon {
-    color: var(--text-main);
-    font-size: 1.3rem;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--bg-card);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.3s;
-}
-
-.social-icon:hover {
-    background: var(--color-red);
-}
-
-/* Formulario */
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -480,50 +479,59 @@ section {
 
 .form-group input, .form-group textarea {
     width: 100%;
-    padding: 15px;
-    background-color: var(--bg-card);
-    border: 1px solid rgba(255,255,255,0.05);
-    border-radius: 8px;
-    color: white;
+    padding: 16px;
+    background-color: var(--bg-tarjeta);
+    border: 1px solid var(--color-borde);
+    border-radius: 10px;
+    color: var(--texto-primario);
     font-family: inherit;
+    transition: var(--transition);
 }
 
 .form-group input:focus, .form-group textarea:focus {
     outline: none;
     border-color: var(--color-purple);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
 }
 
-/* ==========================================================================
-   9. FOOTER
-   ========================================================================== */
 .footer {
-    background-color: #050811;
     text-align: center;
-    padding: 30px 0;
-    border-top: 1px solid rgba(255,255,255,0.02);
-    color: var(--text-muted);
-}
-
-.footer i {
-    color: var(--color-red);
+    padding: 40px 0;
+    border-top: 1px solid var(--color-borde);
+    color: var(--texto-secundario);
+    margin-top: 8px;
 }
 
 /* ==========================================================================
-   10. RESPONSIVE (Hamburguesa y adaptación básica)
+   8. RESPONSIVE DESIGN[cite: 3]
    ========================================================================== */
-@media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-    .hero-background {
-        margin-top: 50px;
-        justify-content: center;
-    }
-    .about-content, .contact-content {
+@media (max-width: 968px) {
+    .hero-grid, .contact-grid {
         grid-template-columns: 1fr;
     }
+    .hero-content {
+        text-align: center;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+    .hamburger {
+        display: flex;
+    }
     .nav-menu {
-        display: none; /* Aquí agregarías lógica JS para menú desplegable */
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-tarjeta);
+        padding: 20px;
+        border-bottom: 1px solid var(--color-borde);
+        gap: 15px;
+        box-shadow: var(--shadow);
+    }
+    .nav-menu.active {
+        display: flex;
     }
 }
