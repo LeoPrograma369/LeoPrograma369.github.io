@@ -1,37 +1,40 @@
 /* ==========================================================================
-   VARIABLES DE COLORES (Paleta Estilo Retro 90s Anime / Lo-Fi)
+   VARIABLES DE DISEÑO GLOBALES (Paleta Cyber Premium / Dark Neon)
    ========================================================================== */
 :root {
-    /* Modo Claro (Pastel Lo-Fi) */
-    --bg-principal: #faf6f0;       
-    --bg-tarjeta: #ffffff;         
-    --texto-primario: #3a2d42;     
-    --texto-secundario: #6b5b7b;   
-    --color-acento: #ffb7b2;       
-    --color-borde: #e8dfd8;        
-    --vhs-overlay: rgba(255, 183, 178, 0.05);
-    --shadow: 0 4px 10px rgba(107, 91, 123, 0.08);
-    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-
-    /* UI Elements específicos basados en la captura */
-    --color-google-badge: #1a73e8;
-    --gradient-ecosistema: linear-gradient(135deg, #2563eb, #8b5cf6, #ef4444);
+    /* Modo Oscuro Predeterminado (Cyber Premium) */
+    --bg-base: #0a0f1d;          /* Azul noche muy profundo */
+    --bg-tarjeta: #131b2e;       /* Azul oscuro integrado para bloques */
+    --border-color: #1e293b;     /* Bordes oscuros discretos */
+    
+    /* Textos */
+    --text-principal: #f8fafc;   /* Blanco puro azulado */
+    --text-muted: #9ca3af;       /* Gris suave para descripciones */
+    
+    /* Colores Estratégicos de la Identidad */
+    --color-azul: #2563eb;       /* Azul Eléctrico */
+    --color-violeta: #8b5cf6;    /* Violeta Neón */
+    --color-rojo: #ef4444;       /* Rojo Carmesí */
+    --color-google: #1a73e8;     /* Azul oficial de Google */
+    
+    /* Gradiente e Iluminaciones */
+    --gradient-brand: linear-gradient(135deg, var(--color-azul), var(--color-violeta), var(--color-rojo));
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-body.dark-mode {
-    /* Modo Oscuro (Cyber Neon / Midnight Anime) */
-    --bg-principal: #0d1424;       /* Cambiado a azul noche profundo acorde a la imagen */
-    --bg-tarjeta: #131b2e;         /* Bloques oscuros de la captura */
-    --texto-primario: #f3e9fa;     
-    --texto-secundario: #9ca3af;   /* Gris suave idéntico al texto de la imagen */
-    --color-acento: #ff9aa2;       
-    --color-borde: #1e293b;        
-    --vhs-overlay: rgba(255, 154, 162, 0.03);
-    --shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+/* Variables para Modo Claro (Inversión limpia de colores para persistencia) */
+body.light-mode {
+    --bg-base: #f8fafc;
+    --bg-tarjeta: #ffffff;
+    --border-color: #e2e8f0;
+    --text-principal: #0f172a;
+    --text-muted: #64748b;
+    --card-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
 }
 
 /* ==========================================================================
-   ESTILOS GENERALES Y RESETEO
+   RESET Y REGLAS BASE (Optimización Tipográfica y Legibilidad)
    ========================================================================== */
 * {
     box-sizing: border-box;
@@ -39,225 +42,302 @@ body.dark-mode {
     padding: 0;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    font-family: 'Segoe UI', Roboto, sans-serif;
-    background-color: var(--bg-principal);
-    color: var(--texto-primario);
+    background-color: var(--bg-base);
+    color: var(--text-principal);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     line-height: 1.6;
-    transition: var(--transition);
-    position: relative;
+    transition: background-color 0.4s ease, color 0.4s ease;
     overflow-x: hidden;
 }
 
-/* Efecto grano VHS */
-body::before {
-    content: " ";
-    display: block;
-    position: fixed;
-    top: 0; left: 0; bottom: 0; right: 0;
-    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 255, 0, 0.06));
-    z-index: 99999;
-    opacity: 0.08;
-    pointer-events: none;
-    background-size: 100% 3px, 6px 100%;
-}
-
 /* ==========================================================================
-   BARRA DE NAVEGACIÓN
+   HEADER Y ESTRUCTURA DE NAVEGACIÓN (Enlaces perfectamente centrados)
    ========================================================================== */
-header {
-    background-color: var(--bg-tarjeta);
-    border-bottom: 3px solid var(--color-acento);
-    padding: 15px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: var(--shadow);
+.sitio-header {
+    background-color: rgba(10, 15, 29, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 1000;
-    transition: var(--transition);
+    padding: 15px 0;
+    transition: var(--transition-smooth);
 }
 
-.logo {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: var(--texto-primario);
-    text-decoration: none;
-    letter-spacing: 1px;
+body.light-mode .sitio-header {
+    background-color: rgba(248, 250, 252, 0.85);
 }
 
-.logo span { color: var(--color-acento); }
-nav { display: flex; align-items: center; gap: 25px; }
-.nav-menu { display: flex; list-style: none; gap: 25px; }
-nav a { color: var(--texto-secundario); text-decoration: none; font-weight: 500; transition: var(--transition); }
-nav a:hover { color: var(--color-acento); }
-
-/* Switch del Tema */
-.theme-toggle-btn {
-    background: none;
-    border: 2px solid var(--color-borde);
-    padding: 8px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    transition: var(--transition);
-}
-
-.theme-toggle-btn svg { width: 20px; height: 20px; fill: var(--texto-primario); }
-.dark-mode-icon { display: block; }
-.light-mode-icon { display: none; }
-body.dark-mode .dark-mode-icon { display: none; }
-body.dark-mode .light-mode-icon { display: block; }
-
-/* ==========================================================================
-   CONTENIDO PRINCIPAL Y TARJETAS DINÁMICAS (image_3c1405.png)
-   ========================================================================== */
-main {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-.hero-section {
-    background-color: var(--bg-tarjeta);
-    border-radius: 12px;
-    padding: 40px;
-    margin-bottom: 40px;
-    border-left: 6px solid var(--color-acento);
-    box-shadow: var(--shadow);
-}
-
-.grid-proyectos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-    margin-top: 20px;
-}
-
-/* Base de la tarjeta */
-.tarjeta-proyecto {
-    background-color: var(--bg-tarjeta);
-    border: 1px solid var(--color-borde);
-    border-radius: 16px; /* Bordes más redondeados tal como se ve en la captura */
-    padding: 30px;
-    box-shadow: var(--shadow);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    transition: var(--transition);
-}
-
-.tarjeta-proyecto:hover {
-    transform: translateY(-5px);
-    border-color: var(--color-acento);
-}
-
-/* Fila Superior: Título + Badge Oficial */
-.tarjeta-header-row {
+.header-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.tarjeta-proyecto h3 {
-    font-size: 1.8rem;
+/* Logo */
+.navbar-logo {
+    font-size: 1.3rem;
     font-weight: 700;
-    color: var(--texto-primario);
+    color: var(--text-principal);
+    text-decoration: none;
+    letter-spacing: 0.5px;
 }
 
-/* Badge Azul "G Oficial" */
-.badge-oficial {
-    background-color: var(--color-google-badge);
-    color: #ffffff;
-    font-size: 0.85rem;
+.navbar-logo .accent-text {
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Contenedor e Ítems de la Navegación (Centrado Absoluto del Menú) */
+.navegacion-principal {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Alineación simétrica al medio de la pantalla */
+}
+
+.nav-links-lista {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-enlace {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition-smooth);
+    position: relative;
+    padding: 5px 0;
+}
+
+.nav-enlace:hover, .nav-enlace.active {
+    color: var(--text-principal);
+}
+
+/* Subrayado de efecto neón en hover */
+.nav-enlace::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-brand);
+    transition: var(--transition-smooth);
+    transform: translateX(-50%);
+}
+
+.nav-enlace:hover::after, .nav-enlace.active::after {
+    width: 100%;
+}
+
+/* Switcher de Color */
+.btn-theme-switch {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-principal);
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-theme-switch:hover {
+    border-color: var(--color-violeta);
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
+}
+
+.light-icon { display: none; }
+body.light-mode .dark-icon { display: none; }
+body.light-mode .light-icon { display: block; }
+
+/* ==========================================================================
+   HERO & SECTIONS AREA
+   ========================================================================== */
+.hero-section {
+    padding: 80px 0 50px 0;
+}
+
+.header-centrado {
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.proyectos-section {
+    padding: 40px 0 80px 0;
+}
+
+.section-title {
+    font-size: 2rem;
     font-weight: 700;
+    margin-bottom: 40px;
+}
+
+/* GRID DE PROYECTOS OPTIMIZADA */
+.proyectos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/* ==========================================================================
+   TARJETAS CYBER PREMIUM (Estructura Semántica e Interactiva)
+   ========================================================================== */
+.tarjeta-cyber {
+    background-color: var(--bg-tarjeta);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease;
+}
+
+/* Efecto hover premium con elevación */
+.tarjeta-cyber:hover {
+    transform: translateY(-6px);
+    border-color: rgba(139, 92, 246, 0.4);
+}
+
+/* Fila Superior Interna */
+.tarjeta-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tarjeta-titulo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-principal);
+}
+
+/* Badge Oficial Google de la imagen */
+.badge-oficial {
+    background-color: var(--color-google);
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 600;
     padding: 6px 14px;
     border-radius: 30px;
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    box-shadow: 0 4px 10px rgba(26, 115, 232, 0.2);
 }
 
+.badge-oficial-secundario {
+    background-color: rgba(37, 99, 235, 0.1);
+    color: var(--color-azul);
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 30px;
+}
+
+/* Texto Descriptivo */
 .tarjeta-descripcion {
-    color: var(--texto-secundario);
-    font-size: 1rem;
-    line-height: 1.5;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
-/* Contenedor de badges de tecnologías inferiores */
-.tarjeta-badges-container {
+/* Contenedor de sub-badges inferiores de la tarjeta */
+.tarjeta-tags-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 10px;
+    gap: 8px;
+    margin-top: auto; /* Empuja el contenido inferior si hay asimetría */
 }
 
-.badge-tech {
-    background-color: rgba(255, 255, 255, 0.05);
-    color: var(--texto-primario);
-    padding: 8px 18px;
+/* Badges ovalados discretos */
+.badge-ovalado {
+    background-color: rgba(255, 255, 255, 0.04);
+    color: var(--text-principal);
+    padding: 6px 16px;
     border-radius: 30px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-body:not(.dark-mode) .badge-tech {
+body.light-mode .badge-ovalado {
     background-color: #f1f5f9;
-    border-color: #cbd5e1;
+    color: #334155;
+    border-color: #e2e8f0;
 }
 
-/* Botón Destacado "Abrir Ecosistema" con Gradiente e Iluminación */
-.btn-ecosistema {
+/* BOTÓN DE ACCIÓN CENTRALIZADO CON GRADIENTE INTEGRAL (Azul, Violeta, Rojo) */
+.btn-neon-action {
     width: 100%;
-    background: var(--gradient-ecosistema);
+    background: var(--gradient-brand);
     color: #ffffff;
     border: none;
-    padding: 14px;
-    font-size: 1.05rem;
+    padding: 14px 20px;
+    font-size: 0.95rem;
     font-weight: 600;
     border-radius: 10px;
     cursor: pointer;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
-    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.25);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.btn-ecosistema:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
-}
-
-.btn-small {
-    color: var(--texto-primario);
-    font-weight: 700;
+    justify-content: center; /* Enlace/Texto perfectamente CENTRADO internamente */
     text-decoration: none;
-    margin-top: auto;
+    transition: var(--transition-smooth);
 }
 
-/* Animaciones */
-.project-card { opacity: 0; }
+/* Hover Neón con Brillo controlado para SEO Performance */
+.btn-neon-action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(139, 92, 246, 0.45), 0 0 10px rgba(239, 68, 68, 0.2);
+    color: #ffffff;
+}
 
 /* ==========================================================================
-   PIE DE PÁGINA
+   ANIMACIÓN INTERSECTION OBSERVER Y FOOTER
    ========================================================================== */
-footer {
-    text-align: center;
-    padding: 30px;
-    margin-top: 60px;
-    color: var(--texto-secundario);
-    border-top: 1px solid var(--color-borde);
+.project-card {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.project-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sitio-footer {
+    padding: 40px 0;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .header-wrapper {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .navegacion-principal {
+        order: 3;
+        width: 100%;
+    }
+    .nav-links-lista {
+        justify-content: center;
+        width: 100%;
+    }
 }
