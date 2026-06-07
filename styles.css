@@ -1,40 +1,40 @@
 /* ==========================================================================
-   VARIABLES DE DISEÑO GLOBALES (Paleta Cyber Premium / Dark Neon)
+   1. VARIABLES DE DISEÑO (Arquitectura de Color y Persistencia)
    ========================================================================== */
 :root {
-    /* Modo Oscuro Predeterminado (Cyber Premium) */
-    --bg-base: #0a0f1d;          /* Azul noche muy profundo */
-    --bg-tarjeta: #131b2e;       /* Azul oscuro integrado para bloques */
-    --border-color: #1e293b;     /* Bordes oscuros discretos */
+    /* MODO OSCURO (Predeterminado - Cyber Premium) */
+    --bg-interfaz: #0a0f1d;        /* Azul noche muy profundo */
+    --bg-tarjeta: #131b2e;         /* Azul oscuro integrado */
+    --borde-sutil: #1e293b;        /* Separadores oscuros discretos */
     
-    /* Textos */
-    --text-principal: #f8fafc;   /* Blanco puro azulado */
-    --text-muted: #9ca3af;       /* Gris suave para descripciones */
+    /* Tipografías de Color */
+    --texto-principal: #f8fafc;   /* Blanco puro azulado */
+    --texto-muted: #9ca3af;       /* Gris suave solicitado */
     
-    /* Colores Estratégicos de la Identidad */
-    --color-azul: #2563eb;       /* Azul Eléctrico */
-    --color-violeta: #8b5cf6;    /* Violeta Neón */
-    --color-rojo: #ef4444;       /* Rojo Carmesí */
-    --color-google: #1a73e8;     /* Azul oficial de Google */
+    /* Acentos Estratégicos */
+    --azul-electrico: #2563eb;    /* Acento Azul */
+    --rojo-carmesi: #ef4444;       /* Acento Rojo */
+    --violeta-neon: #8b5cf6;       /* Botones e Interacciones Principales */
     
-    /* Gradiente e Iluminaciones */
-    --gradient-brand: linear-gradient(135deg, var(--color-azul), var(--color-violeta), var(--color-rojo));
-    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* Sombras y Efectos */
+    --sombra-premium: 0 12px 30px rgba(0, 0, 0, 0.5);
+    --transicion-suave: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Variables para Modo Claro (Inversión limpia de colores para persistencia) */
+/* Selectores de inversión dinámicos para el MODO CLARO */
 body.light-mode {
-    --bg-base: #f8fafc;
-    --bg-tarjeta: #ffffff;
-    --border-color: #e2e8f0;
-    --text-principal: #0f172a;
-    --text-muted: #64748b;
-    --card-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+    --bg-interfaz: #f8fafc;        /* Blanco azulado limpio */
+    --bg-tarjeta: #ffffff;         /* Blanco puro para tarjetas */
+    --borde-sutil: #e2e8f0;        /* Separadores claros discretos */
+    
+    --texto-principal: #0f172a;   /* Gris ultra oscuro para máxima lectura */
+    --texto-muted: #64748b;       /* Gris intermedio */
+    
+    --sombra-premium: 0 10px 25px rgba(15, 23, 42, 0.06);
 }
 
 /* ==========================================================================
-   RESET Y REGLAS BASE (Optimización Tipográfica y Legibilidad)
+   2. REGLAS BASE Y RESET NATIVO
    ========================================================================== */
 * {
     box-sizing: border-box;
@@ -43,301 +43,289 @@ body.light-mode {
 }
 
 body {
-    background-color: var(--bg-base);
-    color: var(--text-principal);
+    background-color: var(--bg-interfaz);
+    color: var(--texto-principal);
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    line-height: 1.6;
+    line-height: 1.5;
     transition: background-color 0.4s ease, color 0.4s ease;
     overflow-x: hidden;
 }
 
+/* Ocultación accesible */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
 /* ==========================================================================
-   HEADER Y ESTRUCTURA DE NAVEGACIÓN (Enlaces perfectamente centrados)
+   3. HEADER Y MENÚ DE NAVEGACIÓN (Enlaces perfectamente CENTRADOS)
    ========================================================================== */
 .sitio-header {
-    background-color: rgba(10, 15, 29, 0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border-color);
+    background-color: var(--bg-interfaz);
+    border-bottom: 1px solid var(--borde-sutil);
     position: sticky;
     top: 0;
-    z-index: 1000;
-    padding: 15px 0;
-    transition: var(--transition-smooth);
+    z-index: 100;
+    padding: 16px 24px;
+    transition: var(--transicion-suave);
 }
 
-body.light-mode .sitio-header {
-    background-color: rgba(248, 250, 252, 0.85);
-}
-
-.header-wrapper {
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between; /* Distribución de los 3 bloques principales */
 }
 
-/* Logo */
-.navbar-logo {
-    font-size: 1.3rem;
+/* Logo izquierda */
+.logo-area .logo-enlace {
+    font-size: 1.4rem;
     font-weight: 700;
-    color: var(--text-principal);
+    color: var(--texto-principal);
     text-decoration: none;
-    letter-spacing: 0.5px;
+    letter-spacing: -0.5px;
 }
 
-.navbar-logo .accent-text {
-    background: var(--gradient-brand);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.logo-acentuado {
+    color: var(--violeta-neon);
 }
 
-/* Contenedor e Ítems de la Navegación (Centrado Absoluto del Menú) */
+/* CONTENEDOR DE LA NAVEGACIÓN: Asegura el centrado geométrico central */
 .navegacion-principal {
     flex: 1;
     display: flex;
-    justify-content: center; /* Alineación simétrica al medio de la pantalla */
+    justify-content: center; /* CENTRADO ABSOLUTO DEL MENÚ DE ENLACES */
 }
 
-.nav-links-lista {
+.menu-enlaces-centrados {
     display: flex;
     list-style: none;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
+    gap: 32px;
 }
 
-.nav-enlace {
-    color: var(--text-muted);
+.enlace-nav {
+    color: var(--texto-muted);
     text-decoration: none;
     font-weight: 500;
     font-size: 0.95rem;
-    transition: var(--transition-smooth);
+    padding: 6px 0;
+    transition: var(--transicion-suave);
     position: relative;
-    padding: 5px 0;
 }
 
-.nav-enlace:hover, .nav-enlace.active {
-    color: var(--text-principal);
+.enlace-nav:hover, .enlace-nav.activo {
+    color: var(--texto-principal);
 }
 
-/* Subrayado de efecto neón en hover */
-.nav-enlace::after {
+/* Línea indicadora inferior neón */
+.enlace-nav::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 50%;
     width: 0;
     height: 2px;
-    background: var(--gradient-brand);
-    transition: var(--transition-smooth);
+    background-color: var(--violeta-neon);
+    transition: var(--transicion-suave);
     transform: translateX(-50%);
 }
 
-.nav-enlace:hover::after, .nav-enlace.active::after {
+.enlace-nav:hover::after, .enlace-nav.activo::after {
     width: 100%;
 }
 
-/* Switcher de Color */
-.btn-theme-switch {
+/* Switcher interactivo derecha */
+.switch-tema {
     background: none;
-    border: 1px solid var(--border-color);
-    color: var(--text-principal);
-    padding: 8px 12px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: var(--transition-smooth);
+    border: 1px solid var(--borde-sutil);
+    color: var(--texto-principal);
     width: 40px;
     height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: var(--transicion-suave);
 }
 
-.btn-theme-switch:hover {
-    border-color: var(--color-violeta);
-    box-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
+.switch-tema:hover {
+    border-color: var(--violeta-neon);
+    box-shadow: 0 0 12px rgba(139, 92, 246, 0.3);
 }
 
-.light-icon { display: none; }
-body.light-mode .dark-icon { display: none; }
-body.light-mode .light-icon { display: block; }
+.switch-tema svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Control visual de los iconos SVG internos */
+body.dark-mode .icono-sol { display: none; }
+body.dark-mode .icono-luna { display: block; }
+body.light-mode .icono-luna { display: none; }
+body.light-mode .icono-sol { display: block; }
 
 /* ==========================================================================
-   HERO & SECTIONS AREA
+   4. SECCIÓN DE CONTENIDO Y MAQUETACIÓN GRID
    ========================================================================== */
-.hero-section {
-    padding: 80px 0 50px 0;
+.seccion-portafolio {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 24px;
 }
 
-.header-centrado {
-    background: var(--gradient-brand);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.proyectos-section {
-    padding: 40px 0 80px 0;
-}
-
-.section-title {
-    font-size: 2rem;
+.titulo-seccion-centrado {
+    text-align: center;
+    font-size: 2.2rem;
     font-weight: 700;
-    margin-bottom: 40px;
+    margin-bottom: 48px;
+    letter-spacing: -0.5px;
 }
 
-/* GRID DE PROYECTOS OPTIMIZADA */
-.proyectos-grid {
+/* Grilla fluida nativa responsiva */
+.contenedor-grid-tarjetas {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 32px;
 }
 
 /* ==========================================================================
-   TARJETAS CYBER PREMIUM (Estructura Semántica e Interactiva)
+   5. COMPONENTE: TARJETAS (Estructura Limpia y Semántica)
    ========================================================================== */
-.tarjeta-cyber {
+.tarjeta-proyecto {
     background-color: var(--bg-tarjeta);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--borde-sutil);
     border-radius: 16px;
-    padding: 30px;
-    box-shadow: var(--card-shadow);
+    padding: 32px;
+    box-shadow: var(--sombra-premium);
     display: flex;
     flex-direction: column;
     gap: 20px;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease;
 }
 
-/* Efecto hover premium con elevación */
-.tarjeta-cyber:hover {
-    transform: translateY(-6px);
-    border-color: rgba(139, 92, 246, 0.4);
+.tarjeta-proyecto:hover {
+    transform: translateY(-4px);
+    border-color: rgba(139, 92, 246, 0.3);
 }
 
-/* Fila Superior Interna */
-.tarjeta-header {
+/* Encabezado interno */
+.tarjeta-encabezado {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.tarjeta-titulo {
-    font-size: 1.5rem;
+.tarjeta-titulo-texto {
+    font-size: 1.4rem;
     font-weight: 700;
-    color: var(--text-principal);
 }
 
-/* Badge Oficial Google de la imagen */
-.badge-oficial {
-    background-color: var(--color-google);
-    color: #ffffff;
-    font-size: 0.8rem;
+/* Badges de Estado configurables */
+.badge-status {
+    font-size: 0.75rem;
     font-weight: 600;
     padding: 6px 14px;
     border-radius: 30px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
+    color: #ffffff;
 }
 
-.badge-oficial-secundario {
-    background-color: rgba(37, 99, 235, 0.1);
-    color: var(--color-azul);
-    border: 1px solid rgba(37, 99, 235, 0.2);
-    font-size: 0.8rem;
-    font-weight: 600;
-    padding: 5px 12px;
-    border-radius: 30px;
-}
+.badge-azul { background-color: var(--azul-electrico); }
+.badge-rojo { background-color: var(--rojo-carmesi); }
 
-/* Texto Descriptivo */
+/* Descripciones de lectura natural */
 .tarjeta-descripcion {
-    color: var(--text-muted);
+    color: var(--texto-muted);
     font-size: 0.95rem;
     line-height: 1.6;
 }
 
-/* Contenedor de sub-badges inferiores de la tarjeta */
-.tarjeta-tags-container {
+/* Contenedor de sub-badges inferiores */
+.tarjeta-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: auto; /* Empuja el contenido inferior si hay asimetría */
+    margin-top: auto; /* Empuja el botón al fondo manteniendo alineación simétrica */
 }
 
-/* Badges ovalados discretos */
-.badge-ovalado {
+.tag-ovalado {
     background-color: rgba(255, 255, 255, 0.04);
-    color: var(--text-principal);
-    padding: 6px 16px;
-    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--texto-principal);
     font-size: 0.8rem;
     font-weight: 500;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 4px 14px;
+    border-radius: 20px;
+    transition: var(--transicion-suave);
 }
 
-body.light-mode .badge-ovalado {
+body.light-mode .tag-ovalado {
     background-color: #f1f5f9;
-    color: #334155;
     border-color: #e2e8f0;
 }
 
-/* BOTÓN DE ACCIÓN CENTRALIZADO CON GRADIENTE INTEGRAL (Azul, Violeta, Rojo) */
-.btn-neon-action {
+/* ==========================================================================
+   6. BOTONES (Violeta Neón e Integración de Centrado Absoluto)
+   ========================================================================== */
+.contenedor-boton-centrado {
     width: 100%;
-    background: var(--gradient-brand);
-    color: #ffffff;
-    border: none;
-    padding: 14px 20px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    border-radius: 10px;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center; /* Enlace/Texto perfectamente CENTRADO internamente */
-    text-decoration: none;
-    transition: var(--transition-smooth);
+    display: flex;
+    justify-content: center; /* CENTRADO INTERNO DEL BOTÓN DENTRO DE LA TARJETA */
+    margin-top: 8px;
 }
 
-/* Hover Neón con Brillo controlado para SEO Performance */
-.btn-neon-action:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(139, 92, 246, 0.45), 0 0 10px rgba(239, 68, 68, 0.2);
+.btn-violeta-premium {
+    width: 100%; /* Ocupa el ancho completo interno de forma simétrica */
+    background-color: var(--violeta-neon);
     color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 24px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center; /* Fuerza el centrado absoluto del texto dentro del botón */
+    transition: var(--transicion-suave);
+}
+
+/* Efecto hover interactivo con brillo neón violeta controlado */
+.btn-violeta-premium:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+    background-color: #7c3aed; /* Tono violeta un punto más oscuro para feedback visual */
 }
 
 /* ==========================================================================
-   ANIMACIÓN INTERSECTION OBSERVER Y FOOTER
+   7. FOOTER Y RESPONSIVIDAD
    ========================================================================== */
-.project-card {
-    opacity: 0;
-    transform: translateY(25px);
-    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.project-card.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.sitio-footer {
-    padding: 40px 0;
-    border-top: 1px solid var(--border-color);
-    color: var(--text-muted);
+.sitio-pie {
+    border-top: 1px solid var(--borde-sutil);
+    padding: 32px 24px;
+    margin-top: 80px;
+    color: var(--texto-muted);
     font-size: 0.9rem;
+    text-align: center;
 }
 
-/* Responsividad */
+/* Adaptación fluida para dispositivos móviles */
 @media (max-width: 768px) {
-    .header-wrapper {
+    .header-container {
         flex-direction: column;
-        gap: 15px;
+        gap: 16px;
     }
     .navegacion-principal {
         order: 3;
         width: 100%;
     }
-    .nav-links-lista {
+    .menu-enlaces-centrados {
         justify-content: center;
-        width: 100%;
+        gap: 24px;
     }
 }
