@@ -1,27 +1,32 @@
 /* ==========================================================================
-   PALETA DE COLORES ORIGINAL (Estilo Retro 90s Anime / Lo-Fi)
+   VARIABLES DE DISEÑO (Estilo Original con Soporte Claro/Oscuro)
    ========================================================================== */
 :root {
-    /* Modo Claro (Pastel Lo-Fi Original) */
-    --bg-principal: #faf6f0;       
-    --bg-tarjeta: #ffffff;         
-    --texto-primario: #3a2d42;     
-    --texto-secundario: #6b5b7b;   
-    --color-acento: #ffb7b2;       
-    --color-borde: #e8dfd8;        
-    --shadow: 0 4px 10px rgba(107, 91, 123, 0.08);
-    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* Por defecto se ve OSCURO (Como tu primera plantilla) */
+    --bg-dark: #0a0f1d;
+    --bg-card: #131b2e;
+    --bg-nav: rgba(10, 15, 29, 0.9);
+    
+    --color-blue: #2563eb;       
+    --color-purple: #8b5cf6;     
+    --color-red: #ef4444;        
+    
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+    --border-color: rgba(255, 255, 255, 0.05);
+    
+    --gradient-brand: linear-gradient(135deg, var(--color-blue), var(--color-purple), var(--color-red));
 }
 
-/* Modo Oscuro Sincronizado */
-.dark-mode {
-    --bg-principal: #1a1625;       
-    --bg-tarjeta: #241e30;         
-    --texto-primario: #f4f0fa;     
-    --texto-secundario: #b3a7c2;   
-    --color-acento: #ff9aa2;       
-    --color-borde: #332a42;        
-    --shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+/* Cuando se activa el Modo Claro desde JS */
+body.light-mode {
+    --bg-dark: #f8fafc;
+    --bg-card: #ffffff;
+    --bg-nav: rgba(248, 250, 252, 0.9);
+    
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --border-color: rgba(0, 0, 0, 0.08);
 }
 
 * {
@@ -35,25 +40,12 @@ html {
 }
 
 body {
-    background-color: var(--bg-principal);
-    color: var(--texto-primario);
+    background-color: var(--bg-dark);
+    color: var(--text-main);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     padding-top: 80px;
-    transition: var(--transition);
-    position: relative;
-}
-
-/* Capa de grano VHS Nostálgico */
-.vhs-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 183, 178, 0.02);
-    pointer-events: none;
-    z-index: 9999;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -62,17 +54,19 @@ body {
     padding: 0 20px;
 }
 
-/* Navbar Estilizada */
+/* Navbar */
 .navbar {
-    background-color: var(--bg-tarjeta);
+    background-color: var(--bg-nav);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    border-bottom: 1px solid var(--color-borde);
+    border-bottom: 1px solid var(--border-color);
     padding: 15px 0;
-    transition: var(--transition);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .nav-container {
@@ -84,10 +78,13 @@ body {
 .logo h1 {
     font-size: 1.5rem;
     font-weight: 800;
+    letter-spacing: -0.5px;
 }
 
 .logo span {
-    color: var(--color-acento);
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .nav-menu {
@@ -97,24 +94,30 @@ body {
 }
 
 .nav-menu a {
-    color: var(--texto-secundario);
+    color: var(--text-muted);
     text-decoration: none;
-    font-weight: 600;
-    transition: color 0.2s ease;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .nav-menu a:hover {
-    color: var(--texto-primario);
+    color: var(--text-main);
 }
 
 .theme-btn {
-    background: none;
-    border: none;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
     font-size: 1.2rem;
     cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+body.light-mode .theme-btn {
+    background: rgba(0, 0, 0, 0.05);
 }
 
-/* Hero Grid */
+/* Hero Section */
 .hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -124,20 +127,23 @@ body {
 }
 
 .hero-content h2 {
-    font-size: 2.8rem;
+    font-size: 3rem;
     line-height: 1.2;
     margin-bottom: 20px;
     font-weight: 800;
 }
 
 .hero-content h2 span {
-    border-bottom: 3px solid var(--color-acento);
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero-content p {
-    color: var(--texto-secundario);
+    color: var(--text-muted);
     font-size: 1.1rem;
     margin-bottom: 30px;
+    max-width: 500px;
 }
 
 .hero-buttons {
@@ -145,13 +151,15 @@ body {
     gap: 15px;
 }
 
-/* Botones Originales */
 .btn {
     padding: 12px 28px;
-    border-radius: 30px;
+    border-radius: 8px;
     font-weight: 600;
     cursor: pointer;
-    transition: var(--transition);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn:hover {
@@ -159,25 +167,27 @@ body {
 }
 
 .btn-primary {
-    background-color: var(--texto-primario);
-    color: var(--bg-principal);
+    background: var(--gradient-brand);
+    color: white;
     border: none;
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
 }
 
 .btn-secondary {
     background: transparent;
-    color: var(--texto-primario);
-    border: 2px solid var(--texto-primario);
+    color: var(--text-main);
+    border: 2px solid var(--text-main);
 }
 
-/* Caja de Código Simulada */
+/* Code Box Component */
 .code-box {
-    background-color: var(--bg-tarjeta);
-    border: 2px solid var(--color-borde);
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
     border-radius: 12px;
-    padding: 25px;
-    box-shadow: var(--shadow);
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
 }
 
 .code-header {
@@ -186,22 +196,20 @@ body {
     margin-bottom: 15px;
 }
 
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-}
-.dot.red { background-color: #ffb7b2; }
-.dot.yellow { background-color: #ffdac1; }
-.dot.green { background-color: #e2f0cb; }
+.dot { width: 12px; height: 12px; border-radius: 50%; }
+.dot.red { background-color: var(--color-red); }
+.dot.yellow { background-color: #eab308; }
+.dot.green { background-color: #22c55e; }
 
 pre {
-    color: var(--texto-secundario);
-    font-family: monospace;
-    font-size: 1rem;
+    color: #38bdf8;
+    font-size: 0.95rem;
+}
+body.light-mode pre {
+    color: #0369a1;
 }
 
-/* Secciones */
+/* Secciones generales */
 .section-title {
     font-size: 2.2rem;
     text-align: center;
@@ -210,10 +218,12 @@ pre {
 }
 
 .section-title span {
-    color: var(--color-acento);
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-/* Rejilla de Habilidades y Proyectos */
+/* Grid de Habilidades */
 .habilidades-grid, .proyectos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -221,12 +231,12 @@ pre {
 }
 
 .categoria-habilidad, .tarjeta-proyecto {
-    background-color: var(--bg-tarjeta);
-    border: 2px solid var(--color-borde);
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 30px;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .tarjeta-proyecto:hover {
@@ -234,14 +244,15 @@ pre {
 }
 
 .categoria-habilidad h3, .tarjeta-proyecto h3 {
-    font-size: 1.4rem;
-    margin-bottom: 15px;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
 }
 
 .nivel-habilidad h4 {
     font-size: 0.85rem;
-    color: var(--texto-secundario);
+    color: var(--text-muted);
     text-transform: uppercase;
+    letter-spacing: 1px;
     margin-bottom: 10px;
     margin-top: 15px;
 }
@@ -249,54 +260,60 @@ pre {
 .badges {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
 }
 
-/* Badges Tech Originales */
 .badge-tech {
-    background-color: var(--bg-principal);
-    border: 1px solid var(--color-borde);
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     padding: 6px 14px;
     border-radius: 20px;
     font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--texto-primario);
+    color: var(--text-main);
+    transition: background-color 0.3s ease;
+}
+body.light-mode .badge-tech {
+    background-color: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-/* Formulario de Contacto */
-.contacto-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
-
+/* Formulario */
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
 .form-group input, .form-group textarea {
     width: 100%;
     padding: 15px;
-    background-color: var(--bg-tarjeta);
-    border: 2px solid var(--color-borde);
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
-    color: var(--texto-primario);
+    color: var(--text-main);
     font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-purple);
 }
 
 .footer {
+    background-color: rgba(0,0,0,0.2);
     text-align: center;
-    padding: 40px 0;
+    padding: 30px 0;
     margin-top: 60px;
-    border-top: 1px solid var(--color-borde);
-    color: var(--texto-secundario);
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
 }
 
 .hamburger { display: none; }
 
 @media (max-width: 768px) {
-    .hero, .contacto-container { grid-template-columns: 1fr; text-align: center; }
+    .hero { grid-template-columns: 1fr; text-align: center; }
+    .hero-content p { margin: 0 auto 30px; }
+    .hero-buttons { justify-content: center; }
     .nav-menu { display: none; }
 }
