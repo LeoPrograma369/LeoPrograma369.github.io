@@ -3,33 +3,40 @@ const btnGoogle = document.getElementById('btn-multi-google');
 
 if (btnGoogle) {
     btnGoogle.addEventListener('click', (e) => {
-        e.preventDefault(); // Evita que la pantalla salte hacia arriba al usar '#'
+        e.preventDefault(); // Evita saltos de pantalla indeseados por el '#'
 
-        // Definimos las URLs exactas que querés abrir al mismo tiempo
+        // URLs oficiales de Google que quieres abrir simultáneamente
         const urlsGoogle = [
             "https://www.google.com",
             "https://trends.google.com",
             "https://analytics.google.com"
         ];
 
-        // Las recorremos y abrimos cada una en una pestaña nueva
+        // Abrir cada enlace en una nueva pestaña
         urlsGoogle.forEach(url => {
             window.open(url, '_blank');
         });
     });
 }
 
-// ===================== (Tus otros scripts originales debajo) =====================
+// ===================== CONTROLADOR DE CAMBIO DE TEMA ORIGINAL =====================
 const themeToggleBtn = document.getElementById('theme-toggle');
 const bodyElement = document.body;
 
-if (localStorage.getItem('theme') === 'dark') {
+// Comprobar si el usuario ya tenía una preferencia guardada anteriormente
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme === 'dark') {
     bodyElement.classList.add('dark-mode');
 }
 
 if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => {
         bodyElement.classList.toggle('dark-mode');
-        localStorage.setItem('theme', bodyElement.classList.contains('dark-mode') ? 'dark' : 'light');
+        
+        let theme = 'light';
+        if (bodyElement.classList.contains('dark-mode')) {
+            theme = 'dark';
+        }
+        localStorage.setItem('theme', theme);
     });
 }
