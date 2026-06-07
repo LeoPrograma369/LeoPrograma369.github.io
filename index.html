@@ -3,327 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LeoPrograma369 | Portafolio Retro Anime</title>
-    <style>
-        /* ==========================================================================
-           VARIABLES DE COLORES (Paleta Estilo Retro 90s Anime / Lo-Fi)
-           ========================================================================== */
-        :root {
-            /* Modo Claro (Pastel Lo-Fi) */
-            --bg-principal: #faf6f0;       /* Crema pastel suave estilo vhs vintage */
-            --bg-tarjeta: #ffffff;         /* Blanco puro para contraste de bloques */
-            --texto-primario: #3a2d42;     /* Violeta oscuro/grisáceo muy saturado */
-            --texto-secundario: #6b5b7b;   /* Lavanda desaturado intermedio */
-            --color-acento: #ffb7b2;       /* Rosa pastel nostálgico */
-            --color-borde: #e8dfd8;        /* Borde sutil apagado */
-            --vhs-overlay: rgba(255, 183, 178, 0.05);
-            --shadow: 0 4px 10px rgba(107, 91, 123, 0.08);
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
+    
+    <!-- ====== ESTRATEGIA SEO Y METADATOS PARA BUSCAR TRABAJO ====== -->
+    <title>LeoPrograma369 | Desarrollador Full Stack - Portafolio Profesional</title>
+    <meta name="description" content="Portafolio profesional de LeoPrograma369, Desarrollador Full Stack especializado en soluciones web de alto rendimiento, React, Node.js, y automatización DevOps. Disponible para contratación.">
+    <meta name="keywords" content="Desarrollador Full Stack, Programador Web, React, Node.js, TypeScript, Portafolio IT, Contratar Programador, Git, DevOps, JavaScript">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://leoprograma369.github.io/">
+    
+    <!-- Open Graph (Para optimizar cómo se comparte en LinkedIn / Twitter) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="LeoPrograma369 | Desarrollador Full Stack - Soluciones Web">
+    <meta property="og:description" content="Explora mis proyectos web, stack tecnológico avanzado y soluciones a medida listas para integrarse en entornos corporativos.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1618477388954-7852f32655ec?q=80&w=600">
 
-        .dark-mode {
-            /* Modo Oscuro (Cyber Neon / Midnight Anime) */
-            --bg-principal: #1a1625;       /* Espacio profundo violeta oscuro */
-            --bg-tarjeta: #241e33;         /* Bloques violeta intermedio */
-            --texto-primario: #f3e9fa;     /* Blanco con tinte lavanda */
-            --texto-secundario: #bdaec6;   /* Lavanda claro desaturado */
-            --color-acento: #ff9aa2;       /* Rosa pastel encendido */
-            --color-borde: #3a324d;        /* Borde oscuro contrastante */
-            --vhs-overlay: rgba(255, 154, 162, 0.03);
-            --shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        /* ==========================================================================
-           ESTILOS GENERALES Y RESETEO
-           ========================================================================== */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-principal);
-            color: var(--texto-primario);
-            line-height: 1.6;
-            transition: var(--transition);
-            position: relative;
-            overflow-x: hidden;
-        }
-
-        /* Efecto sutil grano de cinta VHS retro */
-        body::before {
-            content: " ";
-            display: block;
-            position: fixed;
-            top: 0; left: 0; bottom: 0; right: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-            z-index: 99999;
-            opacity: 0.12;
-            pointer-events: none;
-            background-size: 100% 3px, 6px 100%;
-        }
-
-        /* ==========================================================================
-           BARRA DE NAVEGACIÓN Y BOTÓN MODO CLARO/OSCURO
-           ========================================================================== */
-        header {
-            background-color: var(--bg-tarjeta);
-            border-bottom: 3px solid var(--color-acento);
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: var(--shadow);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            transition: var(--transition);
-        }
-
-        .logo {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: var(--texto-primario);
-            text-decoration: none;
-            letter-spacing: 1px;
-        }
-        
-        .logo span {
-            color: var(--color-acento);
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-
-        nav a {
-            color: var(--texto-secundario);
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        nav a:hover {
-            color: var(--color-acento);
-        }
-
-        /* Interruptor de modo Claro / Oscuro */
-        .theme-toggle-btn {
-            background: none;
-            border: 2px solid var(--color-borde);
-            padding: 8px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            transition: var(--transition);
-            outline: none;
-        }
-
-        .theme-toggle-btn:hover {
-            border-color: var(--color-acento);
-            transform: scale(1.05);
-        }
-
-        .theme-toggle-btn svg {
-            width: 20px;
-            height: 20px;
-            fill: var(--texto-primario);
-            transition: var(--transition);
-        }
-
-        /* Ocultar iconos de manera dinámica */
-        .dark-mode-icon { display: block; }
-        .light-mode-icon { display: none; }
-
-        .dark-mode .dark-mode-icon { display: none; }
-        .dark-mode .light-mode-icon { display: block; }
-        .dark-mode .theme-toggle-btn svg { fill: var(--color-acento); }
-
-        /* ==========================================================================
-           CONTENIDO PRINCIPAL (HERO Y SECCIONES)
-           ========================================================================== */
-        main {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .hero-section {
-            background-color: var(--bg-tarjeta);
-            border-radius: 12px;
-            padding: 40px;
-            margin-bottom: 40px;
-            border-left: 6px solid var(--color-acento);
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .hero-section h1 {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-            color: var(--texto-primario);
-        }
-
-        .hero-section p {
-            color: var(--texto-secundario);
-            font-size: 1.1rem;
-            max-width: 800px;
-        }
-
-        .grid-proyectos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 20px;
-        }
-
-        .tarjeta-proyecto {
-            background-color: var(--bg-tarjeta);
-            border: 1px solid var(--color-borde);
-            border-radius: 8px;
-            padding: 25px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .tarjeta-proyecto:hover {
-            transform: translateY(-5px);
-            border-color: var(--color-acento);
-        }
-
-        .tarjeta-proyecto h3 {
-            margin-bottom: 12px;
-            font-size: 1.3rem;
-            color: var(--texto-primario);
-        }
-
-        .tarjeta-proyecto p {
-            color: var(--texto-secundario);
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-        }
-
-        .badge-tech {
-            display: inline-block;
-            background-color: var(--bg-principal);
-            color: var(--texto-secundario);
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            border: 1px solid var(--color-borde);
-        }
-
-        /* ==========================================================================
-           PIE DE PÁGINA
-           ========================================================================== */
-        footer {
-            text-align: center;
-            padding: 30px;
-            margin-top: 60px;
-            color: var(--texto-secundario);
-            border-top: 1px solid var(--color-borde);
-            font-size: 0.9rem;
-        }
-
-        /* Responsividad básica */
-        @media (max-width: 600px) {
-            header { padding: 15px 20px; }
-            nav { gap: 15px; }
-            .hero-section { padding: 25px; }
-            .hero-section h1 { font-size: 1.7rem; }
-        }
-    </style>
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Vinculación del archivo CSS externo -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <a href="#" class="logo">LeoPrograma<span>369</span></a>
-        <nav>
-            <a href="#proyectos">Proyectos</a>
-            <a href="#sobre-mi">Sobre Mí</a>
-            
-            <button class="theme-toggle-btn" id="theme-toggle" aria-label="Cambiar modo de color">
-                <svg class="dark-mode-icon" viewBox="0 0 24 24">
-                    <path d="M12.3 22h-.1c-5.5 0-10-4.5-10-10 0-4.8 3.5-8.9 8.2-9.8.5-.1 1 .2 1.2.7.2.5 0 1.1-.4 1.4-2.8 2.2-4.2 5.8-3.6 9.4.6 3.5 3.4 6.3 6.9 6.9 3.6.6 7.2-.8 9.4-3.6.3-.4.9-.5 1.4-.4.5.2.8.7.7 1.2-.9 4.7-5 8.2-9.8 8.2z"/>
-                </svg>
-                <svg class="light-mode-icon" viewBox="0 0 24 24">
-                    <path d="M12 4c.6 0 1-.4 1-1V2c0-.6-.4-1-1-1s-1 .4-1 1v1c0 .6.4 1 1 1zm0 16c-.6 0-1 .4-1 1v1c0 .6.4 1 1 1s1-.4 1-1v-1c0-.6-.4-1-1-1zm8-9h1c.6 0 1-.4 1-1s-.4-1-1-1h-1c-.6 0-1 .4-1 1s.4 1 1 1zM3 12h1c.6 0 1-.4 1-1s-.4-1-1-1H3c-.6 0-1 .4-1 1s.4 1 1 1zm14.1-5.7c.4.4 1 .4 1.4 0l.7-.7c.4-.4.4-1 0-1.4s-1-.4-1.4 0l-.7.7c-.4.4-.4 1 0 1.4zm-11.5 11.5c.4.4 1 .4 1.4 0l.7-.7c.4-.4.4-1 0-1.4s-1-.4-1.4 0l-.7.7c-.4.4-.4 1 0 1.4zM18.2 17.5c-.4-.4-1-.4-1.4 0l-.7.7c-.4.4-.4 1 0 1.4.4.4 1 .4 1.4 0l.7-.7c.4-.4.4-1 0-1.4zM6.1 5.6c-.4-.4-1-.4-1.4 0l-.7.7c-.4.4-.4 1 0 1.4.4.4 1 .4 1.4 0l.7-.7c.4-.4.4-1 0-1.4zM12 6c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z"/>
-                </svg>
-            </button>
-        </nav>
-    </header>
+    <!-- NAVEGACIÓN -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>LeoPrograma<span class="brand-accent">369</span></h1>
+            </div>
+            <div class="nav-controls">
+                <ul class="nav-menu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#habilidades">Habilidades</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+                
+                <!-- CONTROLADOR VISIBLE CLARO / OSCURO -->
+                <div class="theme-toggle-container">
+                    <span class="theme-label" id="theme-text">Modo Claro</span>
+                    <button class="theme-toggle-btn" id="theme-toggle" aria-label="Cambiar modo de color">
+                        <svg class="dark-mode-icon" viewBox="0 0 24 24"><path d="M12.3 22h-.1c-5.5 0-10-4.5-10-10 0-4.8 3.5-8.9 8.2-9.8.5-.1 1 .2 1.2.7.2.5 0 1.1-.4 1.4-2.8 2.2-4.2 5.8-3.6 9.4.6 3.5 3.4 6.3 6.9 6.9 3.6.6 7.2-.8 9.4-3.6.3-.4.9-.5 1.4-.4.5.2.8.7.7 1.2-.9 4.7-5 8.2-9.8 8.2z"/></svg>
+                        <svg class="light-mode-icon" viewBox="0 0 24 24"><path d="M12 4c.6 0 1-.4 1-1V2c0-.6-.4-1-1-1s-1 .4-1 1v1c0 .6.4 1 1 4zm0 16c-.6 0-1 .4-1 1v1c0 .6.4 1 1 1s1-.4 1-1v-1c0-.6-.4-1-1-1zm8-9h1c.6 0 1-.4 1-1s-.4-1-1-1h-1c-.6 0-1 .4-1 1s.4 1 1 1zM3 12h1c.6 0 1-.4 1-1s-.4-1-1-1H3c-.6 0-1 .4-1 1s.4 1 1 1zm14.1-5.7c.4.4 1 .4 1.4 0l.7-.7c.4-.4.4-1 0-1.4s-1-.4-1.4 0l-.7.7c-.4.4-.4 1 0 1.4zm-11.5 11.5c.4.4 1 .4 1.4 0l.7-.7c.4-.4.4-1 0-1.4s-1-.4-1.4 0l-.7.7c-.4.4-.4 1 0 1.4zM18.2 17.5c-.4-.4-1-.4-1.4 0l-.7.7c-.4.4-.4 1 0 1.4.4.4 1 .4 1.4 0l.7-.7c.4-.4.4-1 0-1.4zM6.1 5.6c-.4-.4-1-.4-1.4 0l-.7.7c-.4.4-.4 1 0 1.4.4.4 1 .4 1.4 0l.7-.7c.4-.4.4-1 0-1.4zM12 6c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z"/></svg>
+                    </button>
+                </div>
 
-    <main>
-        <section class="hero-section" id="sobre-mi">
-            <h1>Hola, soy Leandro Samperez</h1>
-            <p>Programador Full Stack enfocado en el desarrollo web moderno, optimización de flujos con Git/GitHub y diseño de experiencias digitales con vibras retro únicas.</p>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- HERO SECTION -->
+        <section id="inicio" class="hero">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h2>Desarrollo Soluciones Digitales Robustas con <span>Código Limpio</span></h2>
+                    <p>Hola, soy Leandro Samperez. Un desarrollador Full Stack versátil preparado para integrarse a equipos multidisciplinarios de alto rendimiento y aportar valor inmediato a entornos de producción corporativa.</p>
+                    <div class="hero-buttons">
+                        <a href="#proyectos" class="btn btn-blue">Ver Proyectos <i class="fas fa-arrow-right"></i></a>
+                        <a href="#contacto" class="btn btn-purple">Contratarme</a>
+                        <a href="#habilidades" class="btn btn-red">Echar un ojo al Stack</a>
+                    </div>
+                </div>
+                <div class="hero-background">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="code-dot" style="background-color: #ef4444;"></span>
+                            <span class="code-dot" style="background-color: #f59e0b;"></span>
+                            <span class="code-dot" style="background-color: #10b981;"></span>
+                        </div>
+                        <pre><code>const dev = {
+  name: 'Leandro Samperez',
+  role: 'Full Stack Developer',
+  status: 'Ready to Work',
+  vision: 'Clean architecture & speed'
+};</code></pre>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="proyectos">
-            <h2 style="margin-bottom: 20px;">Proyectos Destacados</h2>
-            <div class="grid-proyectos">
+        <!-- SECCIÓN HABILIDADES -->
+        <section id="habilidades">
+            <h2 class="section-title">Stack Tecnológico & <span>Plataformas</span></h2>
+            <div class="skills-grid">
                 
-                <div class="tarjeta-proyecto">
-                    <h3>Gamer Rentable</h3>
-                    <p>Espacio especializado en optimización, monetización y personalización de plataformas de entretenimiento.</p>
-                    <span class="badge-tech">Blogger XML</span>
-                    <span class="badge-tech">CSS3</span>
+                <!-- Frontend -->
+                <div class="skills-category">
+                    <h3 class="category-title"><i class="fas fa-laptop-code"></i> Frontend</h3>
+                    <div class="level-group">
+                        <span class="level-label">Avanzado</span>
+                        <div class="badges-container">
+                            <span class="badge b-blue">HTML5 / CSS3</span>
+                            <span class="badge b-blue">JavaScript ES6</span>
+                            <span class="badge b-blue">React.js</span>
+                        </div>
+                    </div>
+                    <div class="level-group">
+                        <span class="level-label">Intermedio</span>
+                        <div class="badges-container">
+                            <span class="badge b-blue">TypeScript</span>
+                            <span class="badge b-blue">Vue.js</span>
+                            <span class="badge b-blue">Tailwind CSS</span>
+                        </div>
+                    </div>
+                    <div class="level-group">
+                        <span class="level-label">Principiante</span>
+                        <div class="badges-container">
+                            <span class="badge b-blue">Angular</span>
+                            <span class="badge b-blue">Next.js</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="tarjeta-proyecto">
-                    <h3>Despliegue GitHub Pages</h3>
-                    <p>Infraestructura optimizada y limpia para el alojamiento de aplicaciones web estáticas con alta velocidad de respuesta.</p>
-                    <span class="badge-tech">HTML5 Semántico</span>
-                    <span class="badge-tech">JavaScript</span>
+                <!-- Backend & DB -->
+                <div class="skills-category">
+                    <h3 class="category-title"><i class="fas fa-server"></i> Backend & DB</h3>
+                    <div class="level-group">
+                        <span class="level-label">Avanzado</span>
+                        <div class="badges-container">
+                            <span class="badge b-purple">Node.js</span>
+                            <span class="badge b-purple">Express.js</span>
+                            <span class="badge b-purple">MySQL</span>
+                        </div>
+                    </div>
+                    <div class="level-group">
+                        <span class="level-label">Intermedio</span>
+                        <div class="badges-container">
+                            <span class="badge b-purple">PostgreSQL</span>
+                            <span class="badge b-purple">MongoDB</span>
+                            <span class="badge b-purple">REST APIs</span>
+                        </div>
+                    </div>
+                    <div class="level-group">
+                        <span class="level-label">Principiante</span>
+                        <div class="badges-container">
+                            <span class="badge b-purple">Python / Django</span>
+                            <span class="badge b-purple">GraphQL</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="tarjeta-proyecto">
-                    <h3>Sistemas de Automatización</h3>
-                    <p>Integración de scripts automatizados para el control y mejora de arquitecturas de software cliente-servidor.</p>
-                    <span class="badge-tech">DevOps</span>
-                    <span class="badge-tech">Git</span>
+                <!-- DevOps & Cloud Platforms -->
+                <div class="skills-category">
+                    <h3 class="category-title"><i class="fas fa-cloud"></i> DevOps & Infraestructura</h3>
+                    <div class="level-group">
+                        <span class="level-label">Avanzado</span>
+                        <div class="badges-container">
+                            <span class="badge b-red">Git / GitHub</span>
+                            <span class="badge b-red">GitHub Pages</span>
+                        </div>
+                    </div>
+                    <div class="level-group">
+                        <span class="level-label">Intermedio</span>
+                        <div class="badges-container">
+                            <span class="badge b-red">Docker</span>
+                            <span class="badge b-red">Vercel / Netlify</span>
+                            <span class="badge b-red">Linux CLI</span>
+                        </div>
+                    </div>
+                    <div class="level-group">
+                        <span class="level-label">Principiante</span>
+                        <div class="badges-container">
+                            <span class="badge b-red">AWS S3/EC2</span>
+                            <span class="badge b-red">CI/CD Pipelines</span>
+                        </div>
+                    </div>
                 </div>
 
             </div>
         </section>
+
+        <!-- PROYECTOS DESTACADOS -->
+        <section id="proyectos">
+            <h2 class="section-title">Soluciones de <span>Alto Impacto</span></h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Gamer Rentable</h3>
+                    <p>Optimización y monetización avanzada de plataformas de entretenimiento masivo estructurado bajo arquitecturas semánticas limpias.</p>
+                    <div class="project-tags">
+                        <span class="badge b-blue">Blogger XML</span>
+                        <span class="badge b-purple">CSS3 Advanced</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Despliegue GitHub Pages Automatizado</h3>
+                    <p>Entorno estático altamente escalable bajo auditorías de Lighthouse al 100% en rendimiento y adaptabilidad de UI.</p>
+                    <div class="project-tags">
+                        <span class="badge b-blue">JS Vanilla</span>
+                        <span class="badge b-red">Git CI</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contacto">
+            <h2 class="section-title">Iniciemos un <span>Proyecto</span></h2>
+            <div class="contact-grid">
+                <div>
+                    <h3 style="margin-bottom: 15px;">¿Listo para escalar tus operaciones técnicas?</h3>
+                    <p style="color: var(--texto-secundario); margin-bottom: 25px;">Busco integrarme a posiciones como Desarrollador Full Stack Jr/Mid. Escríbeme y evaluemos cómo puedo potenciar tus metas comerciales e industriales.</p>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <p><i class="fas fa-envelope" style="color: var(--color-blue); margin-right: 8px;"></i> leo@example.com</p>
+                        <p><i class="fas fa-map-marker-alt" style="color: var(--color-red); margin-right: 8px;"></i> Buenos Aires, Argentina</p>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group"><input type="text" placeholder="Tu Nombre" required></div>
+                    <div class="form-group"><input type="email" id="contact-email" placeholder="Tu Email de Contacto" required></div>
+                    <div class="form-group"><textarea placeholder="Detalles de la Vacante o Proyecto" rows="4" required></textarea></div>
+                    <button type="submit" class="btn btn-purple" style="border: none; cursor: pointer;">Enviar Propuesta</button>
+                </form>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 LeoPrograma369. Creado con pasión por el código limpio.</p>
+    <footer class="footer">
+        <p>&copy; 2026 LeoPrograma369. Construido para máxima velocidad de respuesta e indexación SEO.</p>
     </footer>
 
-    <script>
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const bodyElement = document.body;
-
-        // Comprobar si el usuario ya tenía una preferencia guardada anteriormente
-        const currentTheme = localStorage.getItem('theme');
-
-        if (currentTheme === 'dark') {
-            bodyElement.classList.add('dark-mode');
-        }
-
-        // Evento de escucha para detectar el clic en el botón
-        themeToggleBtn.addEventListener('click', () => {
-            // Alternar la clase del modo oscuro en el body
-            bodyElement.classList.toggle('dark-mode');
-            
-            // Determinar qué modo está activo para guardarlo en el almacenamiento local
-            let theme = 'light';
-            if (bodyElement.classList.contains('dark-mode')) {
-                theme = 'dark';
-            }
-            localStorage.setItem('theme', theme);
-        });
-    </script>
+    <!-- Vinculación del archivo JavaScript externo -->
+    <script src="script.js"></script>
 </body>
 </html>
