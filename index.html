@@ -3,103 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Ecosistemas | Soluciones Web Avanzadas</title>
+    <meta name="description" content="Portafolio ultra-profesional optimizado con sistemas multi-link integrados, arquitectura semántica pura y control de interfaz interactiva.">
     
-    <!-- METADATOS DE RENDIMIENTO Y SEO -->
-    <title>Portafolio Premium | Ecosistemas y Automatización</title>
-    <meta name="description" content="Portafolio profesional optimizado con arquitectura Cyber Premium, control de modo claro/oscuro y acceso a herramientas avanzadas.">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Enlace al archivo de estilos nativos independientes -->
+    <!-- Precarga de estilos esenciales para evitar saltos visuales -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<!-- Se inicializa en dark-mode por defecto según los requerimientos -->
 <body class="dark-mode">
 
-    <!-- Enlace de accesibilidad ARIA para lectores de pantalla -->
-    <a href="#contenido-principal" class="visually-hidden">Saltar al contenido principal</a>
-
-    <!-- ENCABEZADO / NAVEGACIÓN GLOBAL -->
+    <!-- ENCABEZADO GLOBAL -->
     <header class="sitio-header">
         <div class="header-container">
-            <!-- Área de Branding -->
+            <!-- Área de Marca -->
             <div class="logo-area">
-                <a href="#" class="logo-enlace">Leo<span class="logo-acentuado">Prog</span></a>
+                <a href="#" class="logo-enlace">Ecosistema<span class="logo-accent">Hub</span></a>
             </div>
 
-            <!-- MENÚ DE NAVEGACIÓN: Enlaces perfectamente CENTRADOS horizontalmente -->
-            <nav class="navegacion-principal" aria-label="Navegación principal del sitio">
+            <!-- ENLACES PRINCIPALES: Geométricamente centrados horizontalmente -->
+            <nav class="navegacion-principal" aria-label="Menú principal">
                 <ul class="menu-enlaces-centrados">
                     <li><a href="#ecosistemas" class="enlace-nav activo">Ecosistemas</a></li>
-                    <li><a href="#proyectos" class="enlace-nav">Proyectos</a></li>
+                    <li><a href="#contacto" class="enlace-nav">Contacto</a></li>
                 </ul>
             </nav>
 
-            <!-- CONTROL INTERACTIVO DE MODO CLARO / OSCURO -->
+            <!-- SWITCH INTERACTIVO DE MODO CLARO/OSCURO -->
             <div class="control-interfaz">
-                <button id="theme-toggle" class="switch-tema" aria-label="Cambiar modo de color" title="Alternar Modo Claro/Oscuro">
-                    <!-- Iconos nativos resueltos de forma limpia mediante SVG integrados -->
-                    <svg class="icono-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-                    <svg class="icono-sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.22" x2="5.64" y2="17.86"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <button id="theme-toggle" class="switch-tema" aria-label="Alternar modo de color" title="Alternar Modo Claro/Oscuro">
+                    <!-- Icono Luna (Modo Oscuro) -->
+                    <svg class="icono-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <!-- Icono Sol (Modo Claro) -->
+                    <svg class="icono-sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.22" x2="5.64" y2="17.86"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- CONTENIDO PRINCIPAL DE LA INTERFAZ -->
+    <!-- CONTENIDO PRINCIPAL -->
     <main id="contenido-principal">
         
-        <!-- SECCIÓN DE SELECCIÓN DE TARJETAS (CSS GRID) -->
+        <!-- SECCIÓN DE ECOSISTEMAS MULTI-LINK -->
         <section class="seccion-portafolio" id="ecosistemas" aria-labelledby="titulo-seccion">
-            <h1 id="titulo-seccion" class="titulo-seccion-centrado">Ecosistemas Profesionales</h1>
+            <h1 id="titulo-seccion" class="titulo-seccion-centrado">Ecosistemas de Trabajo</h1>
             
             <div class="contenedor-grid-tarjetas">
 
-                <!-- TARJETA PRINCIPAL: GOOGLE (Diseño exacto solicitado) -->
-                <article class="tarjeta-proyecto" aria-labelledby="titulo-google">
+                <!-- TARJETA 1: GOOGLE -->
+                <article class="tarjeta-proyecto" data-plataforma="google">
                     <div class="tarjeta-encabezado">
-                        <h2 id="titulo-google" class="tarjeta-titulo-texto">Google</h2>
-                        <!-- Badge Oficial resuelto nativamente con acento Azul Eléctrico -->
+                        <h2 class="tarjeta-titulo-texto">Google</h2>
                         <span class="badge-status badge-azul" role="status">G Oficial</span>
                     </div>
                     
                     <p class="tarjeta-descripcion">
-                        Acceso directo a herramientas de búsqueda, analítica avanzada y optimización SEO global.
+                        Acceso centralizado a herramientas analíticas avanzadas, control de posicionamiento web global, SEO técnico y optimización de flujos comerciales.
                     </p>
                     
-                    <!-- Contenedor de sub-badges ovalados discretos -->
                     <div class="tarjeta-tags">
+                        <span class="tag-ovalado">Analítica</span>
+                        <span class="tag-ovalado">SEO</span>
                         <span class="tag-ovalado">Buscador</span>
-                        <span class="tag-ovalado">Herramientas</span>
                     </div>
                     
-                    <!-- BOTÓN PRINCIPAL VIOLETA Y CENTRADO ABSOLUTO -->
                     <div class="contenedor-boton-centrado">
-                        <button id="btn-ecosistema-google" class="btn-violeta-premium">
-                            Abrir Ecosistema
+                        <button class="btn-violeta-premium btn-ecosistema">
+                            Desplegar Ecosistema
                         </button>
                     </div>
                 </article>
 
-                <!-- TARJETA SECUNDARIA PARA RELLENO SIMÉTRICO (Acento Rojo) -->
-                <article class="tarjeta-proyecto" aria-labelledby="titulo-proy-dos">
+                <!-- TARJETA 2: BLOGGER / GAMER RENTABLE -->
+                <article class="tarjeta-proyecto" data-plataforma="gamer-rentable">
                     <div class="tarjeta-encabezado">
-                        <h2 id="titulo-proy-dos" class="tarjeta-titulo-texto">Gamer Rentable</h2>
-                        <span class="badge-status badge-rojo" role="status">Blogger XML</span>
+                        <h2 class="tarjeta-titulo-texto">Gamer Rentable</h2>
+                        <span class="badge-status badge-rojo" role="status">XML Custom</span>
                     </div>
                     
                     <p class="tarjeta-descripcion">
-                        Estructuras optimizadas para SEO On-Page, monetización avanzada y control de flujo de plantillas personalizadas.
+                        Plataforma optimizada de nicho. Estructura modular diseñada para la monetización de contenido, gestión de microtareas e integraciones e-commerce eficientes.
                     </p>
                     
                     <div class="tarjeta-tags">
-                        <span class="tag-ovalado">Desarrollo</span>
-                        <span class="tag-ovalado">Diseño UI</span>
+                        <span class="tag-ovalado">Blogger</span>
+                        <span class="tag-ovalado">CSS3</span>
+                        <span class="tag-ovalado">Monetización</span>
                     </div>
                     
-                    <!-- BOTÓN PRINCIPAL VIOLETA Y CENTRADO ABSOLUTO -->
                     <div class="contenedor-boton-centrado">
-                        <button class="btn-violeta-premium btn-link-simulado" data-url="https://gamerrentable.blogspot.com">
-                            Ver Plataforma
+                        <button class="btn-violeta-premium btn-ecosistema">
+                            Desplegar Ecosistema
+                        </button>
+                    </div>
+                </article>
+
+                <!-- TARJETA 3: SISTEMAS DEVOPS -->
+                <article class="tarjeta-proyecto" data-plataforma="devops">
+                    <div class="tarjeta-encabezado">
+                        <h2 class="tarjeta-titulo-texto">Sistemas DevOps</h2>
+                        <span class="badge-status badge-azul" role="status">CI / CD</span>
+                    </div>
+                    
+                    <p class="tarjeta-descripcion">
+                        Automatización completa de despliegues web estáticos y dinámicos, flujos lógicos de integración continua y control exhaustivo de código fuente.
+                    </p>
+                    
+                    <div class="tarjeta-tags">
+                        <span class="tag-ovalado">GitHub Actions</span>
+                        <span class="tag-ovalado">Git</span>
+                        <span class="tag-ovalado">Pipelines</span>
+                    </div>
+                    
+                    <div class="contenedor-boton-centrado">
+                        <button class="btn-violeta-premium btn-ecosistema">
+                            Desplegar Ecosistema
                         </button>
                     </div>
                 </article>
@@ -108,14 +124,14 @@
         </section>
     </main>
 
-    <!-- PIE DE PÁGINA SEMÁNTICO -->
-    <footer class="sitio-pie">
+    <!-- PIE DE PÁGINA -->
+    <footer class="sitio-pie" id="contacto">
         <div class="footer-container">
-            <p>&copy; 2026 Portafolio Profesional. Diseñado con estándares nativos UI/UX.</p>
+            <p>&copy; 2026 EcosistemaHub. Construido bajo estrictos estándares semánticos de rendimiento web.</p>
         </div>
     </footer>
 
-    <!-- Vinculación del script lógico antes del cierre de cuerpo -->
+    <!-- Carga diferida de scripts lógicos -->
     <script src="script.js"></script>
 </body>
 </html>
