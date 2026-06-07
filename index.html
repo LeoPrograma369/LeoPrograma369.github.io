@@ -9,6 +9,8 @@
 </head>
 <body>
 
+    <div class="vhs-overlay"></div>
+
     <nav class="navbar">
         <div class="container nav-container">
             <div class="logo">
@@ -46,13 +48,11 @@
                         <span class="dot yellow"></span>
                         <span class="dot green"></span>
                     </div>
-                    <pre><code>
-const dev = {
+                    <pre><code>const dev = {
   name: 'Leandro Samperez',
   role: 'Full Stack Developer',
   status: 'Ready to Work'
-};
-                    </code></pre>
+};</code></pre>
                 </div>
             </div>
         </section>
@@ -110,35 +110,39 @@ const dev = {
                 
                 <div class="tarjeta-proyecto" style="display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
-                        <h3 style="display: flex; justify-content: space-between; align-items: center;">
+                        <h3 style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
                             Google 
-                            <span class="badge-tech" style="background: var(--color-blue); color: white; border: none; font-size: 0.75rem;">
+                            <span class="badge-tech" style="background: #2563eb; color: white; border: none; font-size: 0.75rem; padding: 4px 10px;">
                                 <i class="fab fa-google"></i> Oficial
                             </span>
                         </h3>
                         <p>Acceso directo a herramientas de búsqueda, analítica avanzada y optimización SEO global.</p>
-                        <div style="margin-top: 10px; display: flex; gap: 5px; flex-wrap: wrap;">
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 15px;">
                             <span class="badge-tech">Buscador</span>
                             <span class="badge-tech">Herramientas</span>
                         </div>
                     </div>
-                    <a href="#" id="btn-multi-google" class="btn btn-primary" style="margin-top: 15px; text-align: center; text-decoration: none; display: block;">
-                        Abrir Ecosistema <i class="fas fa-external-link-alt" style="margin-left: 5px;"></i>
+                    <a href="#" id="btn-multi-google" class="btn btn-primary" style="text-align: center; text-decoration: none; display: block; width: 100%;">
+                        Abrir Ecosistema <i class="fas fa-external-link-alt" style="margin-left: 5px; font-size: 0.85rem;"></i>
                     </a>
                 </div>
 
                 <div class="tarjeta-proyecto">
                     <h3>Gamer Rentable</h3>
                     <p>Optimización y monetización avanzada de plataformas de entretenimiento masivo.</p>
-                    <span class="badge-tech">Blogger XML</span>
-                    <span class="badge-tech">CSS3 Advanced</span>
+                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                        <span class="badge-tech">Blogger XML</span>
+                        <span class="badge-tech">CSS3 Advanced</span>
+                    </div>
                 </div>
 
                 <div class="tarjeta-proyecto">
                     <h3>Sistemas de Automatización</h3>
                     <p>Integración de scripts automatizados para el control y mejora de arquitecturas de software cliente-servidor.</p>
-                    <span class="badge-tech">DevOps</span>
-                    <span class="badge-tech">Git</span>
+                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                        <span class="badge-tech">DevOps</span>
+                        <span class="badge-tech">Git</span>
+                    </div>
                 </div>
 
             </div>
@@ -167,7 +171,7 @@ const dev = {
         </section>
     </main>
 
-    <footer>
+    <footer class="footer">
         <p>&copy; 2026 LeoPrograma369. Creado con pasión por el código limpio.</p>
     </footer>
 
