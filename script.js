@@ -1,9 +1,14 @@
+// --- LOGICA DE MODO OSCURO / CLARO ---
 const themeToggleBtn = document.getElementById('theme-toggle');
 const themeText = document.getElementById('theme-text');
 const bodyElement = document.body;
 
 const updateToggleUI = () => {
-    themeText.textContent = bodyElement.classList.contains('dark-mode') ? "Modo Oscuro" : "Modo Claro";
+    if (bodyElement.classList.contains('dark-mode')) {
+        themeText.textContent = "Modo Oscuro";
+    } else {
+        themeText.textContent = "Modo Claro";
+    }
 };
 
 if (localStorage.getItem('theme') === 'dark') {
@@ -17,27 +22,26 @@ themeToggleBtn.addEventListener('click', () => {
     updateToggleUI();
 });
 
-// Hamburguesa
+// --- MENÚ RESPONSIVE (HAMBURGUESA) ---
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 if (hamburger) {
     hamburger.addEventListener('click', () => navMenu.classList.toggle('active'));
 }
-// --- REDIRECCIÓN MÚLTIPLE PARA EL PROYECTO GOOGLE ---
-const btnGoogle = document.getElementById('btn-multi-google');
 
+// --- REDIRECCIÓN MÚLTIPLE DE GOOGLE ---
+const btnGoogle = document.getElementById('btn-multi-google');
 if (btnGoogle) {
     btnGoogle.addEventListener('click', (e) => {
-        e.preventDefault(); // Detiene el enlace '#' para que no salte la pantalla hacia arriba
-
-        // Añade aquí todas las URLs de Google que quieres que se abran juntas
+        e.preventDefault(); 
+        
+        // Direcciones que se abrirán juntas
         const urlsGoogle = [
             "https://www.google.com",
             "https://trends.google.com",
             "https://analytics.google.com"
         ];
 
-        // Ejecuta la apertura en pestañas separadas
         urlsGoogle.forEach(url => {
             window.open(url, '_blank');
         });
