@@ -1,17 +1,17 @@
 /* ==========================================================================
-   1. CONFIGURACIÓN DE COLORES Y VARIABLES GLOBALES[cite: 3]
+   1. CONFIGURACIÓN DE COLORES Y VARIABLES GLOBALES
    ========================================================================== */
 :root {
-    /* MODO CLARO: Letras Negras, Fondos Claros y Confortables[cite: 1] */
+    /* MODO CLARO: Letras Estrictamente Negras y Fondos Confortables */
     --bg-principal: #f8fafc;       
     --bg-tarjeta: #ffffff;         
     --bg-nav: rgba(248, 250, 252, 0.95);
-    --texto-primario: #111111;    /* Exigencia: Letras Negras claras */
+    --texto-primario: #111111;    /* Exigencia: Letras Negras */
     --texto-secundario: #475569;   
     --color-borde: #cbd5e1;        
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
     
-    /* Colores Base para Botones y Acentos (Azul, Rojo, Violeta)[cite: 3] */
+    /* Paleta de Botones Requerida */
     --color-blue: #2563eb;       
     --color-purple: #8b5cf6;     
     --color-red: #ef4444;        
@@ -20,7 +20,7 @@
 }
 
 .dark-mode {
-    /* MODO OSCURO: Altamente Tecnológico e Inmersivo[cite: 1, 3] */
+    /* MODO OSCURO */
     --bg-principal: #0a0f1d;       
     --bg-tarjeta: #131b2e;         
     --bg-nav: rgba(10, 15, 29, 0.95);
@@ -31,7 +31,7 @@
 }
 
 /* ==========================================================================
-   2. ESTILOS GENERALES Y RESETEO[cite: 3]
+   2. ESTILOS GENERALES DE MAQUETACIÓN
    ========================================================================== */
 * {
     margin: 0;
@@ -66,7 +66,6 @@ section {
     font-size: 2.5rem;
     margin-bottom: 50px;
     font-weight: 800;
-    letter-spacing: -0.5px;
 }
 
 .section-title span {
@@ -76,7 +75,7 @@ section {
 }
 
 /* ==========================================================================
-   3. NAVEGACIÓN (NAVBAR CON CONTROLES VISIBLES)[cite: 1, 3]
+   3. CONFIGURACIÓN DE NAVBAR INTERACTIVA
    ========================================================================== */
 .navbar {
     background-color: var(--bg-nav);
@@ -130,7 +129,7 @@ section {
     color: var(--color-blue);
 }
 
-/* Interruptor de Tema Visible y Estilizado[cite: 1] */
+/* Interruptor de Tema Completamente Visible */
 .theme-toggle-container {
     display: flex;
     align-items: center;
@@ -145,7 +144,6 @@ section {
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
     color: var(--texto-primario);
 }
 
@@ -180,7 +178,6 @@ section {
 .dark-mode .dark-mode-icon { display: none; }
 .dark-mode .light-mode-icon { display: block; }
 
-/* Hamburguesa para móviles[cite: 1] */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -197,7 +194,7 @@ section {
 }
 
 /* ==========================================================================
-   4. HERO SECTION (DISEÑO ORIENTADO A LA CONTRATACIÓN)[cite: 1, 3]
+   4. HERO Y BOTONES ESTRÉGICOS (AZUL, ROJO, VIOLETA)
    ========================================================================== */
 .hero {
     min-height: 90vh;
@@ -218,7 +215,6 @@ section {
     font-weight: 900;
     line-height: 1.15;
     margin-bottom: 24px;
-    letter-spacing: -1px;
 }
 
 .hero-content h2 span {
@@ -231,10 +227,8 @@ section {
     color: var(--texto-secundario);
     font-size: 1.25rem;
     margin-bottom: 35px;
-    max-width: 650px;
 }
 
-/* BOTONES EXCLUSIVOS: AZUL, ROJO Y VIOLETA[cite: 1, 3] */
 .hero-buttons {
     display: flex;
     gap: 16px;
@@ -256,25 +250,23 @@ section {
 .btn-blue {
     background-color: var(--color-blue);
     color: #ffffff !important;
-    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
 }
 
 .btn-blue:hover {
     background-color: #1d4ed8;
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
 }
 
 .btn-purple {
     background-color: var(--color-purple);
     color: #ffffff !important;
-    box-shadow: 0 4px 14px rgba(139, 92, 246, 0.4);
+    box-shadow: 0 4px 14px rgba(139, 92, 246, 0.3);
 }
 
 .btn-purple:hover {
     background-color: #7c3aed;
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6);
 }
 
 .btn-red {
@@ -287,10 +279,8 @@ section {
     background-color: var(--color-red);
     color: #ffffff !important;
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
 }
 
-/* Contenedor Interactivo de Consola de Código[cite: 3] */
 .code-window {
     background-color: #0f172a;
     border: 1px solid var(--color-borde);
@@ -305,7 +295,6 @@ section {
     display: flex;
     align-items: center;
     gap: 8px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .code-dot {
@@ -323,7 +312,7 @@ section {
 }
 
 /* ==========================================================================
-   5. SECCIÓN HABILIDADES (ORDENADO POR PLATAFORMAS Y NIVELES)[cite: 1, 3]
+   5. SECCIÓN HABILIDADES (BADGES AUTOMATIZADOS)
    ========================================================================== */
 .skills-grid {
     display: grid;
@@ -342,7 +331,6 @@ section {
 
 .skills-category:hover {
     border-color: var(--color-purple);
-    transform: translateY(-2px);
 }
 
 .category-title {
@@ -362,15 +350,10 @@ section {
     margin-bottom: 20px;
 }
 
-.level-group:last-child {
-    margin-bottom: 0;
-}
-
 .level-label {
     font-size: 0.8rem;
     font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 1px;
     color: var(--color-red);
     margin-bottom: 8px;
     display: block;
@@ -382,29 +365,16 @@ section {
     gap: 10px;
 }
 
-/* CLASE MAESTRA DE BADGES CON SELECTORES INTELIGENTES[cite: 3] */
 .badge {
     display: inline-block;
     padding: 6px 14px;
     border-radius: 8px;
     font-size: 0.85rem;
     font-weight: 600;
-    background-color: rgba(15, 23, 42, 0.04);
-    color: var(--texto-primario);
     border: 1px solid var(--color-borde);
     transition: var(--transition);
 }
 
-.dark-mode .badge {
-    background-color: rgba(255,255,255,0.03);
-}
-
-.badge:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow);
-}
-
-/* Clasificación por Automatización de Colores Sutiles[cite: 3] */
 .b-blue {
     background-color: rgba(37, 99, 235, 0.08) !important;
     color: #2563eb !important;
@@ -422,7 +392,7 @@ section {
 }
 
 /* ==========================================================================
-   6. PROYECTOS DESTACADOS[cite: 1, 3]
+   6. TARJETAS DE PROYECTOS Y FORMULARIO
    ========================================================================== */
 .projects-grid {
     display: grid;
@@ -459,12 +429,8 @@ section {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
-    margin-bottom: 20px;
 }
 
-/* ==========================================================================
-   7. FORMULARIO Y CONTACTO[cite: 3]
-   ========================================================================== */
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
@@ -499,39 +465,24 @@ section {
     padding: 40px 0;
     border-top: 1px solid var(--color-borde);
     color: var(--texto-secundario);
-    margin-top: 8px;
+    margin-top: 50px;
 }
 
-/* ==========================================================================
-   8. RESPONSIVE DESIGN[cite: 3]
-   ========================================================================== */
+/* RESPONSIVE DESIGN */
 @media (max-width: 968px) {
-    .hero-grid, .contact-grid {
-        grid-template-columns: 1fr;
-    }
-    .hero-content {
-        text-align: center;
-    }
-    .hero-buttons {
-        justify-content: center;
-    }
-    .hamburger {
-        display: flex;
-    }
+    .hero-grid, .contact-grid { grid-template-columns: 1fr; }
+    .hero-content { text-align: center; }
+    .hero-buttons { justify-content: center; }
+    .hamburger { display: flex; }
     .nav-menu {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
+        top: 100%; left: 0; width: 100%;
         background-color: var(--bg-tarjeta);
         padding: 20px;
         border-bottom: 1px solid var(--color-borde);
         gap: 15px;
-        box-shadow: var(--shadow);
     }
-    .nav-menu.active {
-        display: flex;
-    }
+    .nav-menu.active { display: flex; }
 }
