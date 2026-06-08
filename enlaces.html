@@ -8,7 +8,7 @@
     <meta name="description" content="Acceso unificado a las plataformas operativas, portales de contenido y redes profesionales de LeoPrograma369. Conectando desarrollo de software con soluciones de alto impacto.">
     <meta name="keywords" content="Full Stack Developer, Gamer Rentable, Monetización Digital, Portafolio IT, Soluciones Web, GitHub Pages, Leandro Samperez">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://leoprograma369.github.io/enlaces.html">
+    <link class="canonical" href="https://leoprograma369.github.io/enlaces.html">
     
     <meta property="og:type" content="website">
     <meta property="og:title" content="Ecosistema Digital Centralizado | LeoPrograma369">
@@ -98,18 +98,18 @@
         [data-bs-theme="dark"] .sun-icon { display: block; }
         [data-bs-theme="dark"] .moon-icon { display: none; }
 
-        /* Estilización de Secciones y Títulos de Categoría */
+        /* Estilización de Secciones y Títulos de Categoría PERFECTAMENTE CENTRADOS */
         .category-header {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            margin-top: 35px;
-            margin-bottom: 15px;
+            margin-top: 40px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
+            justify-content: center; /* Centrado Horizontal */
             gap: 10px;
-            padding-left: 5px;
         }
 
         /* Tarjetas de Enlaces (Prolijas y Simétricas) */
@@ -137,6 +137,7 @@
             display: flex;
             align-items: center;
             gap: 16px;
+            text-align: left; /* Mantiene el texto alineado internamente con su icono */
         }
 
         /* Contenedores de Iconos con los 3 colores solicitados */
@@ -148,11 +149,11 @@
             align-items: center;
             justify-content: center;
             font-size: 1.25rem;
-            background-color: rgba(37, 99, 235, 0.06);
             transition: var(--transition-fluid);
+            flex-shrink: 0;
         }
         
-        /* Modificadores de color específicos para consistencia visual */
+        /* Modificadores de color específicos */
         .icon-blue { color: var(--color-blue); background-color: rgba(37, 99, 235, 0.08); }
         .icon-red { color: var(--color-red); background-color: rgba(239, 68, 68, 0.08); }
         .icon-purple { color: var(--color-purple); background-color: rgba(139, 92, 246, 0.08); }
@@ -176,6 +177,7 @@
             color: var(--text-muted);
             font-size: 0.9rem;
             transition: var(--transition-fluid);
+            flex-shrink: 0;
         }
 
         .link-card-item:hover .arrow-indicator {
@@ -199,24 +201,24 @@
             <div class="mb-3">
                 <img src="https://github.com/LeoPrograma369.png" alt="Foto de perfil corporativa LeoPrograma369" class="rounded-circle border border-3 border-secondary" style="width: 90px; height: 90px; object-fit: cover;">
             </div>
-            <h1 class="fw-extrabold h3 mb-2" style="letter-spacing: -0.5px;">Hub de Soluciones Web & Plataformas Operativas</h1>
+            <h1 class="fw-extrabold h3 mb-2" style="letter-spacing: -0.5px;">Ecosistema Digital Centralizado</h1>
             <p class="text-muted mx-auto small" style="max-width: 500px;">
-                Desarrollo Full Stack y optimización de entornos web de alta velocidad. Explora de forma centralizada mis portales, ecosistemas comerciales y canales profesionales.
+                Escribe aquí una breve descripción general sobre tu perfil o el propósito de este hub dinámico de enlaces. Puedes modificar este texto completo desde cero.
             </p>
         </header>
 
         <main>
-            <section aria-labelledby="cat-portales">
-                <div class="category-header icon-blue" id="cat-portales">
-                    <i class="fa-solid fa-earth-americas"></i> Portales Web & Blogs de Contenido
+            <section aria-labelledby="cat-uno">
+                <div class="category-header text-primary" id="cat-uno">
+                    <i class="fa-solid fa-folder-open me-2"></i> Título de la Categoría Uno Centrado
                 </div>
 
-                <a href="https://gamerrentable.blogspot.com" target="_blank" class="link-card-item">
+                <a href="#" target="_blank" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-red"><i class="fa-solid fa-gamepad"></i></div>
+                        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-star"></i></div>
                         <div class="link-details">
-                            <h2>Gamer Rentable</h2>
-                            <p>Optimización técnica y monetización avanzada de videojuegos.</p>
+                            <h2>Título de la Entrada de Ejemplo 1</h2>
+                            <p>Escribe aquí una descripción corta y atractiva para este enlace.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
@@ -224,10 +226,10 @@
 
                 <a href="#" target="_blank" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-newspaper"></i></div>
+                        <div class="icon-wrapper icon-red"><i class="fa-solid fa-code"></i></div>
                         <div class="link-details">
-                            <h2>Portal Tecnológico Informativo</h2>
-                            <p>Artículos semanales sobre arquitectura de software y código limpio.</p>
+                            <h2>Título de la Entrada de Ejemplo 2</h2>
+                            <p>Modifica este espacio desde cero con tus propios portales o sitios.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
@@ -235,10 +237,10 @@
 
                 <a href="#" target="_blank" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-purple"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                        <div class="icon-wrapper icon-purple"><i class="fa-solid fa-terminal"></i></div>
                         <div class="link-details">
-                            <h2>Blog de Auditoría SEO</h2>
-                            <p>Estrategias avanzadas de indexación y optimización de velocidad web.</p>
+                            <h2>Título de la Entrada de Ejemplo 3</h2>
+                            <p>Mantén un control impecable utilizando tus iconos personalizados.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
@@ -246,10 +248,10 @@
 
                 <a href="#" target="_blank" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-red"><i class="fa-solid fa-code-branch"></i></div>
+                        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-laptop-code"></i></div>
                         <div class="link-details">
-                            <h2>Wiki de Arquitectura de Software</h2>
-                            <p>Documentación y guías semánticas estructuradas.</p>
+                            <h2>Título de la Entrada de Ejemplo 4</h2>
+                            <p>Recuadro simétrico diseñado para alta conversión y legibilidad.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
@@ -257,10 +259,10 @@
 
                 <a href="#" target="_blank" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-book-bookmark"></i></div>
+                        <div class="icon-wrapper icon-red"><i class="fa-solid fa-fire"></i></div>
                         <div class="link-details">
-                            <h2>Tutoriales JavaScript Vanilla</h2>
-                            <p>Fragmentos de lógica interactiva optimizada para rendimiento.</p>
+                            <h2>Título de la Entrada de Ejemplo 5</h2>
+                            <p>Estilo responsivo que se adapta de manera nativa a cualquier móvil.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
@@ -268,10 +270,10 @@
 
                 <a href="#" target="_blank" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-purple"><i class="fa-solid fa-layer-group"></i></div>
+                        <div class="icon-wrapper icon-purple"><i class="fa-solid fa-gears"></i></div>
                         <div class="link-details">
-                            <h2>Catálogo de UI/UX Components</h2>
-                            <p>Plantillas e interfaces responsivas listas para producción.</p>
+                            <h2>Título de la Entrada de Ejemplo 6</h2>
+                            <p>Carga veloz optimizada bajo los requerimientos de Lighthouse.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
@@ -279,10 +281,10 @@
 
                 <a href="#" target="_blank" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-display"></i></div>
+                        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-cube"></i></div>
                         <div class="link-details">
-                            <h2>Portales Webs Secundarios</h2>
-                            <p>Navegación e indexación de micronichos digitales.</p>
+                            <h2>Título de la Entrada de Ejemplo 7</h2>
+                            <p>Séptimo enlace listo para ser enlazado a tus proyectos operativos.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
@@ -290,17 +292,17 @@
             </section>
 
 
-            <section aria-labelledby="cat-monetizacion">
-                <div class="category-header icon-red" id="cat-monetizacion">
-                    <i class="fa-solid fa-wallet"></i> Plataformas de Monetización & Afiliados
+            <section aria-labelledby="cat-dos">
+                <div class="category-header text-danger" id="cat-dos">
+                    <i class="fa-solid fa-wallet me-2"></i> Título de la Categoría Dos Centrado
                 </div>
 
                 <a href="#" target="_blank" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-purple"><i class="fa-solid fa-money-bill-trend-up"></i></div>
+                        <div class="icon-wrapper icon-red"><i class="fa-solid fa-wallet"></i></div>
                         <div class="link-details">
-                            <h2>Estrategias de Microtareas</h2>
-                            <p>Enlaces verificados para generación de flujos de ingresos pasivos.</p>
+                            <h2>Nueva Entrada de Contenido 1</h2>
+                            <p>Reemplaza este texto por tus plataformas o enlaces externos.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
@@ -308,10 +310,10 @@
 
                 <a href="#" target="_blank" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-blue"><i class="fa-brands fa-bitcoin"></i></div>
+                        <div class="icon-wrapper icon-purple"><i class="fa-solid fa-chart-pie"></i></div>
                         <div class="link-details">
-                            <h2>Portafolio Cripto & Faucets</h2>
-                            <p>Plataformas seguras de procesamiento Web3 y activos digitales.</p>
+                            <h2>Nueva Entrada de Contenido 2</h2>
+                            <p>Diseño prolijo con bordes estilizados y sombras sutiles.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
@@ -319,10 +321,10 @@
 
                 <a href="#" target="_blank" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-red"><i class="fa-solid fa-basket-shopping"></i></div>
+                        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-arrow-trend-up"></i></div>
                         <div class="link-details">
-                            <h2>E-commerce & Productos Afiliados</h2>
-                            <p>Recomendaciones comerciales de alta tasa de conversión.</p>
+                            <h2>Nueva Entrada de Contenido 3</h2>
+                            <p>Configuración limpia y semántica bajo clases de Bootstrap 5.3.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
@@ -330,10 +332,10 @@
 
                 <a href="#" target="_blank" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-purple"><i class="fa-solid fa-bullhorn"></i></div>
+                        <div class="icon-wrapper icon-red"><i class="fa-solid fa-shield-halved"></i></div>
                         <div class="link-details">
-                            <h2>Red de Mercadeo & Referidos</h2>
-                            <p>Enlaces estratégicos con beneficios y bonos inmediatos.</p>
+                            <h2>Nueva Entrada de Contenido 4</h2>
+                            <p>Seguridad y rendimiento combinados en una sola estructura HTML5.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
@@ -341,10 +343,10 @@
 
                 <a href="#" target="_blank" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-chart-line"></i></div>
+                        <div class="icon-wrapper icon-purple"><i class="fa-solid fa-bullseye"></i></div>
                         <div class="link-details">
-                            <h2>Inversiones Digitales Controladas</h2>
-                            <p>Herramientas financieras y plataformas de corretaje validadas.</p>
+                            <h2>Nueva Entrada de Contenido 5</h2>
+                            <p>Optimiza la navegación derivando tráfico de forma inteligente.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
@@ -352,10 +354,10 @@
 
                 <a href="#" target="_blank" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-red"><i class="fa-solid fa-percent"></i></div>
+                        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-sliders"></i></div>
                         <div class="link-details">
-                            <h2>Cupones & Descuentos de Hosting</h2>
-                            <p>Enlaces de afiliación para infraestructura web barata y robusta.</p>
+                            <h2>Nueva Entrada de Contenido 6</h2>
+                            <p>Personaliza las referencias internas de manera simple.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
@@ -363,10 +365,10 @@
 
                 <a href="#" target="_blank" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-gift"></i></div>
+                        <div class="icon-wrapper icon-red"><i class="fa-solid fa-circle-nodes"></i></div>
                         <div class="link-details">
-                            <h2>Sistemas de Recompensas Adicionales</h2>
-                            <p>Ecosistemas digitales de fidelización y dropshipping.</p>
+                            <h2>Nueva Entrada de Contenido 7</h2>
+                            <p>Control absoluto sin depender de intermediarios comerciales.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
@@ -374,17 +376,17 @@
             </section>
 
 
-            <section aria-labelledby="cat-profesional">
-                <div class="category-header icon-purple" id="cat-profesional">
-                    <i class="fa-solid fa-network-wired"></i> Redes Profesionales & Repositorios
+            <section aria-labelledby="cat-tres">
+                <div class="category-header text-uppercase text-secondary" id="cat-tres" style="color: var(--color-purple) !important;">
+                    <i class="fa-solid fa-link me-2"></i> Título de la Categoría Tres Centrado
                 </div>
 
-                <a href="https://github.com/LeoPrograma369" target="_blank" class="link-card-item">
+                <a href="#" target="_blank" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-purple"><i class="fa-brands fa-github"></i></div>
+                        <div class="icon-wrapper icon-purple"><i class="fa-solid fa-user-tie"></i></div>
                         <div class="link-details">
-                            <h2>GitHub Oficial</h2>
-                            <p>Código fuente, arquitecturas backend y automatización CI/CD.</p>
+                            <h2>Enlace de Red Profesional 1</h2>
+                            <p>Configura aquí el redireccionamiento hacia tus plataformas.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
@@ -392,21 +394,10 @@
 
                 <a href="#" target="_blank" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-blue"><i class="fa-brands fa-linkedin"></i></div>
+                        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-circle-user"></i></div>
                         <div class="link-details">
-                            <h2>LinkedIn Profesional</h2>
-                            <p>Perfil de reclutamiento IT corporativo y networking industrial.</p>
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
-                </a>
-
-                <a href="index.html" class="link-card-item">
-                    <div class="link-left-content">
-                        <div class="icon-wrapper icon-red"><i class="fa-solid fa-briefcase"></i></div>
-                        <div class="link-details">
-                            <h2>Portafolio Principal</h2>
-                            <p>Retorna a mi página web interactiva de presentación laboral.</p>
+                            <h2>Enlace de Red Profesional 2</h2>
+                            <p>Alineado de fuentes estándar para garantizar máxima legibilidad.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
@@ -414,10 +405,10 @@
 
                 <a href="#" target="_blank" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="icon-wrapper icon-red"><i class="fa-solid fa-share-nodes"></i></div>
                         <div class="link-details">
-                            <h2>Canal Directo de Correo</h2>
-                            <p>Inicia una comunicación formal para vacantes o proyectos mid.</p>
+                            <h2>Enlace de Red Profesional 3</h2>
+                            <p>Transiciones fluidas e interactivas al pasar el cursor.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
@@ -425,10 +416,10 @@
 
                 <a href="#" target="_blank" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-purple"><i class="fa-solid fa-file-pdf"></i></div>
+                        <div class="icon-wrapper icon-purple"><i class="fa-solid fa-comments"></i></div>
                         <div class="link-details">
-                            <h2>Curriculum Vitae (PDF)</h2>
-                            <p>Descarga la hoja de vida técnica optimizada para ATS.</p>
+                            <h2>Enlace de Red Profesional 4</h2>
+                            <p>Canal directo e interactivo para retener a tus visitantes.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
@@ -436,10 +427,10 @@
 
                 <a href="#" target="_blank" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-red"><i class="fa-brands fa-discord"></i></div>
+                        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-paper-plane"></i></div>
                         <div class="link-details">
-                            <h2>Comunidad de Servidores & Discord</h2>
-                            <p>Canal interactivo para soporte y colaboración técnica.</p>
+                            <h2>Enlace de Red Profesional 5</h2>
+                            <p>Estructura modular limpia que facilita el mantenimiento IT.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
@@ -447,10 +438,21 @@
 
                 <a href="#" target="_blank" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-terminal"></i></div>
+                        <div class="icon-wrapper icon-red"><i class="fa-solid fa-hashtag"></i></div>
                         <div class="link-details">
-                            <h2>Laboratorio de Pruebas IT</h2>
-                            <p>Ejemplos de despliegues y entornos experimentales sandbox.</p>
+                            <h2>Enlace de Red Profesional 6</h2>
+                            <p>Ajustes finos embebidos de manera directa en el documento.</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
+                </a>
+
+                <a href="#" target="_blank" class="link-card-item">
+                    <div class="link-left-content">
+                        <div class="icon-wrapper icon-purple"><i class="fa-solid fa-globe"></i></div>
+                        <div class="link-details">
+                            <h2>Enlace de Red Profesional 7</h2>
+                            <p>Listo para centralizar toda la autoridad SEO en tu propio dominio.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
