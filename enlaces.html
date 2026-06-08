@@ -4,42 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Ecosistema Digital Centralizado | LeoPrograma369 &bull; Full Stack Hub</title>
-    <meta name="description" content="Acceso unificado a las plataformas operativas, portales de contenido y redes profesionales de LeoPrograma369. Conectando desarrollo de software con soluciones de alto impacto.">
-    <meta name="keywords" content="Full Stack Developer, Gamer Rentable, Monetización Digital, Portafolio IT, Soluciones Web, GitHub Pages, Leandro Samperez">
+    <!-- ====== ARQUITECTURA SEO AVANZADA ====== -->
+    <title>Ecosistema Digital Centralizado | Gamer Rentable Hub</title>
+    <meta name="description" content="Central oficial de enlaces de Gamer Rentable. Encuentra nuestros blogs en Blogger, tiendas online, guías de monetización, juegos para ganar dinero y redes sociales oficiales.">
+    <meta name="keywords" content="Gamer Rentable, Blogger, tiendas online, ganar dinero jugando, guías de monetización, tutoriales web, redes oficiales, Leandro Samperez">
     <meta name="robots" content="index, follow">
     <link class="canonical" href="https://leoprograma369.github.io/enlaces.html">
     
+    <!-- Open Graph (Redes Sociales) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Ecosistema Digital Centralizado | LeoPrograma369">
-    <meta property="og:description" content="Accede de forma categorizada a todos mis sitios web, blogs de contenido y plataformas de desarrollo.">
+    <meta property="og:title" content="Ecosistema Digital Centralizado | Gamer Rentable">
+    <meta property="og:description" content="Accede de forma organizada a todos nuestros sitios de contenido, tiendas, plataformas de juego y canales de contacto oficiales.">
     <meta property="og:image" content="https://github.com/LeoPrograma369.png">
     <meta property="og:url" content="https://leoprograma369.github.io/enlaces.html">
 
+    <!-- ====== LIBRERÍAS DE ESTILOS ====== -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
         :root {
-            /* Paleta Modo Claro */
             --bg-body: #f8fafc;
             --bg-card: #ffffff;
             --text-main: #111111;
             --text-muted: #64748b;
             --border-color: #e2e8f0;
-            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.08);
-            
-            /* Colores de Iconos Solicitados */
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
             --color-blue: #2563eb;
             --color-red: #ef4444;
             --color-purple: #8b5cf6;
-            
             --transition-fluid: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         [data-bs-theme="dark"] {
-            /* Paleta Modo Oscuro */
             --bg-body: #090d16;
             --bg-card: #111827;
             --text-main: #f9fafb;
@@ -49,23 +47,20 @@
             --shadow-md: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
         }
 
-        /* Tipografía e Higiene Visual */
         body {
             background-color: var(--bg-body);
             color: var(--text-main);
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: system-ui, -apple-system, sans-serif;
             transition: var(--transition-fluid);
             min-height: 100vh;
         }
 
-        /* Contenedor Centralizado Mobile-First */
         .app-container {
             max-width: 650px;
             margin: 0 auto;
             padding: 40px 20px;
         }
 
-        /* Botón de Modo Claro/Oscuro Flotante Superior */
         .theme-toggle-wrapper {
             position: absolute;
             top: 20px;
@@ -85,12 +80,6 @@
             justify-content: center;
             box-shadow: var(--shadow-sm);
             cursor: pointer;
-            transition: var(--transition-fluid);
-        }
-
-        .btn-theme-toggle:hover {
-            transform: scale(1.05);
-            border-color: var(--color-purple);
         }
 
         .sun-icon { display: none; }
@@ -98,21 +87,19 @@
         [data-bs-theme="dark"] .sun-icon { display: block; }
         [data-bs-theme="dark"] .moon-icon { display: none; }
 
-        /* Estilización de Secciones y Títulos de Categoría PERFECTAMENTE CENTRADOS */
         .category-header {
             font-size: 0.9rem;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            margin-top: 40px;
+            margin-top: 45px;
             margin-bottom: 20px;
             display: flex;
             align-items: center;
-            justify-content: center; /* Centrado Horizontal */
+            justify-content: center;
             gap: 10px;
         }
 
-        /* Tarjetas de Enlaces (Prolijas y Simétricas) */
         .link-card-item {
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -137,10 +124,9 @@
             display: flex;
             align-items: center;
             gap: 16px;
-            text-align: left; /* Mantiene el texto alineado internamente con su icono */
+            text-align: left;
         }
 
-        /* Contenedores de Iconos con los 3 colores solicitados */
         .icon-wrapper {
             width: 45px;
             height: 45px;
@@ -149,11 +135,9 @@
             align-items: center;
             justify-content: center;
             font-size: 1.25rem;
-            transition: var(--transition-fluid);
             flex-shrink: 0;
         }
         
-        /* Modificadores de color específicos */
         .icon-blue { color: var(--color-blue); background-color: rgba(37, 99, 235, 0.08); }
         .icon-red { color: var(--color-red); background-color: rgba(239, 68, 68, 0.08); }
         .icon-purple { color: var(--color-purple); background-color: rgba(139, 92, 246, 0.08); }
@@ -163,14 +147,12 @@
             font-weight: 700;
             color: var(--text-main);
             margin: 0 0 2px 0;
-            padding: 0;
         }
 
         .link-details p {
             font-size: 0.85rem;
             color: var(--text-muted);
             margin: 0;
-            padding: 0;
         }
 
         .arrow-indicator {
@@ -189,7 +171,7 @@
 <body>
 
     <div class="theme-toggle-wrapper">
-        <button class="btn-theme-toggle" id="themeToggler" aria-label="Cambiar Tema Estético">
+        <button class="btn-theme-toggle" id="themeToggler" aria-label="Cambiar Tema">
             <i class="fa-solid fa-moon moon-icon"></i>
             <i class="fa-solid fa-sun sun-icon"></i>
         </button>
@@ -197,262 +179,522 @@
 
     <div class="app-container">
         
+        <!-- HEADER ENFOCADO EN CONVERSIÓN -->
         <header class="text-center my-4">
             <div class="mb-3">
-                <img src="https://github.com/LeoPrograma369.png" alt="Foto de perfil corporativa LeoPrograma369" class="rounded-circle border border-3 border-secondary" style="width: 90px; height: 90px; object-fit: cover;">
+                <img src="https://github.com/LeoPrograma369.png" alt="Leandro Samperez" class="rounded-circle border border-3 border-secondary" style="width: 90px; height: 90px; object-fit: cover;">
             </div>
-            <h1 class="fw-extrabold h3 mb-2" style="letter-spacing: -0.5px;">Ecosistema Digital Centralizado</h1>
+            <h1 class="fw-extrabold h3 mb-2" style="letter-spacing: -0.5px;">Ecosistema Gamer Rentable</h1>
             <p class="text-muted mx-auto small" style="max-width: 500px;">
-                Escribe aquí una breve descripción general sobre tu perfil o el propósito de este hub dinámico de enlaces. Puedes modificar este texto completo desde cero.
+                Explora nuestros portales de contenido oficial, plataformas comerciales, guías de monetización y redes de contacto unificadas.
             </p>
         </header>
 
         <main>
-            <section aria-labelledby="cat-uno">
-                <div class="category-header text-primary" id="cat-uno">
-                    <i class="fa-solid fa-folder-open me-2"></i> Título de la Categoría Uno Centrado
+            <!-- ================= CATEGORÍA 1: PÁGINAS Hechas en blogger ================= -->
+            <section aria-labelledby="cat-blogger">
+                <div class="category-header text-primary" id="cat-blogger">
+                    <i class="fa-brands fa-blogger me-2"></i> Portales Oficiales en Blogger
                 </div>
 
-                <a href="#" target="_blank" class="link-card-item">
+                <!-- 1.1 -->
+                <a href="https://gamerrentable.blogspot.com" target="_blank" rel="noopener noreferrer" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-star"></i></div>
+                        <div class="icon-wrapper icon-blue"><i class="fa-brands fa-blogger-b"></i></div>
                         <div class="link-details">
-                            <h2>Título de la Entrada de Ejemplo 1</h2>
-                            <p>Escribe aquí una descripción corta y atractiva para este enlace.</p>
+                            <h2>Gamer Rentable (Sitio Principal)</h2>
+                            <p>Nuestra plataforma matriz con análisis exhaustivos y estrategias web.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
                 </a>
-
-                <a href="#" target="_blank" class="link-card-item">
+                <!-- 1.2 -->
+                <a href="TU_LINK_BLOGGER_2" target="_blank" rel="noopener noreferrer" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-red"><i class="fa-solid fa-code"></i></div>
+                        <div class="icon-wrapper icon-red"><i class="fa-brands fa-blogger-b"></i></div>
                         <div class="link-details">
-                            <h2>Título de la Entrada de Ejemplo 2</h2>
-                            <p>Modifica este espacio desde cero con tus propios portales o sitios.</p>
+                            <h2>Portal de Contenido Secundario</h2>
+                            <p>Artículos alternativos y nichos de monetización complementarios.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
                 </a>
-
-                <a href="#" target="_blank" class="link-card-item">
+                <!-- 1.3 -->
+                <a href="TU_LINK_BLOGGER_3" target="_blank" rel="noopener noreferrer" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-purple"><i class="fa-solid fa-terminal"></i></div>
+                        <div class="icon-wrapper icon-purple"><i class="fa-brands fa-blogger-b"></i></div>
                         <div class="link-details">
-                            <h2>Título de la Entrada de Ejemplo 3</h2>
-                            <p>Mantén un control impecable utilizando tus iconos personalizados.</p>
+                            <h2>Blog de Actualizaciones Técnicas</h2>
+                            <p>Bitácora de optimizaciones, código limpio y plantillas responsivas.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
                 </a>
-
-                <a href="#" target="_blank" class="link-card-item">
+                <!-- 1.4 -->
+                <a href="TU_LINK_BLOGGER_4" target="_blank" rel="noopener noreferrer" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-laptop-code"></i></div>
+                        <div class="icon-wrapper icon-blue"><i class="fa-brands fa-blogger-b"></i></div>
                         <div class="link-details">
-                            <h2>Título de la Entrada de Ejemplo 4</h2>
-                            <p>Recuadro simétrico diseñado para alta conversión y legibilidad.</p>
+                            <h2>Sitio de Reseñas Especializadas</h2>
+                            <p>Evaluación detallada de herramientas digitales y scripts web.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
                 </a>
-
-                <a href="#" target="_blank" class="link-card-item">
+                <!-- 1.5 -->
+                <a href="TU_LINK_BLOGGER_5" target="_blank" rel="noopener noreferrer" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-red"><i class="fa-solid fa-fire"></i></div>
+                        <div class="icon-wrapper icon-red"><i class="fa-brands fa-blogger-b"></i></div>
                         <div class="link-details">
-                            <h2>Título de la Entrada de Ejemplo 5</h2>
-                            <p>Estilo responsivo que se adapta de manera nativa a cualquier móvil.</p>
+                            <h2>Blog de Comunidad y Sorteos</h2>
+                            <p>Espacio dedicado a dinámicas interactivas y avisos importantes.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
                 </a>
+                <!-- 1.6 -->
+                <a href="TU_LINK_BLOGGER_6" target="_blank" rel="noopener noreferrer" class="link-card-item">
+                    <div class="link-left-content">
+                        <div class="icon-wrapper icon-purple"><i class="fa-brands fa-blogger-b"></i></div>
+                        <div class="link-details">
+                            <h2>Plataforma de Documentación</h2>
+                            <p>Repositorio de guías estáticas almacenadas directamente en Blogger.</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
+                </a>
+                <!-- 1.7 -->
+                <a href="TU_LINK_BLOGGER_7" target="_blank" rel="noopener noreferrer" class="link-card-item">
+                    <div class="link-left-content">
+                        <div class="icon-wrapper icon-blue"><i class="fa-brands fa-blogger-b"></i></div>
+                        <div class="link-details">
+                            <h2>Hub de Enlaces de Respaldo</h2>
+                            <p>Espejo de contenidos para garantizar acceso permanente a la información.</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
+                </a>
+            </section>
 
-                <a href="#" target="_blank" class="link-card-item">
+            <!-- ================= CATEGORÍA 2: TIENDAS ================= -->
+            <section aria-labelledby="cat-tiendas">
+                <div class="category-header text-danger" id="cat-tiendas">
+                    <i class="fa-solid fa-store me-2"></i> Tiendas y Comercio Digital
+                </div>
+
+                <!-- 2.1 -->
+                <a href="TU_LINK_TIENDA_1" target="_blank" rel="noopener noreferrer" class="link-card-item">
+                    <div class="link-left-content">
+                        <div class="icon-wrapper icon-red"><i class="fa-solid fa-shop"></i></div>
+                        <div class="link-details">
+                            <h2>Tienda Oficial Gamer Rentable</h2>
+                            <p>Adquiere productos exclusivos, plantillas web y recursos premium.</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
+                </a>
+                <!-- 2.2 -->
+                <a href="TU_LINK_TIENDA_2" target="_blank" rel="noopener noreferrer" class="link-card-item">
+                    <div class="link-left-content">
+                        <div class="icon-wrapper icon-purple"><i class="fa-solid fa-bag-shopping"></i></div>
+                        <div class="link-details">
+                            <h2>Catálogo de E-commerce Externo</h2>
+                            <p>Plataforma de distribución comercial con pasarelas automáticas.</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
+                </a>
+                <!-- 2.3 -->
+                <a href="TU_LINK_TIENDA_3" target="_blank" rel="noopener noreferrer" class="link-card-item">
+                    <div class="link-left-content">
+                        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-cart-flatbed-suitcases"></i></div>
+                        <div class="link-details">
+                            <h2>Tienda de Plantillas & Assets</h2>
+                            <p>Diseños optimizados en CSS, Bootstrap y XML listos para implementar.</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
+                </a>
+                <!-- 2.4 -->
+                <a href="TU_LINK_TIENDA_4" target="_blank" rel="noopener noreferrer" class="link-card-item">
+                    <div class="link-left-content">
+                        <div class="icon-wrapper icon-red"><i class="fa-solid fa-money-check-dollar"></i></div>
+                        <div class="link-details">
+                            <h2>Marketplace de Afiliados Seleccionados</h2>
+                            <p>Productos validados con ofertas especiales para nuestra audiencia.</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
+                </a>
+                <!-- 2.5 -->
+                <a href="TU_LINK_TIENDA_5" target="_blank" rel="noopener noreferrer" class="link-card-item">
+                    <div class="link-left-content">
+                        <div class="icon-wrapper icon-purple"><i class="fa-solid fa-tags"></i></div>
+                        <div class="link-details">
+                            <h2>Cupones y Descuentos Digitales</h2>
+                            <p>Códigos promocionales activos para servidores, dominios y software.</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
+                </a>
+                <!-- 2.6 -->
+                <a href="TU_LINK_TIENDA_6" target="_blank" rel="noopener noreferrer" class="link-card-item">
+                    <div class="link-left-content">
+                        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-basket-shopping"></i></div>
+                        <div class="link-details">
+                            <h2>Tienda de Licencias e Infoproductos</h2>
+                            <p>Guías maestras en formato PDF y accesos avanzados a herramientas.</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
+                </a>
+                <!-- 2.7 -->
+                <a href="TU_LINK_TIENDA_7" target="_blank" rel="noopener noreferrer" class="link-card-item">
+                    <div class="link-left-content">
+                        <div class="icon-wrapper icon-red"><i class="fa-solid fa-credit-card"></i></div>
+                        <div class="link-details">
+                            <h2>Portal de Donaciones y Membresías</h2>
+                            <p>Apoya el desarrollo de contenido independiente y recibe ventajas VIP.</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
+                </a>
+            </section>
+
+            <!-- ================= CATEGORÍA 3: JUEGOS ================= -->
+            <section aria-labelledby="cat-juegos">
+                <div class="category-header style-purple" id="cat-juegos" style="color: var(--color-purple) !important;">
+                    <i class="fa-solid fa-gamepad me-2"></i> Juegos y Plataformas Gaming
+                </div>
+
+                <!-- 3.1 -->
+                <a href="TU_LINK_JUEGOS_1" target="_blank" rel="noopener noreferrer" class="link-card-item">
+                    <div class="link-left-content">
+                        <div class="icon-wrapper icon-purple"><i class="fa-solid fa-trophy"></i></div>
+                        <div class="link-details">
+                            <h2>Análisis de Juegos Rentables</h2>
+                            <p>Títulos evaluados bajo criterios de estabilidad y retorno económico.</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
+                </a>
+                <!-- 3.2 -->
+                <a href="TU_LINK_JUEGOS_2" target="_blank" rel="noopener noreferrer" class="link-card-item">
+                    <div class="link-left-content">
+                        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-dice"></i></div>
+                        <div class="link-details">
+                            <h2>Juegos Web y Minijuegos Activos</h2>
+                            <p>Plataformas directas desde el navegador para acumular recompensas.</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
+                </a>
+                <!-- 3.3 -->
+                <a href="TU_LINK_JUEGOS_3" target="_blank" rel="noopener noreferrer" class="link-card-item">
+                    <div class="link-left-content">
+                        <div class="icon-wrapper icon-red"><i class="fa-solid fa-vr-cardboard"></i></div>
+                        <div class="link-details">
+                            <h2>Proyectos Gaming en la Nube</h2>
+                            <p>Alternativas Cloud accesibles desde cualquier smartphone o PC básica.</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
+                </a>
+                <!-- 3.4 -->
+                <a href="TU_LINK_JUEGOS_4" target="_blank" rel="noopener noreferrer" class="link-card-item">
+                    <div class="link-left-content">
+                        <div class="icon-wrapper icon-purple"><i class="fa-solid fa-headset"></i></div>
+                        <div class="link-details">
+                            <h2>Comunidades de Multijugador</h2>
+                            <p>Servidores y salas coordinadas para jugar en equipo de forma óptima.</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
+                </a>
+                <!-- 3.5 -->
+                <a href="TU_LINK_JUEGOS_5" target="_blank" rel="noopener noreferrer" class="link-card-item">
+                    <div class="link-left-content">
+                        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-chess-board"></i></div>
+                        <div class="link-details">
+                            <h2>Estrategia y Táctica Competitiva</h2>
+                            <p>Títulos que premian la habilidad analítica y la gestión de recursos.</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
+                </a>
+                <!-- 3.6 -->
+                <a href="TU_LINK_JUEGOS_6" target="_blank" rel="noopener noreferrer" class="link-card-item">
+                    <div class="link-left-content">
+                        <div class="icon-wrapper icon-red"><i class="fa-solid fa-puzzle-piece"></i></div>
+                        <div class="link-details">
+                            <h2>Plataformas F2P (Free to Play)</h2>
+                            <p>Selección de juegos gratuitos que no requieren inversión de capital inicial.</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
+                </a>
+                <!-- 3.7 -->
+                <a href="TU_LINK_JUEGOS_7" target="_blank" rel="noopener noreferrer" class="link-card-item">
+                    <div class="link-left-content">
+                        <div class="icon-wrapper icon-purple"><i class="fa-solid fa-ghost"></i></div>
+                        <div class="link-details">
+                            <h2>Beta Testing & Lanzamientos</h2>
+                            <p>Accede a pruebas cerradas de nuevos desarrollos antes que nadie.</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
+                </a>
+            </section>
+
+            <!-- ================= CATEGORÍA 4: GANAR DINERO ================= -->
+            <section aria-labelledby="cat-dinero">
+                <div class="category-header text-primary" id="cat-dinero">
+                    <i class="fa-solid fa-hand-holding-dollar me-2"></i> Métodos para Ganar Dinero
+                </div>
+
+                <!-- 4.1 -->
+                <a href="TU_LINK_DINERO_1" target="_blank" rel="noopener noreferrer" class="link-card-item">
+                    <div class="link-left-content">
+                        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-money-bill-wave"></i></div>
+                        <div class="link-details">
+                            <h2>Sistemas de Microtareas Validadas</h2>
+                            <p>Páginas comprobadas para generar ingresos completando minitrabajos.</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
+                </a>
+                <!-- 4.2 -->
+                <a href="TU_LINK_DINERO_2" target="_blank" rel="noopener noreferrer" class="link-card-item">
+                    <div class="link-left-content">
+                        <div class="icon-wrapper icon-red"><i class="fa-solid fa-chart-line"></i></div>
+                        <div class="link-details">
+                            <h2>Marketing de Afiliados Activo</h2>
+                            <p>Estrategias de promoción externa para generar comisiones recurrentes.</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
+                </a>
+                <!-- 4.3 -->
+                <a href="TU_LINK_DINERO_3" target="_blank" rel="noopener noreferrer" class="link-card-item">
+                    <div class="link-left-content">
+                        <div class="icon-wrapper icon-purple"><i class="fa-brands fa-bitcoin"></i></div>
+                        <div class="link-details">
+                            <h2>Criptoactivos, Faucets y Airdrops</h2>
+                            <p>Reclamos seguros de activos digitales y plataformas distribuidas.</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
+                </a>
+                <!-- 4.4 -->
+                <a href="TU_LINK_DINERO_4" target="_blank" rel="noopener noreferrer" class="link-card-item">
+                    <div class="link-left-content">
+                        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-arrows-spin"></i></div>
+                        <div class="link-details">
+                            <h2>Sistemas de Ingresos Pasivos</h2>
+                            <p>Configuraciones automatizadas y monetización de tráfico web.</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
+                </a>
+                <!-- 4.5 -->
+                <a href="TU_LINK_DINERO_5" target="_blank" rel="noopener noreferrer" class="link-card-item">
+                    <div class="link-left-content">
+                        <div class="icon-wrapper icon-red"><i class="fa-solid fa-users"></i></div>
+                        <div class="link-details">
+                            <h2>Programas de Referidos VIP</h2>
+                            <p>Enlaces con bonificaciones iniciales de alta conversión comunitaria.</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
+                </a>
+                <!-- 4.6 -->
+                <a href="TU_LINK_DINERO_6" target="_blank" rel="noopener noreferrer" class="link-card-item">
+                    <div class="link-left-content">
+                        <div class="icon-wrapper icon-purple"><i class="fa-solid fa-laptop-file"></i></div>
+                        <div class="link-details">
+                            <h2>Plataformas de Tareas de Datos</h2>
+                            <p>Procesamiento de información y etiquetado de imágenes remunerado.</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
+                </a>
+                <!-- 4.7 -->
+                <a href="TU_LINK_DINERO_7" target="_blank" rel="noopener noreferrer" class="link-card-item">
+                    <div class="link-left-content">
+                        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div class="link-details">
+                            <h2>Alerta de Estafas & Sitios Scam</h2>
+                            <p>Lista negra de páginas fraudulentas detectadas para proteger tu tiempo.</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
+                </a>
+            </section>
+
+            <!-- ================= CATEGORÍA 5: GUÍAS Y TUTORIALES ================= -->
+            <section aria-labelledby="cat-guias">
+                <div class="category-header text-danger" id="cat-guias">
+                    <i class="fa-solid fa-book-open-reader me-2"></i> Guías y Tutoriales
+                </div>
+
+                <!-- 5.1 -->
+                <a href="TU_LINK_GUIAS_1" target="_blank" rel="noopener noreferrer" class="link-card-item">
+                    <div class="link-left-content">
+                        <div class="icon-wrapper icon-red"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <div class="link-details">
+                            <h2>Guía de Inicio para Principiantes</h2>
+                            <p>Aprende las bases fundamentales de la monetización en línea paso a paso.</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
+                </a>
+                <!-- 5.2 -->
+                <a href="TU_LINK_GUIAS_2" target="_blank" rel="noopener noreferrer" class="link-card-item">
+                    <div class="link-left-content">
+                        <div class="icon-wrapper icon-purple"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                        <div class="link-details">
+                            <h2>Estrategias Avanzadas de SEO</h2>
+                            <p>Optimiza tus artículos e indexa correctamente en motores de búsqueda.</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
+                </a>
+                <!-- 5.3 -->
+                <a href="TU_LINK_GUIAS_3" target="_blank" rel="noopener noreferrer" class="link-card-item">
+                    <div class="link-left-content">
+                        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-code"></i></div>
+                        <div class="link-details">
+                            <h2>Tutoriales de Bootstrap y CSS</h2>
+                            <p>Personalización estética de plantillas XML mobile-first sin errores.</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
+                </a>
+                <!-- 5.4 -->
+                <a href="TU_LINK_GUIAS_4" target="_blank" rel="noopener noreferrer" class="link-card-item">
+                    <div class="link-left-content">
+                        <div class="icon-wrapper icon-red"><i class="fa-solid fa-compass-drafting"></i></div>
+                        <div class="link-details">
+                            <h2>Diseño Estructurado de Blogs</h2>
+                            <p>Arquitectura de menús, barras de navegación y experiencia UI/UX fluida.</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
+                </a>
+                <!-- 5.5 -->
+                <a href="TU_LINK_GUIAS_5" target="_blank" rel="noopener noreferrer" class="link-card-item">
                     <div class="link-left-content">
                         <div class="icon-wrapper icon-purple"><i class="fa-solid fa-gears"></i></div>
                         <div class="link-details">
-                            <h2>Título de la Entrada de Ejemplo 6</h2>
-                            <p>Carga veloz optimizada bajo los requerimientos de Lighthouse.</p>
+                            <h2>Configuración de Herramientas Dev</h2>
+                            <p>Uso de GitHub Actions, control de versiones y entornos locales.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
                 </a>
-
-                <a href="#" target="_blank" class="link-card-item">
+                <!-- 5.6 -->
+                <a href="TU_LINK_GUIAS_6" target="_blank" rel="noopener noreferrer" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-cube"></i></div>
+                        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-bolt"></i></div>
                         <div class="link-details">
-                            <h2>Título de la Entrada de Ejemplo 7</h2>
-                            <p>Séptimo enlace listo para ser enlazado a tus proyectos operativos.</p>
+                            <h2>Optimización de Velocidad Web</h2>
+                            <p>Hacks de compresión e higiene de código bajo Core Web Vitals.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
                 </a>
-            </section>
-
-
-            <section aria-labelledby="cat-dos">
-                <div class="category-header text-danger" id="cat-dos">
-                    <i class="fa-solid fa-wallet me-2"></i> Título de la Categoría Dos Centrado
-                </div>
-
-                <a href="#" target="_blank" class="link-card-item">
+                <!-- 5.7 -->
+                <a href="TU_LINK_GUIAS_7" target="_blank" rel="noopener noreferrer" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-red"><i class="fa-solid fa-wallet"></i></div>
+                        <div class="icon-wrapper icon-red"><i class="fa-solid fa-lightbulb"></i></div>
                         <div class="link-details">
-                            <h2>Nueva Entrada de Contenido 1</h2>
-                            <p>Reemplaza este texto por tus plataformas o enlaces externos.</p>
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
-                </a>
-
-                <a href="#" target="_blank" class="link-card-item">
-                    <div class="link-left-content">
-                        <div class="icon-wrapper icon-purple"><i class="fa-solid fa-chart-pie"></i></div>
-                        <div class="link-details">
-                            <h2>Nueva Entrada de Contenido 2</h2>
-                            <p>Diseño prolijo con bordes estilizados y sombras sutiles.</p>
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
-                </a>
-
-                <a href="#" target="_blank" class="link-card-item">
-                    <div class="link-left-content">
-                        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-arrow-trend-up"></i></div>
-                        <div class="link-details">
-                            <h2>Nueva Entrada de Contenido 3</h2>
-                            <p>Configuración limpia y semántica bajo clases de Bootstrap 5.3.</p>
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
-                </a>
-
-                <a href="#" target="_blank" class="link-card-item">
-                    <div class="link-left-content">
-                        <div class="icon-wrapper icon-red"><i class="fa-solid fa-shield-halved"></i></div>
-                        <div class="link-details">
-                            <h2>Nueva Entrada de Contenido 4</h2>
-                            <p>Seguridad y rendimiento combinados en una sola estructura HTML5.</p>
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
-                </a>
-
-                <a href="#" target="_blank" class="link-card-item">
-                    <div class="link-left-content">
-                        <div class="icon-wrapper icon-purple"><i class="fa-solid fa-bullseye"></i></div>
-                        <div class="link-details">
-                            <h2>Nueva Entrada de Contenido 5</h2>
-                            <p>Optimiza la navegación derivando tráfico de forma inteligente.</p>
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
-                </a>
-
-                <a href="#" target="_blank" class="link-card-item">
-                    <div class="link-left-content">
-                        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-sliders"></i></div>
-                        <div class="link-details">
-                            <h2>Nueva Entrada de Contenido 6</h2>
-                            <p>Personaliza las referencias internas de manera simple.</p>
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-chevron-right arrow-indicator"></i>
-                </a>
-
-                <a href="#" target="_blank" class="link-card-item">
-                    <div class="link-left-content">
-                        <div class="icon-wrapper icon-red"><i class="fa-solid fa-circle-nodes"></i></div>
-                        <div class="link-details">
-                            <h2>Nueva Entrada de Contenido 7</h2>
-                            <p>Control absoluto sin depender de intermediarios comerciales.</p>
+                            <h2>Estrategias de Retención de Tráfico</h2>
+                            <p>Técnicas de redacción persuasiva para mantener activos a tus lectores.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
                 </a>
             </section>
 
-
-            <section aria-labelledby="cat-tres">
-                <div class="category-header text-uppercase text-secondary" id="cat-tres" style="color: var(--color-purple) !important;">
-                    <i class="fa-solid fa-link me-2"></i> Título de la Categoría Tres Centrado
+            <!-- ================= CATEGORÍA 6: REDES SOCIALES ================= -->
+            <section aria-labelledby="cat-redes">
+                <div class="category-header style-purple" id="cat-redes" style="color: var(--color-purple) !important;">
+                    <i class="fa-solid fa-share-nodes me-2"></i> Redes Sociales Oficiales
                 </div>
 
-                <a href="#" target="_blank" class="link-card-item">
+                <!-- 6.1 GitHub -->
+                <a href="https://github.com/LeoPrograma369" target="_blank" rel="noopener noreferrer" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-purple"><i class="fa-solid fa-user-tie"></i></div>
+                        <div class="icon-wrapper icon-purple"><i class="fa-brands fa-github"></i></div>
                         <div class="link-details">
-                            <h2>Enlace de Red Profesional 1</h2>
-                            <p>Configura aquí el redireccionamiento hacia tus plataformas.</p>
+                            <h2>GitHub Profile</h2>
+                            <p>Repositorios de código, flujos CI/CD y automatizaciones de software.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
                 </a>
-
-                <a href="#" target="_blank" class="link-card-item">
+                <!-- 6.2 LinkedIn -->
+                <a href="TU_LINK_LINKEDIN" target="_blank" rel="noopener noreferrer" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-circle-user"></i></div>
+                        <div class="icon-wrapper icon-blue"><i class="fa-brands fa-linkedin-in"></i></div>
                         <div class="link-details">
-                            <h2>Enlace de Red Profesional 2</h2>
-                            <p>Alineado de fuentes estándar para garantizar máxima legibilidad.</p>
+                            <h2>LinkedIn Professional</h2>
+                            <p>Conexión profesional para consultorías IT y proyectos Full Stack.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
                 </a>
-
-                <a href="#" target="_blank" class="link-card-item">
+                <!-- 6.3 Facebook -->
+                <a href="TU_LINK_FACEBOOK" target="_blank" rel="noopener noreferrer" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-red"><i class="fa-solid fa-share-nodes"></i></div>
+                        <div class="icon-wrapper icon-red"><i class="fa-brands fa-facebook-f"></i></div>
                         <div class="link-details">
-                            <h2>Enlace de Red Profesional 3</h2>
-                            <p>Transiciones fluidas e interactivas al pasar el cursor.</p>
+                            <h2>Comunidad de Facebook</h2>
+                            <p>Página oficial para interactuar, debatir y compartir contenido.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
                 </a>
-
-                <a href="#" target="_blank" class="link-card-item">
+                <!-- 6.4 Instagram -->
+                <a href="TU_LINK_INSTAGRAM" target="_blank" rel="noopener noreferrer" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-purple"><i class="fa-solid fa-comments"></i></div>
+                        <div class="icon-wrapper icon-purple"><i class="fa-brands fa-instagram"></i></div>
                         <div class="link-details">
-                            <h2>Enlace de Red Profesional 4</h2>
-                            <p>Canal directo e interactivo para retener a tus visitantes.</p>
+                            <h2>Instagram Oficial</h2>
+                            <p>Historias diarias, tips rápidos de desarrollo y novedades gaming.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
                 </a>
-
-                <a href="#" target="_blank" class="link-card-item">
+                <!-- 6.5 X (Twitter) -->
+                <a href="TU_LINK_X" target="_blank" rel="noopener noreferrer" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-paper-plane"></i></div>
+                        <div class="icon-wrapper icon-blue"><i class="fa-brands fa-x-twitter"></i></div>
                         <div class="link-details">
-                            <h2>Enlace de Red Profesional 5</h2>
-                            <p>Estructura modular limpia que facilita el mantenimiento IT.</p>
+                            <h2>X (Twitter Feed)</h2>
+                            <p>Hilos informativos breves y opiniones sobre tendencias tecnológicas.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
                 </a>
-
-                <a href="#" target="_blank" class="link-card-item">
+                <!-- 6.6 WhatsApp -->
+                <a href="TU_LINK_WHATSAPP" target="_blank" rel="noopener noreferrer" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-red"><i class="fa-solid fa-hashtag"></i></div>
+                        <div class="icon-wrapper icon-red"><i class="fa-brands fa-whatsapp"></i></div>
                         <div class="link-details">
-                            <h2>Enlace de Red Profesional 6</h2>
-                            <p>Ajustes finos embebidos de manera directa en el documento.</p>
+                            <h2>Canal / Chat de WhatsApp</h2>
+                            <p>Contacto ágil y alertas instantáneas directo en tu teléfono.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
                 </a>
-
-                <a href="#" target="_blank" class="link-card-item">
+                <!-- 6.7 Telegram -->
+                <a href="TU_LINK_TELEGRAM" target="_blank" rel="noopener noreferrer" class="link-card-item">
                     <div class="link-left-content">
-                        <div class="icon-wrapper icon-purple"><i class="fa-solid fa-globe"></i></div>
+                        <div class="icon-wrapper icon-purple"><i class="fa-brands fa-telegram"></i></div>
                         <div class="link-details">
-                            <h2>Enlace de Red Profesional 7</h2>
-                            <p>Listo para centralizar toda la autoridad SEO en tu propio dominio.</p>
+                            <h2>Comunidad de Telegram</h2>
+                            <p>Grupo oficial de difusión para debates, dinámicas y soporte mutuo.</p>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right arrow-indicator"></i>
@@ -460,16 +702,16 @@
             </section>
         </main>
 
+        <!-- PIE DE PÁGINA PROFESIONAL -->
         <footer class="text-center mt-5 pt-3 text-muted small border-top border-secondary-subtle">
-            <p>&copy; 2026 LeoPrograma369 &bull; Infraestructura independiente alojada en GitHub Pages.</p>
+            <p>&copy; 2026 Gamer Rentable &bull; Desarrollado de forma independiente en GitHub Pages.</p>
         </footer>
     </div>
 
+    <!-- ====== CONTROL INTERACTIVO DE TEMAS ====== -->
     <script>
         const themeToggler = document.getElementById('themeToggler');
         const htmlElement = document.documentElement;
-
-        // Comprobación de preferencia del sistema o almacenamiento del usuario
         const currentStoredTheme = localStorage.getItem('hub-theme');
         const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -479,15 +721,9 @@
             htmlElement.setAttribute('data-bs-theme', 'light');
         }
 
-        // Manejador del evento clic con persistencia
         themeToggler.addEventListener('click', () => {
             const currentActiveTheme = htmlElement.getAttribute('data-bs-theme');
-            let newTheme = 'light';
-            
-            if (currentActiveTheme === 'light') {
-                newTheme = 'dark';
-            }
-            
+            let newTheme = currentActiveTheme === 'light' ? 'dark' : 'light';
             htmlElement.setAttribute('data-bs-theme', newTheme);
             localStorage.setItem('hub-theme', newTheme);
         });
