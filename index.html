@@ -322,6 +322,10 @@
             </div>
         </section>
 
+
+<!-- ==========================================================
+     SECCIÓN PROYECTOS: RESTRICCIONES DE ANCHO Y TEMA INTEGRADO
+     ========================================================== -->
 <section id="proyectos" class="py-5" style="background-color: var(--bg-body);">
     <div class="container">
         
@@ -329,13 +333,16 @@
             Soluciones de <span>Alto Impacto</span>
         </h2>
         
+        <!-- GRILLA QUE FUERZA LAS 3 COLUMNAS IDÉNTICAS AL STACK -->
         <div class="row g-4 justify-content-center">
             
+            <!-- TARJETA 1: BLOGGER XML -->
             <div class="col-12 col-md-6 col-lg-4 d-flex">
                 <div class="project-card text-center w-100 d-flex flex-column justify-content-between" 
-                     style="background: var(--bg-card); border: 1px solid var(--border-color, #e2e8f0); border-radius: 16px; padding: 28px 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+                     style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 28px 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
                     
                     <div>
+                        <!-- Identidad Unificada de Marca -->
                         <div class="brand-header mb-3">
                             <div style="font-size: 2.8rem; color: #ff9900; line-height: 1; margin-bottom: 8px;">
                                 <i class="fa-brands fa-blogger"></i>
@@ -343,10 +350,11 @@
                             <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--text-main); margin: 0;">Blogger XML</h3>
                         </div>
                         
-                        <p class="mb-4" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-muted, #64748b);">
+                        <p class="mb-4" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-muted);">
                             Desarrollo y optimización estructural de plantillas a medida bajo arquitecturas semánticas limpias.
                         </p>
                         
+                        <!-- Badges Agrupadas -->
                         <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
                             <span class="badge b-blue">Blogger XML</span>
                             <span class="badge b-purple">Custom Templates</span>
@@ -355,6 +363,7 @@
                         </div>
                     </div>
 
+                    <!-- Botón Separado y Estable -->
                     <div class="mt-auto pt-3">
                         <a href="enlaces.html" target="_blank" rel="noopener noreferrer" class="btn btn-ecosistema-hub w-100 justify-content-center" 
                            style="background-color: rgba(139, 92, 246, 0.08) !important; 
@@ -374,19 +383,21 @@
                 </div>
             </div>
 
+            <!-- TARJETA 2: GITHUB PAGES (Con arreglo de icono para Modo Oscuro) -->
             <div class="col-12 col-md-6 col-lg-4 d-flex">
                 <div class="project-card text-center w-100 d-flex flex-column justify-content-between" 
-                     style="background: var(--bg-card); border: 1px solid var(--border-color, #e2e8f0); border-radius: 16px; padding: 28px 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+                     style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 28px 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
                     
                     <div>
                         <div class="brand-header mb-3">
-                            <div style="font-size: 2.8rem; color: var(--text-main, #0f172a); line-height: 1; margin-bottom: 8px;">
+                            <!-- var(--text-main) cambia el color del logo o hereda el filtro según el modo -->
+                            <div style="font-size: 2.8rem; color: var(--text-main); line-height: 1; margin-bottom: 8px;">
                                 <i class="fa-brands fa-github"></i>
                             </div>
                             <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--text-main); margin: 0;">GitHub Pages</h3>
                         </div>
                         
-                        <p class="mb-4" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-muted, #64748b);">
+                        <p class="mb-4" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-muted);">
                             Entornos estáticos de alta velocidad bajo auditorías de Lighthouse al 100% en rendimiento y UX adaptivo.
                         </p>
                         
@@ -416,9 +427,10 @@
                 </div>
             </div>
 
+            <!-- TARJETA 3: MONETIZACIÓN & SEO -->
             <div class="col-12 col-md-6 col-lg-4 d-flex">
                 <div class="project-card text-center w-100 d-flex flex-column justify-content-between" 
-                     style="background: var(--bg-card); border: 1px solid var(--border-color, #e2e8f0); border-radius: 16px; padding: 28px 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+                     style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 28px 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
                     
                     <div>
                         <div class="brand-header mb-3">
@@ -428,7 +440,7 @@
                             <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--text-main); margin: 0;">Monetización</h3>
                         </div>
                         
-                        <p class="mb-4" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-muted, #64748b);">
+                        <p class="mb-4" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-muted);">
                             Optimización avanzada orientada a la conversión de tráfico, embudos SEO y monetización de plataformas.
                         </p>
                         
@@ -460,8 +472,13 @@
                 </div>
             </div>
 
-        </div> </div>
+        </div> <!-- Fin de row -->
+        
+    </div>
 </section>
+
+
+        
         
         <section id="formacion">
             <h2 class="section-title">Mi <span>Formación Académica</span></h2>
