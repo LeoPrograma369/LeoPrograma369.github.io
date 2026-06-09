@@ -199,6 +199,22 @@
     margin-top: 2rem !important; /* Añade un espacio generoso y exacto arriba del botón */
     padding-top: 1rem !important; /* Espacio extra interno para que respire visualmente */
 }
+
+/* ==========================================================
+   ALINEACIÓN CENTRADA PARA LOS BOTONES DE PROYECTOS
+   ========================================================== */
+.project-card > div:last-child {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+}
+
+.project-card > div:last-child a,
+.project-card > div:last-child button {
+    margin: 0 auto !important;
+    max-width: 260px !important; /* Limita el ancho para que mantenga forma de botón cuadrado y compacto */
+}
+
         
     </style>
 </head>
