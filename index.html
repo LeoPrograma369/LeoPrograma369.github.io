@@ -181,6 +181,16 @@
     margin-bottom: 0px !important; /* Limpia márgenes antiguos */
 }
 
+
+/* BORRA ESTO DE TUS ESTILOS EN LA PARTE SUPERIOR */
+.project-card .mt-auto {
+    margin-top: auto !important;
+    padding-top: 1.5rem !important;
+    border-top: 1px solid var(--border-color) !important;
+}
+.project-card .project-tags {
+    margin-bottom: 0px !important;
+}
         
     </style>
 </head>
@@ -340,195 +350,209 @@
             </div>
         </section>
 
-<!-- ==========================================================
-     SECCIÓN PROYECTOS (CON TODAS LAS ETIQUETAS COMPLETAS Y CERRADAS)
-     ========================================================== -->
-<section id="proyectos" class="py-5" style="background-color: var(--bg-body);">
-    <div class="container">
-        
-        <h2 class="section-title text-center mb-5" style="font-weight: 800;">
-            Soluciones de <span>Alto Impacto</span>
-        </h2>
-        
-        <div class="row g-4 justify-content-center">
+<section id="proyectos" class="py-5" style="background-color: var(--bg-principal);">
+        <div class="container">
             
-            <!-- TARJETA 1: BLOGGER XML -->
-            <div class="col-12 col-md-6 col-lg-4 d-flex">
-                <div class="project-card text-center w-100 d-flex flex-column justify-content-between" 
-                     style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 25px 20px; box-shadow: var(--shadow);">
+            <h2 class="section-title text-center mb-5" style="font-weight: 800;">
+                Soluciones de <span>Alto Impacto</span>
+            </h2>
+            
+            <div class="skills-grid">
+                
+                <div class="project-card text-center" style="background: var(--bg-tarjeta); border: 1px solid var(--color-borde); border-radius: 16px; padding: 30px 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
-                        <div class="brand-header mb-3">
+                        <div class="brand-header text-center mb-3">
                             <div style="font-size: 2.5rem; color: #ff9900; line-height: 1; margin-bottom: 6px;">
                                 <i class="fa-brands fa-blogger"></i>
                             </div>
-                            <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--text-main); margin: 0;">Blogger XML</h3>
+                            <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--texto-primario); margin: 0; letter-spacing: -0.3px;">Blogger XML</h3>
                         </div>
-                        <p class="mb-3 text-muted" style="font-size: 0.85rem; line-height: 1.5; max-width: 260px; margin: 0 auto 1.5rem auto;">
+                        
+                        <p class="mb-4" style="font-size: 0.85rem; line-height: 1.5; color: var(--texto-secundario); max-width: 260px; margin: 0 auto 1.5rem auto;">
                             Desarrollo y optimización estructural de plantillas a medida bajo arquitecturas semánticas limpias.
                         </p>
-                        <div class="d-flex flex-wrap justify-content-center gap-2 mb-3">
+                        
+                        <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
                             <span class="badge b-blue">Blogger XML</span>
                             <span class="badge b-purple">Custom Templates</span>
                             <span class="badge b-blue">CSS3 Avanzado</span>
-                            <span class="badge b-purple">Vanilla JS Widgets</span>
                         </div>
                     </div>
-                    <div class="pt-3" style="border-top: 1px solid var(--border-color);">
+
+                    <div class="pt-3 mt-4" style="border-top: 1px solid var(--color-borde);">
                         <a href="enlaces.html" target="_blank" rel="noopener noreferrer" class="btn btn-ecosistema-hub w-100 justify-content-center" 
                            style="background-color: rgba(139, 92, 246, 0.08) !important; color: #8b5cf6 !important; border: 1px solid rgba(139, 92, 246, 0.25) !important; border-radius: 10px !important; padding: 10px 14px !important; font-size: 0.82rem !important; font-weight: 600 !important; text-decoration: none !important; display: inline-flex !important; align-items: center !important;">
                             Ver Ecosistema <i class="fa-solid fa-arrow-up-right-from-square ms-2" style="font-size: 0.75rem;"></i>
                         </a>
                     </div>
                 </div>
-            </div>
 
-            <!-- TARJETA 2: GITHUB PAGES -->
-            <div class="col-12 col-md-6 col-lg-4 d-flex">
-                <div class="project-card text-center w-100 d-flex flex-column justify-content-between" 
-                     style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 25px 20px; box-shadow: var(--shadow);">
+                <div class="project-card text-center" style="background: var(--bg-tarjeta); border: 1px solid var(--color-borde); border-radius: 16px; padding: 30px 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
-                        <div class="brand-header mb-3">
-                            <div style="font-size: 2.5rem; color: var(--text-main); line-height: 1; margin-bottom: 6px;">
+                        <div class="brand-header text-center mb-3">
+                            <div style="font-size: 2.5rem; color: var(--texto-primario); line-height: 1; margin-bottom: 6px;">
                                 <i class="fa-brands fa-github"></i>
                             </div>
-                            <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--text-main); margin: 0;">GitHub Pages</h3>
+                            <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--texto-primario); margin: 0; letter-spacing: -0.3px;">GitHub Pages</h3>
                         </div>
-                        <p class="mb-3 text-muted" style="font-size: 0.85rem; line-height: 1.5; max-width: 260px; margin: 0 auto 1.5rem auto;">
+                        
+                        <p class="mb-4" style="font-size: 0.85rem; line-height: 1.5; color: var(--texto-secundario); max-width: 260px; margin: 0 auto 1.5rem auto;">
                             Entornos estáticos de alta velocidad bajo auditorías de Lighthouse al 100% en rendimiento y UX adaptivo.
                         </p>
-                        <div class="d-flex flex-wrap justify-content-center gap-2 mb-3">
+                        
+                        <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
                             <span class="badge b-blue">JS Vanilla</span>
                             <span class="badge b-red">Git CI</span>
                             <span class="badge b-blue">Mobile-First</span>
                         </div>
                     </div>
-                    <div class="pt-3" style="border-top: 1px solid var(--border-color);">
+
+                    <div class="pt-3 mt-4" style="border-top: 1px solid var(--color-borde);">
                         <a href="https://github.com/LeoPrograma369" target="_blank" rel="noopener noreferrer" class="btn w-100 justify-content-center fw-bold" 
                            style="background-color: rgba(37, 99, 235, 0.08) !important; color: #2563eb !important; border: 1px solid rgba(37, 99, 235, 0.25) !important; border-radius: 10px !important; padding: 10px 14px !important; font-size: 0.82rem !important; text-decoration: none !important; display: inline-flex !important; align-items: center !important;">
                             Ver Repositorio <i class="fa-solid fa-code ms-2" style="font-size: 0.75rem;"></i>
                         </a>
                     </div>
                 </div>
-            </div>
 
-            <!-- TARJETA 3: MONETIZACIÓN -->
-            <div class="col-12 col-md-6 col-lg-4 d-flex">
-                <div class="project-card text-center w-100 d-flex flex-column justify-content-between" 
-                     style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 25px 20px; box-shadow: var(--shadow);">
+                <div class="project-card text-center" style="background: var(--bg-tarjeta); border: 1px solid var(--color-borde); border-radius: 16px; padding: 30px 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
-                        <div class="brand-header mb-3">
+                        <div class="brand-header text-center mb-3">
                             <div style="font-size: 2.5rem; color: #10b981; line-height: 1; margin-bottom: 6px;">
                                 <i class="fa-solid fa-hand-holding-dollar"></i>
                             </div>
-                            <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--text-main); margin: 0;">Monetización</h3>
+                            <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--texto-primario); margin: 0; letter-spacing: -0.3px;">Monetización</h3>
                         </div>
-                        <p class="mb-3 text-muted" style="font-size: 0.85rem; line-height: 1.5; max-width: 260px; margin: 0 auto 1.5rem auto;">
+                        
+                        <p class="mb-4" style="font-size: 0.85rem; line-height: 1.5; color: var(--texto-secundario); max-width: 260px; margin: 0 auto 1.5rem auto;">
                             Optimización avanzada orientada a la conversión de tráfico, embudos SEO y rentabilidad web masiva.
                         </p>
-                        <div class="d-flex flex-wrap justify-content-center gap-2 mb-3">
+                        
+                        <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
                             <span class="badge b-purple">Google AdSense</span>
-                            <span class="badge b-blue">SEO Avanzado</span>
+                            <span class="badge b-blue">SEO</span>
                             <span class="badge b-purple">Affiliate</span>
                         </div>
                     </div>
-                    <div class="pt-3" style="border-top: 1px solid var(--border-color);">
+
+                    <div class="pt-3 mt-4" style="border-top: 1px solid var(--color-borde);">
                         <a href="#contacto" class="btn w-100 justify-content-center fw-bold" 
                            style="background-color: rgba(16, 185, 129, 0.08) !important; color: #10b981 !important; border: 1px solid rgba(16, 185, 129, 0.25) !important; border-radius: 10px !important; padding: 10px 14px !important; font-size: 0.82rem !important; text-decoration: none !important; display: inline-flex !important; align-items: center !important;">
                             Optimizar Sitio <i class="fa-solid fa-bolt ms-2" style="font-size: 0.75rem;"></i>
                         </a>
                     </div>
                 </div>
-            </div>
 
-            <!-- TARJETA 4: CONTROL DE VERSIONES -->
-            <div class="col-12 col-md-6 col-lg-4 d-flex">
-                <div class="project-card text-center w-100 d-flex flex-column justify-content-between" 
-                     style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 25px 20px; box-shadow: var(--shadow); opacity: 0.85;">
+                <div class="project-card text-center" style="background: var(--bg-tarjeta); border: 1px solid var(--color-borde); border-radius: 16px; padding: 30px 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: space-between; opacity: 0.85;">
                     <div>
-                        <div class="brand-header mb-3">
+                        <div class="brand-header text-center mb-3">
                             <div style="font-size: 2.5rem; color: #3b82f6; line-height: 1; margin-bottom: 6px;">
                                 <i class="fa-solid fa-code-branch"></i>
                             </div>
-                            <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--text-main); margin: 0;">Control de Versiones</h3>
+                            <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--texto-primario); margin: 0;">Git & GitHub Workspace</h3>
                         </div>
-                        <p class="mb-3 text-muted" style="font-size: 0.85rem; line-height: 1.5; max-width: 260px; margin: 0 auto 1.5rem auto;">
+                        
+                        <p class="mb-4" style="font-size: 0.85rem; line-height: 1.5; color: var(--texto-secundario); max-width: 260px; margin: 0 auto 1.5rem auto;">
                             Sección de reserva para integraciones futuras de Git, flujos de trabajo locales y desarrollo colaborativo.
                         </p>
-                        <div class="d-flex flex-wrap justify-content-center gap-2 mb-3">
+                        
+                        <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
                             <span class="badge b-blue">Próximamente</span>
                             <span class="badge b-purple">Workspace</span>
                         </div>
                     </div>
-                    <div class="pt-3" style="border-top: 1px solid var(--border-color);">
+
+                    <div class="pt-3 mt-4" style="border-top: 1px solid var(--color-borde);">
                         <button class="btn w-100 justify-content-center fw-bold disabled" 
-                                style="background-color: rgba(100, 116, 139, 0.08) !important; color: #64748b !important; border: 1px solid rgba(100, 116, 139, 0.2) !important; border-radius: 10px !important; padding: 10px 14px !important; font-size: 0.82rem !important;">
+                                style="background-color: rgba(100, 116, 139, 0.08) !important; color: #64748b !important; border: 1px solid rgba(100, 116, 139, 0.2) !important; border-radius: 10px !important; padding: 10px 14px !important; font-size: 0.82rem !important; width: 100%;">
                             En Desarrollo <i class="fa-solid fa-lock ms-2" style="font-size: 0.75rem;"></i>
                         </button>
                     </div>
                 </div>
-            </div>
 
-            <!-- TARJETA 5: DISEÑO UI/UX -->
-            <div class="col-12 col-md-6 col-lg-4 d-flex">
-                <div class="project-card text-center w-100 d-flex flex-column justify-content-between" 
-                     style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 25px 20px; box-shadow: var(--shadow); opacity: 0.85;">
+                <div class="project-card text-center" style="background: var(--bg-tarjeta); border: 1px solid var(--color-borde); border-radius: 16px; padding: 30px 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: space-between; opacity: 0.85;">
                     <div>
-                        <div class="brand-header mb-3">
+                        <div class="brand-header text-center mb-3">
                             <div style="font-size: 2.5rem; color: #ec4899; line-height: 1; margin-bottom: 6px;">
                                 <i class="fa-solid fa-palette"></i>
                             </div>
-                            <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--text-main); margin: 0;">Diseño UI/UX</h3>
+                            <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--texto-primario); margin: 0;">Diseño UI/UX</h3>
                         </div>
-                        <p class="mb-3 text-muted" style="font-size: 0.85rem; line-height: 1.5; max-width: 260px; margin: 0 auto 1.5rem auto;">
+                        
+                        <p class="mb-4" style="font-size: 0.85rem; line-height: 1.5; color: var(--texto-secundario); max-width: 260px; margin: 0 auto 1.5rem auto;">
                             Sección de reserva para añadir prototipos de interfaces visuales, maquetación adaptiva y componentes web.
                         </p>
-                        <div class="d-flex flex-wrap justify-content-center gap-2 mb-3">
+                        
+                        <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
                             <span class="badge b-blue">Próximamente</span>
                             <span class="badge b-red">Estilos</span>
                         </div>
                     </div>
-                    <div class="pt-3" style="border-top: 1px solid var(--border-color);">
+
+                    <div class="pt-3 mt-4" style="border-top: 1px solid var(--color-borde);">
                         <button class="btn w-100 justify-content-center fw-bold disabled" 
-                                style="background-color: rgba(100, 116, 139, 0.08) !important; color: #64748b !important; border: 1px solid rgba(100, 116, 139, 0.2) !important; border-radius: 10px !important; padding: 10px 14px !important; font-size: 0.82rem !important;">
+                                style="background-color: rgba(100, 116, 139, 0.08) !important; color: #64748b !important; border: 1px solid rgba(100, 116, 139, 0.2) !important; border-radius: 10px !important; padding: 10px 14px !important; font-size: 0.82rem !important; width: 100%;">
                             En Desarrollo <i class="fa-solid fa-lock ms-2" style="font-size: 0.75rem;"></i>
                         </button>
                     </div>
                 </div>
-            </div>
 
-        </div> <!-- Cerramos la fila de las tarjetas principales correctamente -->
-    </div> <!-- Cerramos el container de proyectos correctamente -->
-</section>
+                <div class="project-card text-center" style="background: var(--bg-tarjeta); border: 1px solid var(--color-borde); border-radius: 16px; padding: 30px 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: space-between; opacity: 0.85;">
+                    <div>
+                        <div class="brand-header text-center mb-3">
+                            <div style="font-size: 2.5rem; color: #a855f7; line-height: 1; margin-bottom: 6px;">
+                                <i class="fa-solid fa-layer-group"></i>
+                            </div>
+                            <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--texto-primario); margin: 0;">Estructuras Backend</h3>
+                        </div>
+                        
+                        <p class="mb-4" style="font-size: 0.85rem; line-height: 1.5; color: var(--texto-secundario); max-width: 260px; margin: 0 auto 1.5rem auto;">
+                            Sección de reserva para futuros microservicios, bases de datos optimizadas o lógica en la nube.
+                        </p>
+                        
+                        <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
+                            <span class="badge b-purple">Próximamente</span>
+                            <span class="badge b-blue">Backend</span>
+                        </div>
+                    </div>
 
-<!-- ==========================================================
-     SECCIÓN FORMACIÓN ACADÉMICA (RESTABLECIDA E INTACTA)
-     ========================================================== -->
-<section id="formacion">
-    <div class="container">
-        <h2 class="section-title">Mi <span>Formación Académica</span></h2>
-        <div class="formation-grid">
-            
-            <div class="formation-card">
-                <div>
-                    <h3>Desarrollo Web Full Stack</h3>
-                    <div class="formation-institution">Institución Educativa / Plataforma Tecnológica</div>
-                    <div class="formation-date">Enero 2025 - Presente</div>
-                    <p>Especialización intensiva enfocada en la construcción de arquitecturas escalables, diseño responsivo, manejo avanzado del estado en aplicaciones frontend e integraciones robustas de bases de datos relacionales y no relacionales.</p>
+                    <div class="pt-3 mt-4" style="border-top: 1px solid var(--color-borde);">
+                        <button class="btn w-100 justify-content-center fw-bold disabled" 
+                                style="background-color: rgba(100, 116, 139, 0.08) !important; color: #64748b !important; border: 1px solid rgba(100, 116, 139, 0.2) !important; border-radius: 10px !important; padding: 10px 14px !important; font-size: 0.82rem !important; width: 100%;">
+                            En Desarrollo <i class="fa-solid fa-lock ms-2" style="font-size: 0.75rem;"></i>
+                        </button>
+                    </div>
                 </div>
-            </div>
 
-            <div class="formation-card">
-                <div>
-                    <h3>Especialización en DevOps & Arquitecturas en la Nube</h3>
-                    <div class="formation-institution">Certificación de Infraestructura</div>
-                    <div class="formation-date">Completado - 2026</div>
-                    <p>Formación orientada a la implementación de flujos de integración y despliegue continuos (CI/CD Pipelines), contenedorización mediante Docker y automatizaciones directas en servidores y plataformas PaaS/SaaS.</p>
+            </div> </div>
+    </section>
+
+    <section id="formacion">
+        <div class="container">
+            <h2 class="section-title">Mi <span>Formación Académica</span></h2>
+            <div class="formation-grid">
+                
+                <div class="formation-card">
+                    <div>
+                        <h3>Desarrollo Web Full Stack</h3>
+                        <div class="formation-institution">Institución Educativa / Plataforma Tecnológica</div>
+                        <div class="formation-date">Enero 2025 - Presente</div>
+                        <p>Especialización intensiva enfocada en la construcción de arquitecturas scalables, diseño responsivo, manejo avanzado del estado en aplicaciones frontend e integraciones robustas de bases de datos relacionales y no relacionales.</p>
+                    </div>
                 </div>
-            </div>
 
+                <div class="formation-card">
+                    <div>
+                        <h3>Especialización en DevOps & Arquitecturas en la Nube</h3>
+                        <div class="formation-institution">Certificación de Infraestructura</div>
+                        <div class="formation-date">Completado - 2026</div>
+                        <p>Formación orientada a la implementación de flujos de integración y despliegue continuos (CI/CD Pipelines), contenedorización mediante Docker y automatizaciones directas en servidores y plataformas PaaS/SaaS.</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
         <section id="contacto">
             <h2 class="section-title">Iniciemos un <span>Proyecto</span></h2>
