@@ -138,6 +138,32 @@
             .nav-menu { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background-color: var(--bg-tarjeta); padding: 20px; border-bottom: 1px solid var(--color-borde); gap: 15px; box-shadow: var(--shadow); }
             .nav-menu.active { display: flex; }
         }
+
+        /* ==========================================================
+   ESTILO CORPORATIVO PARA EL BOTÓN VER ECOSISTEMA
+   ========================================================== */
+.btn-ecosistema-hub {
+    background-color: rgba(139, 92, 246, 0.08); /* Fondo violeta suave idéntico a tus etiquetas */
+    color: #8b5cf6 !important;                  /* Texto violeta corporativo principal */
+    border: 1px solid rgba(139, 92, 246, 0.3);  /* Borde sutil a juego */
+    border-radius: 10px;                        /* Esquinas redondeadas simétricas */
+    padding: 8px 18px;                          /* Espaciado interno elegante */
+    font-size: 0.9rem;                          /* Tamaño de fuente equilibrado */
+    font-weight: 600;                           /* Grosor seminegrita profesional */
+    text-decoration: none !important;           /* Eliminamos por completo el subrayado feo */
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); /* Transición de software fluida */
+}
+
+/* Efecto Hover interactivo de alta calidad */
+.btn-ecosistema-hub:hover {
+    background-color: #8b5cf6;                  /* El botón se rellena al pasar el cursor */
+    color: #ffffff !important;                  /* El texto pasa a blanco absoluto */
+    border-color: #8b5cf6;
+    transform: translateY(-2px);                /* Microanimación de elevación moderna */
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25); /* Sombra suave de enfoque */
+}
     </style>
 </head>
 <body>
@@ -310,10 +336,12 @@
                         </div>
                     </div>
                     
-               <!-- Configuración para abrir en pestaña nueva con seguridad optimizada -->
-               <a href="enlaces.html" target="_blank" rel="noopener noreferrer" class="btn-ecosistema">
-               Ver Ecosistema Externo <i class="fas fa-external-link-alt"></i>
-              </a>
+                  <!-- Reemplaza tu enlace actual por este bloque estructurado -->
+                 <div class="mt-3">
+                 <a href="enlaces.html" target="_blank" rel="noopener noreferrer" class="btn btn-ecosistema-hub">
+                 Ver Ecosistema Externo <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+                 </a>
+                </div>
                     
                 </div>
 
