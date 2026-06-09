@@ -164,6 +164,24 @@
     transform: translateY(-2px);                /* Microanimación de elevación moderna */
     box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25); /* Sombra suave de enfoque */
 }
+
+/* ==========================================================
+   SEPARACIÓN ESTRUCTURAL DE BOTONES EN TARJETAS DE PROYECTOS
+   ========================================================== */
+
+/* 1. Forzar una separación interna superior y una línea sutil sobre los botones */
+.project-card .mt-auto {
+    margin-top: auto !important;
+    padding-top: 1.5rem !important; /* Espacio exacto de separación */
+    border-top: 1px solid var(--border-color) !important; /* Línea divisoria adaptativa al tema */
+}
+
+/* 2. Asegurar que las insignias (badges) no se peguen a la separación */
+.project-card .project-tags {
+    margin-bottom: 0px !important; /* Limpia márgenes antiguos */
+}
+
+        
     </style>
 </head>
 <body>
